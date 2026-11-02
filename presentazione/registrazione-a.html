@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sceglie bene, rilascia vicino allo zaino · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso A · 1:45</p>
+    <h1>Sceglie bene, rilascia vicino allo zaino</h1>
+    <p class="lead">Lo zaino diventa più tollerante, la domanda resta uguale.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-A.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="simulazione.html?tratto=scelta-e-gesto">Peculiarità 1</a> <a class="chip" href="simulazione.html?tratto=proposta">Peculiarità 2</a> <a class="chip" href="simulazione.html?tratto=domanda">Peculiarità 3</a></p>
+        <section><h2>Che cosa mostra</h2><p>È il caso da cui nasce il gioco: la scelta è giusta, è il gesto che non riesce. Dopo una sola sessione il sistema non propone niente; dopo due propone uno zaino più tollerante, con i numeri che lo giustificano.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="7.5">0:07</a> l'oggetto torna indietro senza suoni d'errore, e la scelta resta registrata come giusta.</li>
+          <li><a href="#" data-t="88.0">1:28</a> lo stesso rilascio di prima ora entra: lista, oggetti e posizioni non sono cambiati.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«Zaino più tollerante (0% → 21%). Nelle ultime 19 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 19 volte; in 9 di queste il rilascio si è fermato vicino allo zaino o ne è uscito all'ultimo. Stima prudente della quota di gesti non riusciti: 33%.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-A-dati.json">caso-A-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "Il bambino deve mettere nello zaino l'oggetto mostrato nella lista, a sinistra."], [5.75, "Sceglie l'oggetto giusto, ma lo rilascia appena fuori dallo zaino."], [7.5, "L'oggetto torna al suo posto, senza suoni d'errore. Registrato: scelta corretta, gesto non riuscito."], [12.5, "Riprova e questa volta il rilascio è dentro: prova completata."], [18.25, "Stesso schema nelle altre prove: scelta giusta, primo rilascio appena fuori."], [39.75, "Fine della prima sessione. Vediamo cosa propone il sistema all'adulto."], [42.0, "Con una sola sessione il sistema non cambia nulla: i dati non bastano."], [46.75, "Seconda sessione, a velocità doppia: stesso comportamento."], [72.75, "Dopo due sessioni il sistema propone uno zaino più tollerante, e spiega perché con i dati."], [79.75, "La proposta non si applica da sola: decide l'adulto, che accetta."], [80.75, "Il cambio vale solo per questo gioco su questo dispositivo, e si può annullare."], [85.5, "Solo per la dimostrazione mostriamo l'area di aggancio tratteggiata: il bambino non la vede."], [88.0, "Nuova sessione: lo stesso rilascio di prima, appena fuori dal bordo..."], [90.25, "...ora entra nello zaino al primo tentativo."], [98.0, "Lista, oggetti e posizioni sono gli stessi: è cambiata solo la precisione richiesta al gesto."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

@@ -1,0 +1,733 @@
+{
+  "caso": "Caso G · L'adulto prepara gli oggetti di casa",
+  "riepilogo": {
+    "sessioni": 1,
+    "tentativi": 3,
+    "tentativiSimulati": 0,
+    "scelteCorrette": 3,
+    "conAiuto": 0,
+    "conFotoPropria": 3,
+    "conVoceRegistrata": 1,
+    "oggettiDellaFamiglia": [
+      {
+        "nome": "diario",
+        "foto": true,
+        "voce": false
+      },
+      {
+        "nome": "astuccio",
+        "foto": true,
+        "voce": true
+      },
+      {
+        "nome": "borraccia",
+        "foto": true,
+        "voce": false
+      }
+    ],
+    "esitiDelGesto": {
+      "placed": 3
+    },
+    "proposte": [],
+    "accessoFinale": {
+      "templateId": "prepariamo-lo-zaino",
+      "device": "questo-dispositivo",
+      "interaction": {
+        "mode": "drag",
+        "tolerance": 0,
+        "version": 1
+      },
+      "locked": [],
+      "task": {
+        "instruction": "list_voice"
+      }
+    }
+  },
+  "motore": [
+    "Controlli della configurazione\nAvviso: Con 3 oggetti la sessione avrà 3 prove invece di 5."
+  ],
+  "dati": {
+    "attempts": [
+      {
+        "sessionId": "6e3e2172-4e0c-4432-97a0-1d63252137e0",
+        "trialId": "1614722907-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-3-mvtdb11p",
+          "target": "photo",
+          "voice": "recorded"
+        },
+        "n": 1,
+        "ts": 1793267748459,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-66a639ac-1e80-4c29-91e1-379b4127de98",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1412,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              59,
+              759,
+              192
+            ],
+            [
+              107,
+              758,
+              194
+            ],
+            [
+              159,
+              756,
+              198
+            ],
+            [
+              230,
+              751,
+              207
+            ],
+            [
+              296,
+              744,
+              221
+            ],
+            [
+              358,
+              735,
+              239
+            ],
+            [
+              393,
+              730,
+              249
+            ],
+            [
+              459,
+              718,
+              272
+            ],
+            [
+              499,
+              712,
+              285
+            ],
+            [
+              566,
+              697,
+              314
+            ],
+            [
+              630,
+              680,
+              347
+            ],
+            [
+              664,
+              671,
+              364
+            ],
+            [
+              699,
+              663,
+              380
+            ],
+            [
+              732,
+              656,
+              395
+            ],
+            [
+              797,
+              642,
+              423
+            ],
+            [
+              832,
+              636,
+              435
+            ],
+            [
+              895,
+              625,
+              456
+            ],
+            [
+              959,
+              616,
+              474
+            ],
+            [
+              1000,
+              612,
+              481
+            ],
+            [
+              1067,
+              606,
+              493
+            ],
+            [
+              1130,
+              602,
+              500
+            ],
+            [
+              1193,
+              600,
+              504
+            ],
+            [
+              1226,
+              600,
+              505
+            ],
+            [
+              1412,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-66a639ac-1e80-4c29-91e1-379b4127de98",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": true,
+          "interrupted": false
+        },
+        "id": 1
+      },
+      {
+        "sessionId": "6e3e2172-4e0c-4432-97a0-1d63252137e0",
+        "trialId": "1614722907-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-3-mvtdb11p",
+          "target": "photo",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267751721,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-769e15ae-7e69-4f6e-bae6-bf0023315db3",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1397,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              47,
+              421,
+              192
+            ],
+            [
+              93,
+              423,
+              194
+            ],
+            [
+              145,
+              424,
+              198
+            ],
+            [
+              207,
+              430,
+              207
+            ],
+            [
+              280,
+              438,
+              221
+            ],
+            [
+              313,
+              443,
+              229
+            ],
+            [
+              384,
+              454,
+              249
+            ],
+            [
+              422,
+              460,
+              260
+            ],
+            [
+              484,
+              474,
+              285
+            ],
+            [
+              547,
+              491,
+              314
+            ],
+            [
+              614,
+              510,
+              347
+            ],
+            [
+              649,
+              520,
+              364
+            ],
+            [
+              716,
+              537,
+              395
+            ],
+            [
+              752,
+              546,
+              410
+            ],
+            [
+              814,
+              560,
+              435
+            ],
+            [
+              876,
+              572,
+              456
+            ],
+            [
+              946,
+              582,
+              474
+            ],
+            [
+              1013,
+              590,
+              487
+            ],
+            [
+              1081,
+              596,
+              497
+            ],
+            [
+              1147,
+              599,
+              503
+            ],
+            [
+              1182,
+              600,
+              504
+            ],
+            [
+              1397,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-769e15ae-7e69-4f6e-bae6-bf0023315db3",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 2
+      },
+      {
+        "sessionId": "6e3e2172-4e0c-4432-97a0-1d63252137e0",
+        "trialId": "1614722907-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-3-mvtdb11p",
+          "target": "photo",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267754992,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-09da38cd-3f78-4d4d-9751-99a75e425ebf",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1403,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              49,
+              421,
+              192
+            ],
+            [
+              95,
+              423,
+              194
+            ],
+            [
+              146,
+              424,
+              198
+            ],
+            [
+              208,
+              430,
+              207
+            ],
+            [
+              249,
+              434,
+              214
+            ],
+            [
+              286,
+              438,
+              221
+            ],
+            [
+              351,
+              448,
+              239
+            ],
+            [
+              412,
+              460,
+              260
+            ],
+            [
+              476,
+              474,
+              285
+            ],
+            [
+              516,
+              482,
+              299
+            ],
+            [
+              552,
+              491,
+              314
+            ],
+            [
+              615,
+              510,
+              347
+            ],
+            [
+              681,
+              529,
+              380
+            ],
+            [
+              718,
+              537,
+              395
+            ],
+            [
+              782,
+              553,
+              423
+            ],
+            [
+              821,
+              560,
+              435
+            ],
+            [
+              891,
+              572,
+              456
+            ],
+            [
+              953,
+              582,
+              474
+            ],
+            [
+              1018,
+              590,
+              487
+            ],
+            [
+              1052,
+              593,
+              493
+            ],
+            [
+              1086,
+              596,
+              497
+            ],
+            [
+              1151,
+              599,
+              503
+            ],
+            [
+              1187,
+              600,
+              504
+            ],
+            [
+              1403,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-09da38cd-3f78-4d4d-9751-99a75e425ebf",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 3
+      }
+    ],
+    "configHistory": [
+      {
+        "ts": 1793267705898,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "default",
+        "id": 1
+      }
+    ],
+    "editorSessions": [
+      {
+        "openedAt": 1793267709392,
+        "added": 3,
+        "edited": 1,
+        "id": 1,
+        "closedAt": 1793267739538
+      }
+    ],
+    "kv": [
+      {
+        "key": "context",
+        "value": {
+          "templateId": "prepariamo-lo-zaino",
+          "device": "questo-dispositivo",
+          "interaction": {
+            "mode": "drag",
+            "tolerance": 0,
+            "version": 1
+          },
+          "locked": [],
+          "task": {
+            "instruction": "list_voice"
+          }
+        }
+      },
+      {
+        "key": "materialsSeeded",
+        "value": true
+      }
+    ],
+    "materials": [
+      {
+        "id": "forbici",
+        "label": "forbici",
+        "article": "le",
+        "emoji": "✂️",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705929,
+        "updatedAt": 1793267733326
+      },
+      {
+        "id": "libro",
+        "label": "libro",
+        "article": "il",
+        "emoji": "📕",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705928,
+        "updatedAt": 1793267733326
+      },
+      {
+        "id": "m-09da38cd-3f78-4d4d-9751-99a75e425ebf",
+        "label": "diario",
+        "article": "il",
+        "photo": {
+          "blob": "image/jpeg",
+          "size": 12207
+        },
+        "source": "family",
+        "active": true,
+        "createdAt": 1793267731213,
+        "updatedAt": 1793267731213
+      },
+      {
+        "id": "m-66a639ac-1e80-4c29-91e1-379b4127de98",
+        "label": "astuccio",
+        "article": "l'",
+        "photo": {
+          "blob": "image/jpeg",
+          "size": 6503
+        },
+        "voice": {
+          "blob": "audio/webm;codecs=opus",
+          "size": 49360
+        },
+        "source": "family",
+        "active": true,
+        "createdAt": 1793267721558,
+        "updatedAt": 1793267721558
+      },
+      {
+        "id": "m-769e15ae-7e69-4f6e-bae6-bf0023315db3",
+        "label": "borraccia",
+        "article": "la",
+        "photo": {
+          "blob": "image/jpeg",
+          "size": 6240
+        },
+        "source": "family",
+        "active": true,
+        "createdAt": 1793267726506,
+        "updatedAt": 1793267726506
+      },
+      {
+        "id": "matita",
+        "label": "matita",
+        "article": "la",
+        "emoji": "✏️",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705925,
+        "updatedAt": 1793267733326
+      },
+      {
+        "id": "mela",
+        "label": "mela",
+        "article": "la",
+        "emoji": "🍎",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705927,
+        "updatedAt": 1793267733326
+      },
+      {
+        "id": "pastelli",
+        "label": "pastelli",
+        "article": "i",
+        "emoji": "🖍️",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705926,
+        "updatedAt": 1793267733326
+      },
+      {
+        "id": "quaderno",
+        "label": "quaderno",
+        "article": "il",
+        "emoji": "📓",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705924,
+        "updatedAt": 1793267733326
+      },
+      {
+        "id": "righello",
+        "label": "righello",
+        "article": "il",
+        "emoji": "📏",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705930,
+        "updatedAt": 1793267733326
+      },
+      {
+        "id": "succo",
+        "label": "succo",
+        "article": "il",
+        "emoji": "🧃",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793267705931,
+        "updatedAt": 1793267733326
+      }
+    ],
+    "proposals": [],
+    "sessionEvents": [],
+    "sessions": [
+      {
+        "id": "6e3e2172-4e0c-4432-97a0-1d63252137e0",
+        "startedAt": 1793267745658,
+        "trials": 3,
+        "endedAt": 1793267756104,
+        "endReason": "completed"
+      }
+    ]
+  }
+}

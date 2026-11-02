@@ -1,0 +1,1318 @@
+{
+  "caso": "Caso F · L'adulto rifiuta la proposta",
+  "riepilogo": {
+    "sessioni": 2,
+    "tentativi": 29,
+    "tentativiSimulati": 29,
+    "scelteCorrette": 27,
+    "conAiuto": 0,
+    "conFotoPropria": 0,
+    "conVoceRegistrata": 0,
+    "oggettiDellaFamiglia": [],
+    "esitiDelGesto": {
+      "near_miss": 10,
+      "overshoot": 7,
+      "placed": 10,
+      "abandoned": 2
+    },
+    "proposte": [
+      {
+        "cambio": {
+          "dimension": "tolerance",
+          "from": 0,
+          "to": 0.32
+        },
+        "stato": "refused",
+        "spiegazione": "Propongo uno zaino più tollerante: l'area di aggancio passa da 0% a 32% della sua misura, senza cambiarne l'aspetto. Nelle ultime 28 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 26 volte; in 14 di queste il rilascio si è fermato vicino allo zaino o ne è uscito all'ultimo. Stima prudente della quota di gesti non riusciti: 49% (limite inferiore di un intervallo all'80%). La lista e gli oggetti restano gli stessi. Le scelte corrette riguardano queste prove e non dimostrano una competenza consolidata; i gesti non riusciti non indicano una difficoltà motoria generale."
+      }
+    ],
+    "accessoFinale": {
+      "templateId": "prepariamo-lo-zaino",
+      "device": "questo-dispositivo",
+      "interaction": {
+        "mode": "drag",
+        "tolerance": 0,
+        "version": 1
+      },
+      "locked": [
+        "tolerance"
+      ],
+      "task": {
+        "instruction": "list_voice"
+      }
+    }
+  },
+  "motore": [
+    "Proposte del sistema\n\nZaino più tollerante (0% → 32%)\n\nPropongo uno zaino più tollerante: l'area di aggancio passa da 0% a 32% della sua misura, senza cambiarne l'aspetto. Nelle ultime 28 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 26 volte; in 14 di queste il rilascio si è fermato vicino allo zaino o ne è uscito all'ultimo. Stima prudente della quota di gesti non riusciti: 49% (limite inferiore di un intervallo all'80%). La lista e gli oggetti restano gli stessi. Le scelte corrette riguardano queste prove e non dimostrano una competenza consolidata; i gesti non riusciti non indicano una difficoltà motoria generale.\n\nRegola interaction-access v1.0.0 · 28 prove · 2 sessioni\n\nAccetta\nRifiuta\nRifiuta e blocca\n29/10/2026, 10:54:47 · Zaino più tollerante (0% → 32%) · in attesa",
+    "Proposte del sistema\n\nUna proposta è stata rifiutata con questo accesso: aspetto altre prove prima di riproporla (finora 0).\n\n29/10/2026, 10:54:47 · Zaino più tollerante (0% → 32%) · rifiutata"
+  ],
+  "dati": {
+    "attempts": [
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t0",
+        "trialIndex": 0,
+        "n": 1,
+        "ts": 1793256886566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.233,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": true,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 1
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t0",
+        "trialIndex": 0,
+        "n": 2,
+        "ts": 1793256891566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "overshoot",
+          "releaseDist": 0.09,
+          "enteredTarget": true,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 2
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t0",
+        "trialIndex": 0,
+        "n": 3,
+        "ts": 1793256896566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 3
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t1",
+        "trialIndex": 1,
+        "n": 1,
+        "ts": 1793256901566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "overshoot",
+          "releaseDist": 0.394,
+          "enteredTarget": true,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 4
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t1",
+        "trialIndex": 1,
+        "n": 2,
+        "ts": 1793256906566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "abandoned",
+          "releaseDist": 1.474,
+          "enteredTarget": false,
+          "pathLength": 0.406,
+          "durationMs": 800,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 5
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t1",
+        "trialIndex": 1,
+        "n": 3,
+        "ts": 1793256911566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "overshoot",
+          "releaseDist": 0.371,
+          "enteredTarget": true,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 6
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t1",
+        "trialIndex": 1,
+        "n": 4,
+        "ts": 1793256916566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.26,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 7
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t2",
+        "trialIndex": 2,
+        "n": 1,
+        "ts": 1793256921566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 8
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t3",
+        "trialIndex": 3,
+        "n": 1,
+        "ts": 1793256926566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.337,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 9
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t3",
+        "trialIndex": 3,
+        "n": 2,
+        "ts": 1793256931566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 10
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t4",
+        "trialIndex": 4,
+        "n": 1,
+        "ts": 1793256936566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 11
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 1,
+        "ts": 1793256941566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "overshoot",
+          "releaseDist": 0.092,
+          "enteredTarget": true,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 12
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 2,
+        "ts": 1793256946566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.3,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 13
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 3,
+        "ts": 1793256951566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "other",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "overshoot",
+          "releaseDist": 0.385,
+          "enteredTarget": true,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 14
+      },
+      {
+        "sessionId": "sim-380805324-0",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 4,
+        "ts": 1793256956566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.192,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 15
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t0",
+        "trialIndex": 0,
+        "n": 1,
+        "ts": 1793260486566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.309,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 16
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t0",
+        "trialIndex": 0,
+        "n": 2,
+        "ts": 1793260491566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "overshoot",
+          "releaseDist": 0.294,
+          "enteredTarget": true,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 17
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t0",
+        "trialIndex": 0,
+        "n": 3,
+        "ts": 1793260496566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "abandoned",
+          "releaseDist": 1.034,
+          "enteredTarget": false,
+          "pathLength": 0.353,
+          "durationMs": 800,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 18
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t0",
+        "trialIndex": 0,
+        "n": 4,
+        "ts": 1793260501566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 19
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t1",
+        "trialIndex": 1,
+        "n": 1,
+        "ts": 1793260506566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "other",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.386,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 20
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t1",
+        "trialIndex": 1,
+        "n": 2,
+        "ts": 1793260511566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 21
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t2",
+        "trialIndex": 2,
+        "n": 1,
+        "ts": 1793260516566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.162,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 22
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t2",
+        "trialIndex": 2,
+        "n": 2,
+        "ts": 1793260521566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 23
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t3",
+        "trialIndex": 3,
+        "n": 1,
+        "ts": 1793260526566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 24
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t4",
+        "trialIndex": 4,
+        "n": 1,
+        "ts": 1793260531566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 25
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 1,
+        "ts": 1793260536566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.238,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 26
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 2,
+        "ts": 1793260541566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "overshoot",
+          "releaseDist": 0.072,
+          "enteredTarget": true,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 27
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 3,
+        "ts": 1793260546566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "near_miss",
+          "releaseDist": 0.182,
+          "enteredTarget": false,
+          "pathLength": 1.2,
+          "durationMs": 1500,
+          "multiTouch": false
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 28
+      },
+      {
+        "sessionId": "sim-380805324-1",
+        "trialId": "t5",
+        "trialIndex": 5,
+        "n": 4,
+        "ts": 1793260551566,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "target",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "outcome": "placed",
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.3,
+          "durationMs": 1400,
+          "multiTouch": false
+        },
+        "decision": {
+          "objectId": "target",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false,
+          "simulated": true
+        },
+        "goal": "match_list_item",
+        "id": 29
+      }
+    ],
+    "configHistory": [
+      {
+        "ts": 1793267678492,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "default",
+        "id": 1
+      },
+      {
+        "ts": 1793267694707,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [
+          "tolerance"
+        ],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "adult",
+        "proposalId": "67b61ee8-cf25-40bf-9ff5-248182866ce2",
+        "id": 2
+      }
+    ],
+    "editorSessions": [],
+    "kv": [
+      {
+        "key": "context",
+        "value": {
+          "templateId": "prepariamo-lo-zaino",
+          "device": "questo-dispositivo",
+          "interaction": {
+            "mode": "drag",
+            "tolerance": 0,
+            "version": 1
+          },
+          "locked": [
+            "tolerance"
+          ],
+          "task": {
+            "instruction": "list_voice"
+          }
+        }
+      },
+      {
+        "key": "materialsSeeded",
+        "value": true
+      }
+    ],
+    "materials": [
+      {
+        "id": "forbici",
+        "label": "forbici",
+        "article": "le",
+        "emoji": "✂️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678501,
+        "updatedAt": 1793267678496
+      },
+      {
+        "id": "libro",
+        "label": "libro",
+        "article": "il",
+        "emoji": "📕",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678500,
+        "updatedAt": 1793267678496
+      },
+      {
+        "id": "matita",
+        "label": "matita",
+        "article": "la",
+        "emoji": "✏️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678497,
+        "updatedAt": 1793267678496
+      },
+      {
+        "id": "mela",
+        "label": "mela",
+        "article": "la",
+        "emoji": "🍎",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678499,
+        "updatedAt": 1793267678496
+      },
+      {
+        "id": "pastelli",
+        "label": "pastelli",
+        "article": "i",
+        "emoji": "🖍️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678498,
+        "updatedAt": 1793267678496
+      },
+      {
+        "id": "quaderno",
+        "label": "quaderno",
+        "article": "il",
+        "emoji": "📓",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678496,
+        "updatedAt": 1793267678496
+      },
+      {
+        "id": "righello",
+        "label": "righello",
+        "article": "il",
+        "emoji": "📏",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678502,
+        "updatedAt": 1793267678496
+      },
+      {
+        "id": "succo",
+        "label": "succo",
+        "article": "il",
+        "emoji": "🧃",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267678503,
+        "updatedAt": 1793267678496
+      }
+    ],
+    "proposals": [
+      {
+        "id": "67b61ee8-cf25-40bf-9ff5-248182866ce2",
+        "ts": 1793267687669,
+        "ruleset": {
+          "id": "interaction-access",
+          "version": "1.0.0"
+        },
+        "change": {
+          "dimension": "tolerance",
+          "from": 0,
+          "to": 0.32
+        },
+        "evidence": {
+          "considered": 28,
+          "sessions": 2,
+          "choiceOk": 26,
+          "gestureFailed": 16,
+          "nearOrOvershoot": 14,
+          "failRateLower": 0.49,
+          "attemptIds": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29
+          ]
+        },
+        "explanation": "Propongo uno zaino più tollerante: l'area di aggancio passa da 0% a 32% della sua misura, senza cambiarne l'aspetto. Nelle ultime 28 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 26 volte; in 14 di queste il rilascio si è fermato vicino allo zaino o ne è uscito all'ultimo. Stima prudente della quota di gesti non riusciti: 49% (limite inferiore di un intervallo all'80%). La lista e gli oggetti restano gli stessi. Le scelte corrette riguardano queste prove e non dimostrano una competenza consolidata; i gesti non riusciti non indicano una difficoltà motoria generale.",
+        "status": "refused",
+        "fromConfig": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "decidedAt": 1793267694700
+      }
+    ],
+    "sessionEvents": [],
+    "sessions": [
+      {
+        "id": "sim-380805324-0",
+        "startedAt": 1793256886566,
+        "endedAt": 1793256956566,
+        "endReason": "completed",
+        "trials": 6,
+        "simulated": true
+      },
+      {
+        "id": "sim-380805324-1",
+        "startedAt": 1793260486566,
+        "endedAt": 1793260551566,
+        "endReason": "completed",
+        "trials": 6,
+        "simulated": true
+      }
+    ]
+  }
+}

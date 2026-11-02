@@ -1,0 +1,1287 @@
+{
+  "caso": "Caso I · Più foto dello stesso oggetto",
+  "riepilogo": {
+    "sessioni": 2,
+    "tentativi": 6,
+    "tentativiSimulati": 0,
+    "scelteCorrette": 6,
+    "conAiuto": 0,
+    "conFotoPropria": 6,
+    "conVoceRegistrata": 0,
+    "fotoUsate": {
+      "diario": [
+        0,
+        0
+      ],
+      "borraccia": [
+        0,
+        0
+      ],
+      "astuccio": [
+        2,
+        2
+      ]
+    },
+    "oggettiDellaFamiglia": [
+      {
+        "nome": "borraccia",
+        "foto": 1,
+        "voce": false
+      },
+      {
+        "nome": "diario",
+        "foto": 1,
+        "voce": false
+      },
+      {
+        "nome": "astuccio",
+        "foto": 3,
+        "voce": false
+      }
+    ],
+    "esitiDelGesto": {
+      "placed": 6
+    },
+    "proveConOggettiVeri": [],
+    "proposte": [],
+    "accessoFinale": {
+      "templateId": "prepariamo-lo-zaino",
+      "device": "questo-dispositivo",
+      "interaction": {
+        "mode": "drag",
+        "tolerance": 0,
+        "version": 1
+      },
+      "locked": [],
+      "task": {
+        "instruction": "list_voice",
+        "variants": "mixed"
+      }
+    }
+  },
+  "motore": [
+    "Consegna e compito\n\nCon la lista il compito è abbinare l'oggetto mostrato; con la sola voce è riconoscere l'oggetto nominato, un compito diverso. Il sistema non cambia mai la consegna da solo.\n\nConsegna\nLista e voce\nSolo voce\nUsa anche le altre foto di ogni oggetto (varianti)\n\nCon le varianti la stessa foto compare nella lista e sulla carta: cambia l'aspetto dell'oggetto, non il compito. Le altre foto si aggiungono nell'editor degli oggetti."
+  ],
+  "dati": {
+    "attempts": [
+      {
+        "sessionId": "b09dfc1b-162a-4719-b12d-1b9feb81e5d2",
+        "trialId": "612858809-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "targetObjectId": "m-e9298972-6573-4ca5-9c29-275320371757",
+        "materials": {
+          "version": "set-3-mvwcu7xw",
+          "target": "photo",
+          "voice": "synthetic",
+          "variant": 0
+        },
+        "n": 1,
+        "ts": 1793448364124,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-e9298972-6573-4ca5-9c29-275320371757",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1394,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              51,
+              759,
+              192
+            ],
+            [
+              101,
+              758,
+              194
+            ],
+            [
+              148,
+              756,
+              198
+            ],
+            [
+              210,
+              751,
+              207
+            ],
+            [
+              252,
+              748,
+              214
+            ],
+            [
+              287,
+              744,
+              221
+            ],
+            [
+              321,
+              740,
+              229
+            ],
+            [
+              354,
+              735,
+              239
+            ],
+            [
+              415,
+              724,
+              260
+            ],
+            [
+              477,
+              712,
+              285
+            ],
+            [
+              516,
+              704,
+              299
+            ],
+            [
+              585,
+              689,
+              330
+            ],
+            [
+              648,
+              671,
+              364
+            ],
+            [
+              710,
+              656,
+              395
+            ],
+            [
+              750,
+              648,
+              410
+            ],
+            [
+              813,
+              636,
+              435
+            ],
+            [
+              882,
+              625,
+              456
+            ],
+            [
+              946,
+              616,
+              474
+            ],
+            [
+              1018,
+              609,
+              487
+            ],
+            [
+              1081,
+              604,
+              497
+            ],
+            [
+              1143,
+              601,
+              503
+            ],
+            [
+              1181,
+              600,
+              504
+            ],
+            [
+              1394,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-e9298972-6573-4ca5-9c29-275320371757",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": true,
+          "interrupted": false
+        },
+        "id": 1
+      },
+      {
+        "sessionId": "b09dfc1b-162a-4719-b12d-1b9feb81e5d2",
+        "trialId": "612858809-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "targetObjectId": "m-b6821edd-b4e8-4cd1-a4d7-97335ca0dd0d",
+        "materials": {
+          "version": "set-3-mvwcu7xw",
+          "target": "photo",
+          "voice": "synthetic",
+          "variant": 0
+        },
+        "n": 1,
+        "ts": 1793448367358,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-b6821edd-b4e8-4cd1-a4d7-97335ca0dd0d",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1394,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              48,
+              421,
+              192
+            ],
+            [
+              100,
+              423,
+              194
+            ],
+            [
+              149,
+              424,
+              198
+            ],
+            [
+              212,
+              430,
+              207
+            ],
+            [
+              252,
+              434,
+              214
+            ],
+            [
+              321,
+              443,
+              229
+            ],
+            [
+              382,
+              454,
+              249
+            ],
+            [
+              444,
+              467,
+              272
+            ],
+            [
+              509,
+              482,
+              299
+            ],
+            [
+              549,
+              491,
+              314
+            ],
+            [
+              611,
+              510,
+              347
+            ],
+            [
+              646,
+              520,
+              364
+            ],
+            [
+              679,
+              529,
+              380
+            ],
+            [
+              751,
+              546,
+              410
+            ],
+            [
+              813,
+              560,
+              435
+            ],
+            [
+              851,
+              566,
+              446
+            ],
+            [
+              916,
+              577,
+              465
+            ],
+            [
+              985,
+              586,
+              481
+            ],
+            [
+              1049,
+              593,
+              493
+            ],
+            [
+              1112,
+              597,
+              500
+            ],
+            [
+              1181,
+              600,
+              504
+            ],
+            [
+              1394,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-b6821edd-b4e8-4cd1-a4d7-97335ca0dd0d",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 2
+      },
+      {
+        "sessionId": "b09dfc1b-162a-4719-b12d-1b9feb81e5d2",
+        "trialId": "612858809-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "targetObjectId": "m-f4e3a236-5b00-42f8-a6bb-04648f92c2c3",
+        "materials": {
+          "version": "set-3-mvwcu7xw",
+          "target": "photo",
+          "voice": "synthetic",
+          "variant": 2
+        },
+        "n": 1,
+        "ts": 1793448370635,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-f4e3a236-5b00-42f8-a6bb-04648f92c2c3",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1437,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              48,
+              421,
+              192
+            ],
+            [
+              96,
+              423,
+              194
+            ],
+            [
+              146,
+              424,
+              198
+            ],
+            [
+              183,
+              427,
+              202
+            ],
+            [
+              222,
+              430,
+              207
+            ],
+            [
+              285,
+              438,
+              221
+            ],
+            [
+              320,
+              443,
+              229
+            ],
+            [
+              353,
+              448,
+              239
+            ],
+            [
+              424,
+              460,
+              260
+            ],
+            [
+              486,
+              474,
+              285
+            ],
+            [
+              548,
+              491,
+              314
+            ],
+            [
+              582,
+              500,
+              330
+            ],
+            [
+              618,
+              510,
+              347
+            ],
+            [
+              680,
+              529,
+              380
+            ],
+            [
+              720,
+              537,
+              395
+            ],
+            [
+              782,
+              553,
+              423
+            ],
+            [
+              823,
+              560,
+              435
+            ],
+            [
+              856,
+              566,
+              446
+            ],
+            [
+              890,
+              572,
+              456
+            ],
+            [
+              923,
+              577,
+              465
+            ],
+            [
+              986,
+              586,
+              481
+            ],
+            [
+              1049,
+              593,
+              493
+            ],
+            [
+              1089,
+              596,
+              497
+            ],
+            [
+              1126,
+              597,
+              500
+            ],
+            [
+              1206,
+              600,
+              504
+            ],
+            [
+              1246,
+              600,
+              505
+            ],
+            [
+              1437,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-f4e3a236-5b00-42f8-a6bb-04648f92c2c3",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 3
+      },
+      {
+        "sessionId": "38615419-be1e-404c-b7f5-1a85da372073",
+        "trialId": "1962038253-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "targetObjectId": "m-e9298972-6573-4ca5-9c29-275320371757",
+        "materials": {
+          "version": "set-3-mvwcu7xw",
+          "target": "photo",
+          "voice": "synthetic",
+          "variant": 0
+        },
+        "n": 1,
+        "ts": 1793448376270,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-e9298972-6573-4ca5-9c29-275320371757",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1374,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              51,
+              421,
+              192
+            ],
+            [
+              94,
+              423,
+              194
+            ],
+            [
+              131,
+              424,
+              198
+            ],
+            [
+              196,
+              430,
+              207
+            ],
+            [
+              268,
+              438,
+              221
+            ],
+            [
+              305,
+              443,
+              229
+            ],
+            [
+              367,
+              454,
+              249
+            ],
+            [
+              428,
+              467,
+              272
+            ],
+            [
+              500,
+              482,
+              299
+            ],
+            [
+              537,
+              491,
+              314
+            ],
+            [
+              599,
+              510,
+              347
+            ],
+            [
+              661,
+              529,
+              380
+            ],
+            [
+              702,
+              537,
+              395
+            ],
+            [
+              739,
+              546,
+              410
+            ],
+            [
+              802,
+              560,
+              435
+            ],
+            [
+              864,
+              572,
+              456
+            ],
+            [
+              898,
+              577,
+              465
+            ],
+            [
+              936,
+              582,
+              474
+            ],
+            [
+              1000,
+              590,
+              487
+            ],
+            [
+              1064,
+              596,
+              497
+            ],
+            [
+              1131,
+              599,
+              503
+            ],
+            [
+              1195,
+              600,
+              505
+            ],
+            [
+              1374,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-e9298972-6573-4ca5-9c29-275320371757",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 4
+      },
+      {
+        "sessionId": "38615419-be1e-404c-b7f5-1a85da372073",
+        "trialId": "1962038253-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "targetObjectId": "m-b6821edd-b4e8-4cd1-a4d7-97335ca0dd0d",
+        "materials": {
+          "version": "set-3-mvwcu7xw",
+          "target": "photo",
+          "voice": "synthetic",
+          "variant": 0
+        },
+        "n": 1,
+        "ts": 1793448379523,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-b6821edd-b4e8-4cd1-a4d7-97335ca0dd0d",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1391,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              48,
+              759,
+              192
+            ],
+            [
+              93,
+              758,
+              194
+            ],
+            [
+              162,
+              754,
+              202
+            ],
+            [
+              197,
+              751,
+              207
+            ],
+            [
+              266,
+              744,
+              221
+            ],
+            [
+              329,
+              735,
+              239
+            ],
+            [
+              398,
+              724,
+              260
+            ],
+            [
+              465,
+              712,
+              285
+            ],
+            [
+              533,
+              697,
+              314
+            ],
+            [
+              598,
+              680,
+              347
+            ],
+            [
+              665,
+              663,
+              380
+            ],
+            [
+              698,
+              656,
+              395
+            ],
+            [
+              765,
+              642,
+              423
+            ],
+            [
+              800,
+              636,
+              435
+            ],
+            [
+              862,
+              625,
+              456
+            ],
+            [
+              896,
+              620,
+              465
+            ],
+            [
+              930,
+              616,
+              474
+            ],
+            [
+              966,
+              612,
+              481
+            ],
+            [
+              1005,
+              609,
+              487
+            ],
+            [
+              1068,
+              604,
+              497
+            ],
+            [
+              1132,
+              601,
+              503
+            ],
+            [
+              1169,
+              600,
+              504
+            ],
+            [
+              1206,
+              600,
+              505
+            ],
+            [
+              1391,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-b6821edd-b4e8-4cd1-a4d7-97335ca0dd0d",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 5
+      },
+      {
+        "sessionId": "38615419-be1e-404c-b7f5-1a85da372073",
+        "trialId": "1962038253-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "targetObjectId": "m-f4e3a236-5b00-42f8-a6bb-04648f92c2c3",
+        "materials": {
+          "version": "set-3-mvwcu7xw",
+          "target": "photo",
+          "voice": "synthetic",
+          "variant": 2
+        },
+        "n": 1,
+        "ts": 1793448382802,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "m-f4e3a236-5b00-42f8-a6bb-04648f92c2c3",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1436,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              48,
+              759,
+              192
+            ],
+            [
+              95,
+              758,
+              194
+            ],
+            [
+              152,
+              756,
+              198
+            ],
+            [
+              189,
+              754,
+              202
+            ],
+            [
+              235,
+              751,
+              207
+            ],
+            [
+              283,
+              748,
+              214
+            ],
+            [
+              318,
+              744,
+              221
+            ],
+            [
+              381,
+              735,
+              239
+            ],
+            [
+              444,
+              724,
+              260
+            ],
+            [
+              517,
+              712,
+              285
+            ],
+            [
+              585,
+              697,
+              314
+            ],
+            [
+              618,
+              689,
+              330
+            ],
+            [
+              687,
+              671,
+              364
+            ],
+            [
+              751,
+              656,
+              395
+            ],
+            [
+              818,
+              642,
+              423
+            ],
+            [
+              881,
+              630,
+              446
+            ],
+            [
+              943,
+              620,
+              465
+            ],
+            [
+              1016,
+              612,
+              481
+            ],
+            [
+              1078,
+              606,
+              493
+            ],
+            [
+              1117,
+              604,
+              497
+            ],
+            [
+              1178,
+              601,
+              503
+            ],
+            [
+              1241,
+              600,
+              505
+            ],
+            [
+              1436,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "m-f4e3a236-5b00-42f8-a6bb-04648f92c2c3",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 6
+      }
+    ],
+    "configHistory": [
+      {
+        "ts": 1793448329131,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "default",
+        "id": 1
+      },
+      {
+        "ts": 1793448352595,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice",
+          "variants": "mixed"
+        },
+        "source": "adult",
+        "id": 2
+      }
+    ],
+    "editorSessions": [
+      {
+        "openedAt": 1793448332215,
+        "added": 3,
+        "edited": 3,
+        "id": 1,
+        "closedAt": 1793448351553
+      }
+    ],
+    "kv": [
+      {
+        "key": "context",
+        "value": {
+          "templateId": "prepariamo-lo-zaino",
+          "device": "questo-dispositivo",
+          "interaction": {
+            "mode": "drag",
+            "tolerance": 0,
+            "version": 1
+          },
+          "locked": [],
+          "task": {
+            "instruction": "list_voice",
+            "variants": "mixed"
+          }
+        }
+      },
+      {
+        "key": "materialsSeeded",
+        "value": true
+      }
+    ],
+    "materials": [
+      {
+        "id": "forbici",
+        "label": "forbici",
+        "article": "le",
+        "emoji": "✂️",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329140,
+        "updatedAt": 1793448343761
+      },
+      {
+        "id": "libro",
+        "label": "libro",
+        "article": "il",
+        "emoji": "📕",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329139,
+        "updatedAt": 1793448343761
+      },
+      {
+        "id": "m-b6821edd-b4e8-4cd1-a4d7-97335ca0dd0d",
+        "label": "borraccia",
+        "article": "la",
+        "photos": [
+          {}
+        ],
+        "source": "family",
+        "active": true,
+        "createdAt": 1793448338848,
+        "updatedAt": 1793448338848
+      },
+      {
+        "id": "m-e9298972-6573-4ca5-9c29-275320371757",
+        "label": "diario",
+        "article": "il",
+        "photos": [
+          {}
+        ],
+        "source": "family",
+        "active": true,
+        "createdAt": 1793448342255,
+        "updatedAt": 1793448342255
+      },
+      {
+        "id": "m-f4e3a236-5b00-42f8-a6bb-04648f92c2c3",
+        "label": "astuccio",
+        "article": "l'",
+        "photos": [
+          {},
+          {},
+          {}
+        ],
+        "source": "family",
+        "active": true,
+        "createdAt": 1793448335255,
+        "updatedAt": 1793448345524
+      },
+      {
+        "id": "matita",
+        "label": "matita",
+        "article": "la",
+        "emoji": "✏️",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329136,
+        "updatedAt": 1793448343761
+      },
+      {
+        "id": "mela",
+        "label": "mela",
+        "article": "la",
+        "emoji": "🍎",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329138,
+        "updatedAt": 1793448343761
+      },
+      {
+        "id": "pastelli",
+        "label": "pastelli",
+        "article": "i",
+        "emoji": "🖍️",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329137,
+        "updatedAt": 1793448343761
+      },
+      {
+        "id": "quaderno",
+        "label": "quaderno",
+        "article": "il",
+        "emoji": "📓",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329135,
+        "updatedAt": 1793448343761
+      },
+      {
+        "id": "righello",
+        "label": "righello",
+        "article": "il",
+        "emoji": "📏",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329141,
+        "updatedAt": 1793448343761
+      },
+      {
+        "id": "succo",
+        "label": "succo",
+        "article": "il",
+        "emoji": "🧃",
+        "source": "demo",
+        "active": false,
+        "createdAt": 1793448329142,
+        "updatedAt": 1793448343761
+      }
+    ],
+    "proposals": [],
+    "realObservations": [],
+    "sessionEvents": [],
+    "sessions": [
+      {
+        "id": "38615419-be1e-404c-b7f5-1a85da372073",
+        "startedAt": 1793448373508,
+        "trials": 3,
+        "endedAt": 1793448383912,
+        "endReason": "completed"
+      },
+      {
+        "id": "b09dfc1b-162a-4719-b12d-1b9feb81e5d2",
+        "startedAt": 1793448361342,
+        "trials": 3,
+        "endedAt": 1793448371747,
+        "endReason": "completed"
+      }
+    ]
+  }
+}

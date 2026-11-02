@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulation · Pack the backpack</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: titolo in alto; sotto, a sinistra il tablet con la didascalia del passo, a destra cosa registra e cosa conclude il sistema. */
+:root {
+  --bg: #edf1f4;
+  --surface: #ffffff;
+  --ink: #1c2731;
+  --muted: #566573;
+  --line: #d2dae2;
+  --accent: #2f6db5;
+  --accent-ink: #ffffff;
+  --accent-soft: #e4edf8;
+  --good: #2b7a52;
+  --good-bg: #e1f1e8;
+  --warn: #9a5f0c;
+  --warn-bg: #fbeed8;
+  --bad: #ad3e2c;
+  --bad-bg: #f7e2dd;
+  --chip: #edf1f5;
+  --bezel: #27313b;
+  /* lo schermo del tablet ha i colori del gioco in entrambi i temi */
+  --s-screen: #f4efe6;
+  --s-paper: #fffdf8;
+  --s-pack: #e3ecf7;
+  --s-line: #d9cfbf;
+  --s-ink: #2d2a26;
+  --s-accent: #2f6db5;
+  --s-good: #2b7a52;
+  --s-warn: #c27a10;
+  --s-far: #8b97a3;
+  --s-bad: #b3412e;
+  --font-body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10161c; --surface: #18212a; --ink: #e3e9ef; --muted: #9babb9; --line: #2a3642;
+    --accent: #7eaae6; --accent-ink: #0c1520; --accent-soft: #1d2b3c;
+    --good: #66c492; --good-bg: #173127; --warn: #e3a64e; --warn-bg: #33270f; --bad: #ea8a77; --bad-bg: #3a1f1a;
+    --chip: #222d38; --bezel: #05080b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10161c; --surface: #18212a; --ink: #e3e9ef; --muted: #9babb9; --line: #2a3642;
+  --accent: #7eaae6; --accent-ink: #0c1520; --accent-soft: #1d2b3c;
+  --good: #66c492; --good-bg: #173127; --warn: #e3a64e; --warn-bg: #33270f; --bad: #ea8a77; --bad-bg: #3a1f1a;
+  --chip: #222d38; --bezel: #05080b; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--font-body); }
+.wrap {
+  max-width: 1240px; margin: 0 auto; display: grid; gap: 22px;
+  padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.point { margin: 12px 0 0; max-width: 72ch; padding: 10px 14px; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font-weight: 600; }
+.eyebrow { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { margin: 4px 0 0; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; font-weight: 700; text-wrap: balance; }
+header p.lead { margin: 10px 0 0; max-width: 68ch; color: var(--muted); font-size: 17px; }
+
+.stage { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 920px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.left { display: grid; gap: 14px; min-width: 0; }
+
+.device { background: var(--bezel); border-radius: 26px; padding: 12px; display: flex; }
+.strip {
+  flex: 0 0 9%; background: var(--s-screen); border-right: 2px solid var(--s-line); border-radius: 15px 0 0 15px;
+  display: flex; flex-direction: column; align-items: center; gap: 6%; padding-top: 4%;
+}
+.strip span {
+  width: 68%; aspect-ratio: 1; border-radius: 24%; border: 2px solid var(--s-line); background: var(--s-paper);
+  display: grid; place-items: center; font-size: clamp(11px, 1.7vw, 21px); line-height: 1;
+}
+#scene { flex: 1; min-width: 0; width: 100%; height: auto; aspect-ratio: 10 / 7; display: block; border-radius: 0 15px 15px 0; overflow: hidden; }
+
+.screen { fill: var(--s-screen); }
+.s-card { fill: var(--s-paper); stroke: var(--s-line); stroke-width: 4; }
+.s-label { fill: var(--s-ink); font: 30px var(--font-body); text-anchor: middle; }
+.glyph { text-anchor: middle; dominant-baseline: central; }
+.bp { fill: var(--s-pack); stroke: var(--s-line); stroke-width: 4; }
+.bp.ready { stroke: var(--s-accent); stroke-width: 8; }
+.obj .s-card { transition: stroke .2s; }
+.obj.selected .s-card { stroke: var(--s-accent); stroke-width: 10; }
+.obj.lift { filter: drop-shadow(0 10px 10px rgba(30, 40, 50, .25)); }
+.obj.dim { opacity: .35; }
+.hit { fill: var(--s-accent); fill-opacity: .07; stroke: var(--s-accent); stroke-width: 3; stroke-dasharray: 14 10; }
+.dot { stroke: var(--s-paper); stroke-width: 3; }
+.dot.good { fill: var(--s-good); }
+.dot.warn { fill: var(--s-warn); }
+.dot.far { fill: var(--s-far); }
+.xmark { stroke: var(--s-bad); stroke-width: 5; stroke-linecap: round; fill: none; }
+.finger-ring { fill: var(--s-accent); fill-opacity: .2; stroke: var(--s-accent); stroke-width: 4; }
+.finger-dot { fill: var(--s-accent); }
+.note-line { stroke: var(--s-ink); stroke-width: 2; stroke-dasharray: 4 5; }
+.note-text { fill: var(--s-ink); font: 600 26px var(--font-body); }
+.note-bg { fill: var(--s-paper); stroke: var(--s-line); stroke-width: 2; }
+
+.caption { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; display: grid; gap: 6px; }
+.stepno { margin: 0; font: 600 13px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.caption h2 { margin: 0; font-size: 22px; line-height: 1.25; text-wrap: balance; }
+.caption p.text { margin: 0; max-width: 66ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 6px; font-size: 14px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend svg { width: 16px; height: 16px; flex: none; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; }
+button {
+  font: 600 15px var(--font-body); color: var(--ink); background: var(--surface); border: 1.5px solid var(--line);
+  border-radius: 999px; padding: 9px 16px; min-height: 44px; cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button:disabled { opacity: .45; cursor: default; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.steps button { min-width: 44px; padding: 8px 12px; font-family: var(--font-mono); }
+.steps button[aria-current="step"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.side { display: grid; gap: 16px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
+.panel h3 { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.logwrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .04em; padding: 0 8px 6px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+td.num { font: 14px var(--font-mono); font-variant-numeric: tabular-nums; color: var(--muted); }
+td.acc { white-space: nowrap; }
+tr.gap td { color: var(--muted); font-style: italic; }
+tr.fresh td { background: var(--accent-soft); }
+.empty { color: var(--muted); margin: 0; }
+.chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; background: var(--chip); color: var(--ink); }
+.chip.good { background: var(--good-bg); color: var(--good); }
+.chip.warn { background: var(--warn-bg); color: var(--warn); }
+.chip.bad { background: var(--bad-bg); color: var(--bad); }
+.note { margin: 0; font-size: 14px; color: var(--muted); }
+
+#concl { display: grid; gap: 10px; }
+#concl p { margin: 0; }
+.muted { color: var(--muted); font-size: 14px; }
+.wait { color: var(--muted); font-style: italic; }
+.facts { margin: 0; display: grid; gap: 6px; }
+.facts div { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 10px; }
+.facts dt { color: var(--muted); font-size: 14px; }
+.facts dd { margin: 0; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 8px; align-items: start; }
+.checks .ok { width: 24px; height: 24px; border-radius: 50%; background: var(--good-bg); color: var(--good); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+.checks b { display: block; }
+.checks span.v { font: 14px var(--font-mono); color: var(--muted); }
+.proposal { background: var(--accent-soft); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; }
+.plabel { font: 600 12px var(--font-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+.pchange { font-weight: 700; font-size: 17px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.msg { min-height: 1.5em; font-size: 14px; color: var(--ink); }
+.grid4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 520px) { .grid4 { grid-template-columns: minmax(0, 1fr); } }
+.grid4 section { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; }
+.grid4 h4 { margin: 0; font-size: 15px; }
+.grid4 p, .grid4 ul { margin: 0; font-size: 14px; }
+.grid4 ul { padding-left: 18px; }
+
+footer { color: var(--muted); font-size: 14px; max-width: 80ch; }
+footer p { margin: 0; }
+@media (prefers-reduced-motion: reduce) { .obj .s-card { transition: none; } }
+
+/* Tutto nello schermo: il tablet si adatta all'altezza disponibile, i pannelli di destra scorrono al loro interno se serve. */
+.controls .steps { margin-left: auto; }
+@media (min-width: 821px) {
+  html { font-size: clamp(12px, min(1.2vw, 2.15vh), 21px); }
+  body { font-size: .9rem; margin: 0; }
+  .wrap { height: 100dvh; max-width: 86rem; padding-block: .9rem; gap: .7rem; grid-template-rows: auto auto minmax(0, 1fr); }
+  .eyebrow { font-size: .72rem; }
+  h1 { font-size: 1.75rem; margin-top: .1rem; }
+  header p.lead { font-size: .98rem; margin-top: .3rem; max-width: 80ch; }
+  .point { font-size: .85rem; margin: 0; padding: .4rem .8rem; max-width: none; }
+  .stage { min-height: 0; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 1rem; align-items: stretch; }
+  .left { min-height: 0; grid-template-rows: minmax(0, 1fr) auto auto; gap: .55rem; }
+  .device { min-height: 0; height: 100%; justify-content: center; padding: .55rem; border-radius: 1.3rem; }
+  .strip { flex: 0 0 auto; width: 3rem; gap: .6rem; padding-top: .6rem; }
+  .strip span { width: 2.1rem; font-size: 1rem; }
+  #scene { flex: 0 1 auto; width: auto; max-width: calc(100% - 3rem); height: 100%; }
+  .caption { padding: .6rem .9rem; gap: .2rem; border-radius: .8rem; }
+  .stepno { font-size: .7rem; }
+  .caption h2 { font-size: 1.1rem; }
+  .caption p.text { font-size: .9rem; }
+  .legend { font-size: .75rem; gap: .2rem .9rem; margin-top: .2rem; }
+  .controls { gap: .4rem; align-items: center; }
+  button { font-size: .82rem; padding: .3rem .8rem; min-height: 2.2rem; }
+  .steps { gap: .3rem; }
+  .steps button { min-width: 2.2rem; padding: .2rem .5rem; }
+  .side { min-height: 0; grid-template-rows: auto minmax(0, 1fr); gap: .6rem; }
+  .side:has(.point:not([hidden])) { grid-template-rows: auto auto minmax(0, 1fr); }
+  .panel { min-height: 0; overflow: auto; padding: .5rem .85rem; gap: .35rem; border-radius: .8rem; }
+  .panel h3 { font-size: .7rem; }
+  table { font-size: .78rem; }
+  th { font-size: .66rem; }
+  td { padding: .25rem .4rem .25rem 0; }
+  .note, .muted { font-size: .78rem; }
+  #concl { gap: .35rem; font-size: .8rem; line-height: 1.4; }
+  .facts div { grid-template-columns: 8em minmax(0, 1fr); }
+  .proposal { padding: .5rem .75rem; gap: .3rem; }
+  .pchange { font-size: .95rem; }
+  .grid4 { gap: .5rem; }
+  .grid4 section { padding: .5rem .7rem; }
+  .grid4 h4 { font-size: .85rem; }
+  .grid4 p, .grid4 ul { font-size: .78rem; }
+}
+</style>
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow" id="simEyebrow">Guided simulation</p>
+    <h1 id="simTitle">Pack the backpack, step by step</h1>
+    <p class="lead" id="simLead">The child puts into the backpack the object shown in the list. The game records separately whether the right object was chosen and whether the gesture succeeded. Only after several sessions does it propose to the adult an easier way to answer the same question.</p>
+  </header>
+
+  <div class="stage">
+    <div class="left">
+      <div class="device">
+        <div class="strip" aria-hidden="true"><span>⏸️</span><span>🙋</span><span>🏁</span></div>
+        <svg id="scene" viewBox="0 0 1000 700" role="img" aria-label="Game screen: list on the left, two objects at the top, backpack at the bottom">
+          <rect class="screen" x="0" y="0" width="1000" height="700"></rect>
+          <g>
+            <rect class="s-card" x="30" y="30" width="210" height="250" rx="24"></rect>
+            <text id="listGlyph" class="glyph" x="135" y="145" font-size="110">📓</text>
+            <text id="listLabel" class="s-label" x="135" y="252">notebook</text>
+          </g>
+          <rect id="hit" class="hit" x="368.5" y="278.5" width="463" height="493" rx="140" hidden></rect>
+          <rect id="bp" class="bp" x="470" y="380" width="260" height="290" rx="40"></rect>
+          <text class="glyph" x="600" y="495" font-size="150">🎒</text>
+          <g id="packed"></g>
+          <g id="cloud" hidden></g>
+          <g id="objA" class="obj">
+            <rect class="s-card" x="335" y="105" width="170" height="170" rx="28"></rect>
+            <text class="glyph" x="420" y="190" font-size="110">📓</text>
+          </g>
+          <g id="objB" class="obj">
+            <rect class="s-card" x="675" y="105" width="170" height="170" rx="28"></rect>
+            <text class="glyph" x="760" y="190" font-size="110">📏</text>
+          </g>
+          <g id="note" hidden>
+            <line class="note-line" id="noteLine" x1="0" y1="0" x2="0" y2="0"></line>
+            <rect class="note-bg" id="noteBg" x="0" y="0" width="10" height="44" rx="10"></rect>
+            <text class="note-text" id="noteText" x="0" y="0"></text>
+          </g>
+          <g id="finger" opacity="0">
+            <circle class="finger-ring" r="34" id="fingerRing"></circle>
+            <circle class="finger-dot" r="9"></circle>
+          </g>
+        </svg>
+      </div>
+
+      <div class="caption" aria-live="polite">
+        <p class="stepno" id="stepNo">Step 1 of 9</p>
+        <h2 id="stepTitle">The trial</h2>
+        <p class="text" id="stepText"></p>
+        <div class="legend" id="legend" hidden>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--s-good)"></circle></svg>inside, right choice (9)</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--s-warn)"></circle></svg>right choice, release nearby (10)</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--s-far)"></circle></svg>right choice, release far away (2)</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="var(--s-bad)" stroke-width="2.5" stroke-linecap="round"></path></svg>wrong choice (2)</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="prev" type="button">‹ Back</button>
+        <button id="replay" type="button">Replay gesture</button>
+        <button id="next" type="button" class="primary">Next ›</button>
+        <button id="auto" type="button" aria-pressed="false">Play all</button>
+        <ol class="steps" id="steps" aria-label="Simulation steps"></ol>
+      </div>
+    </div>
+
+    <aside class="side">
+      <p class="point" id="simPoint" hidden></p>
+      <section class="panel" aria-labelledby="h-log">
+        <h3 id="h-log">What it records</h3>
+        <div class="logwrap" id="logwrap"></div>
+        <p class="note" id="logNote"></p>
+      </section>
+      <section class="panel" aria-labelledby="h-concl">
+        <h3 id="h-concl">What the system concludes</h3>
+        <div id="concl"></div>
+      </section>
+    </aside>
+  </div>
+
+</div>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Geometria del gioco vero: scena 1000×700, zaino 260×290.
+  const SLOT = { A: { x: 420, y: 190 }, B: { x: 760, y: 190 } };
+  const BPC = { x: 600, y: 520 };
+  const NEAR_RELEASE = { x: 435, y: 540 }; // 35 unità a sinistra del bordo: 12% della misura dello zaino
+
+  const ITEMS = {
+    Q: { e: "📓", l: "notebook" }, R: { e: "📏", l: "ruler" }, M: { e: "✏️", l: "pencil" },
+    P: { e: "🖍️", l: "crayons" }, A: { e: "🍎", l: "apple" },
+  };
+
+  const CLOUD = {
+    good: [[560, 470], [625, 520], [655, 450], [590, 600], [540, 565], [685, 565], [610, 420], [520, 450], [660, 630]],
+    warn: [[440, 520], [452, 600], [430, 450], [455, 410], [500, 355], [560, 350], [445, 640], [425, 560], [610, 345], [460, 482]],
+    far: [[250, 600], [300, 420]],
+    bad: [[575, 505], [640, 590]],
+  };
+
+  const objs = { A: $("#objA"), B: $("#objB") };
+  const finger = $("#finger");
+  const fingerRing = $("#fingerRing");
+  const bp = $("#bp");
+  const hit = $("#hit");
+  const cloud = $("#cloud");
+  const packedG = $("#packed");
+  const note = $("#note");
+
+  let run = 0;
+  let cur = 0;
+  let auto = false;
+
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const ease = (k) => (k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
+  const bez = (p0, p1, p2, k) => ({
+    x: (1 - k) * (1 - k) * p0.x + 2 * (1 - k) * k * p1.x + k * k * p2.x,
+    y: (1 - k) * (1 - k) * p0.y + 2 * (1 - k) * k * p1.y + k * k * p2.y,
+  });
+
+  function tween(my, ms, fn) {
+    return new Promise((resolve) => {
+      if (reduce) { fn(1); resolve(); return; }
+      const t0 = performance.now();
+      const frame = (t) => {
+        if (my !== run) { resolve(); return; }
+        const k = Math.min(1, (t - t0) / ms);
+        fn(ease(k));
+        if (k < 1) requestAnimationFrame(frame); else resolve();
+      };
+      requestAnimationFrame(frame);
+    });
+  }
+  const wait = (ms) => new Promise((r) => setTimeout(r, reduce ? Math.min(ms, 400) : ms));
+
+  const show = (el, on) => (on ? el.removeAttribute("hidden") : el.setAttribute("hidden", ""));
+
+  function placeObj(key, x, y, opacity = 1) {
+    const s = SLOT[key];
+    objs[key].setAttribute("transform", `translate(${x - s.x} ${y - s.y})`);
+    objs[key].style.opacity = String(opacity);
+  }
+  const resetObj = (key) => placeObj(key, SLOT[key].x, SLOT[key].y, 1);
+  const setGlyph = (key, item) => { objs[key].querySelector("text").textContent = item.e; };
+  const setSelected = (key, on) => objs[key].classList.toggle("selected", on);
+  const bpReady = (on) => bp.classList.toggle("ready", on);
+
+  function fingerAt(p) { finger.setAttribute("transform", `translate(${p.x} ${p.y})`); }
+  function press(on) { fingerRing.setAttribute("r", on ? "26" : "34"); }
+
+  function setPacked(list) {
+    packedG.innerHTML = list
+      .map((e, i) => `<text class="glyph" x="${510 + i * 45}" y="632" font-size="36">${e}</text>`)
+      .join("");
+  }
+
+  function setNote(text, at) {
+    if (!text) { show(note, false); return; }
+    const tx = 120, ty = 610;
+    $("#noteText").textContent = text;
+    $("#noteText").setAttribute("x", String(tx + 16));
+    $("#noteText").setAttribute("y", String(ty + 31));
+    const w = 16 * 2 + text.length * 13.2;
+    const bg = $("#noteBg");
+    bg.setAttribute("x", String(tx)); bg.setAttribute("y", String(ty)); bg.setAttribute("width", String(w));
+    const ln = $("#noteLine");
+    ln.setAttribute("x1", String(Math.min(tx + w - 20, at.x - 10))); ln.setAttribute("y1", String(ty));
+    ln.setAttribute("x2", String(at.x)); ln.setAttribute("y2", String(at.y));
+    show(note, true);
+  }
+
+  function renderCloud() {
+    const dots = (list, cls) => list.map(([x, y]) => `<circle class="dot ${cls}" cx="${x}" cy="${y}" r="12"></circle>`).join("");
+    const xs = CLOUD.bad.map(([x, y]) => `<path class="xmark" d="M${x - 10} ${y - 10} L${x + 10} ${y + 10} M${x + 10} ${y - 10} L${x - 10} ${y + 10}"></path>`).join("");
+    cloud.innerHTML = dots(CLOUD.good, "good") + dots(CLOUD.warn, "warn") + dots(CLOUD.far, "far") + xs;
+  }
+
+  // ---- gesti animati ----
+
+  async function moveFinger(my, from, to, ms) {
+    fingerAt(from);
+    finger.setAttribute("opacity", "1");
+    await tween(my, ms, (k) => fingerAt({ x: lerp(from.x, to.x, k), y: lerp(from.y, to.y, k) }));
+  }
+
+  async function tapAt(my) {
+    press(true); await wait(180); if (my !== run) return; press(false); await wait(120);
+  }
+
+  /** Trascina l'oggetto fino a `to`; se `accept`, entra nello zaino, altrimenti torna al suo posto. */
+  async function drag(my, key, to, accept) {
+    const from = SLOT[key];
+    await moveFinger(my, { x: from.x + 90, y: from.y + 170 }, from, 450); if (my !== run) return;
+    press(true); objs[key].classList.add("lift");
+    await wait(220); if (my !== run) return;
+    const ctrl = { x: (from.x + to.x) / 2 + 80, y: (from.y + to.y) / 2 - 30 };
+    await tween(my, 1300, (k) => { const p = bez(from, ctrl, to, k); placeObj(key, p.x, p.y); fingerAt(p); });
+    if (my !== run) return;
+    press(false); objs[key].classList.remove("lift");
+    await wait(250); if (my !== run) return;
+    finger.setAttribute("opacity", "0");
+    if (accept) {
+      await tween(my, 550, (k) => placeObj(key, lerp(to.x, BPC.x, k), lerp(to.y, BPC.y, k), 1 - k));
+    } else {
+      await wait(450); if (my !== run) return;
+      await tween(my, 700, (k) => placeObj(key, lerp(to.x, from.x, k), lerp(to.y, from.y, k)));
+    }
+  }
+
+  async function twoTaps(my, key) {
+    const s = SLOT[key];
+    await moveFinger(my, { x: s.x - 120, y: s.y + 200 }, s, 600); if (my !== run) return;
+    await tapAt(my); if (my !== run) return;
+    setSelected(key, true); bpReady(true);
+    await wait(900); if (my !== run) return;
+    await moveFinger(my, s, BPC, 800); if (my !== run) return;
+    await tapAt(my); if (my !== run) return;
+    finger.setAttribute("opacity", "0");
+    setSelected(key, false); bpReady(false);
+    await tween(my, 650, (k) => placeObj(key, lerp(s.x, BPC.x, k), lerp(s.y, BPC.y, k), 1 - k));
+  }
+
+  // ---- registro ----
+
+  const R1 = { n: 1, s: 1, acc: "drag", choice: true, g: "just outside · 12%", gk: "warn", done: false };
+  const R2 = { n: 2, s: 1, acc: "drag", choice: true, g: "inside", gk: "good", done: true };
+  const R3 = { n: 3, s: 1, acc: "drag", choice: false, g: "inside", gk: "good", done: false };
+  const GAP = { note: "… 20 more attempts in sessions 2 and 3" };
+  const R24 = { n: 24, s: 4, acc: "drag · snap 35%", choice: true, g: "within the snap area", gk: "good", done: true };
+  const OTHER = { note: "Example for another child, after the yes to two taps" };
+  const RT = { n: 1, s: 4, acc: "two taps", choice: true, g: "second tap on the backpack", gk: "good", done: true };
+
+  const chip = (cls, text) => `<span class="chip ${cls}">${text}</span>`;
+
+  function renderLog(rows, fresh) {
+    const wrap = $("#logwrap");
+    if (!rows.length) { wrap.innerHTML = `<p class="empty">No attempts yet.</p>`; return; }
+    const body = rows.map((r) => {
+      if (r.note) return `<tr class="gap"><td colspan="6">${r.note}</td></tr>`;
+      const cls = fresh.includes(r) ? "fresh" : "";
+      return `<tr class="${cls}"><td class="num">${r.n}</td><td class="num">${r.s}</td><td class="acc">${r.acc}</td>` +
+        `<td>${chip(r.choice ? "good" : "bad", r.choice ? "right" : "wrong")}</td>` +
+        `<td>${chip(r.gk, r.g)}</td><td>${r.done ? chip("good", "completed") : chip("", "retry")}</td></tr>`;
+    }).join("");
+    wrap.innerHTML = `<table><thead><tr><th>#</th><th>Sess.</th><th>Access</th><th>Choice</th><th>Gesture</th><th>Trial</th></tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  // ---- passi ----
+
+  const C_PROPOSAL = `
+    <div class="proposal">
+      <p class="plabel">Proposal · rule v1.0.0 · awaiting the adult</p>
+      <p class="pchange">More tolerant backpack: snap area from 0% to 35%</p>
+      <p>In the last 23 valid trials, over 3 sessions, the chosen object was the one in the list 21 times; in 10 of these the release stopped near the backpack or slipped out at the last moment. Cautious estimate of the share of failed gestures: 43% (lower bound of an 80% interval).</p>
+      <p class="muted">The list and the objects stay the same. The correct choices concern these trials and do not prove an established skill; the failed gestures do not indicate a general motor difficulty.</p>
+      <div class="row">
+        <button type="button" class="primary" data-act="accept">Accept</button>
+        <button type="button" data-act="refuse">Refuse</button>
+        <button type="button" data-act="lock">Refuse and lock</button>
+      </div>
+      <p class="msg" id="msg" role="status"></p>
+    </div>
+    <p class="muted">The proposal arrives at the end of the session. Nothing changes during play.</p>`;
+
+  const ALL_STEPS = [
+    {
+      title: "The trial",
+      text: "The child must put into the backpack the object shown in the list, here the notebook. There are two alternatives and they change place at every trial, so the answer does not depend on position.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      log: [],
+      concl: `<p>No conclusion: the trial has just begun.</p>
+        <dl class="facts">
+          <div><dt>Question</dt><dd>Put the object in the list into the backpack</dd></div>
+          <div><dt>Alternatives</dt><dd>2, in changing positions</dd></div>
+          <div><dt>Current access</dt><dd>Dragging; only a release inside the backpack counts</dd></div>
+        </dl>`,
+    },
+    {
+      title: "Picks well, releases just outside",
+      text: "The child takes the notebook, the right object, but lets go just short of the backpack. The notebook calmly returns to its place, with no error sounds.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      play: async (my) => { await drag(my, "A", NEAR_RELEASE, false); if (my === run) setNote("release: 12% outside the edge", NEAR_RELEASE); },
+      end: () => setNote("release: 12% outside the edge", NEAR_RELEASE),
+      log: [R1],
+      logNote: "Choice and gesture sit in two different columns.",
+      concl: `<p><b>Right choice, failed gesture.</b> The system keeps the two apart: this attempt does not count as a choice error.</p>
+        <p class="muted">One attempt is not enough to conclude anything, about either skill or motor ability.</p>`,
+    },
+    {
+      title: "Tries again and succeeds",
+      text: "On the second attempt the release lands inside the backpack. The notebook goes in and the game moves on to the next trial.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      play: async (my) => { await drag(my, "A", BPC, true); if (my === run) setPacked(["📓"]); },
+      end: () => { placeObj("A", BPC.x, BPC.y, 0); setPacked(["📓"]); },
+      log: [R1, R2],
+      concl: `<p><b>Trial completed on the second attempt.</b> The first stays in the log as a failed gesture with a right choice: that is the information needed later on.</p>`,
+    },
+    {
+      title: "For comparison: picks the wrong object",
+      text: "In another trial the list shows the pencil, but the child drags the ruler into the backpack. The gesture succeeds, the choice does not, and the ruler returns to its place.",
+      list: ITEMS.M, A: ITEMS.M, B: ITEMS.R, packed: ["📓"],
+      play: (my) => drag(my, "B", BPC, false),
+      log: [R1, R2, R3],
+      concl: `<p><b>Successful gesture, wrong choice:</b> the opposite of step 2.</p>
+        <p>If it happened often, the rule would propose no access change. With an unstable choice, changing the gesture does not address the problem, and the system does not attribute the error to a lack of understanding.</p>`,
+    },
+    {
+      title: "After three sessions",
+      text: "The dots show where the releases ended up. The child almost always picks the right object, and nearly all failed attempts stop close to the edge of the backpack.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R, cloud: true, dim: true,
+      log: [R1, R2, R3, GAP],
+      logNote: "Not counted: trials with a revealing or physical prompt, the first attempt after a change, interruptions.",
+      concl: `<p>At session end the rule checks four conditions on valid trials with the current access.</p>
+        <ul class="checks">
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Enough trials</b><span class="v">23 valid in 3 sessions · minimum 8 in 2</span></div></li>
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Stable choice</b><span class="v">21 right of 23 · 91% · threshold 75%</span></div></li>
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Fragile gesture</b><span class="v">12 failed of 21 · cautious estimate 43% · threshold 30%</span></div></li>
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Near releases</b><span class="v">10 of 12 · 83% · above 60%: widen the snap area</span></div></li>
+        </ul>
+        <p class="muted">Thresholds are placeholders, to be tuned with the child's team.</p>`,
+    },
+    {
+      title: "The proposal to the adult",
+      text: "At the end of the session the system proposes a change to the adult, with the data behind it. The child sees nothing until the adult decides.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R, cloud: true, dim: true,
+      log: [R1, R2, R3, GAP],
+      concl: C_PROPOSAL,
+    },
+    {
+      title: "More tolerant backpack: the same gesture now counts",
+      text: "After the adult's yes, the backpack also catches nearby releases. The dashed outline is only for explanation: the child sees the same backpack as before, and the same release as in step 2 now puts the notebook into the backpack.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R, cloud: true, hit: true,
+      play: async (my) => { await drag(my, "A", NEAR_RELEASE, true); if (my === run) setPacked(["📓"]); },
+      end: () => { placeObj("A", BPC.x, BPC.y, 0); setPacked(["📓"]); },
+      log: [R1, R2, R3, GAP, R24],
+      logNote: "The change opens a new version of the configuration: trials before and after remain distinguishable.",
+      concl: `<p class="pchange">On trial: more tolerant backpack (0% → 35%)</p>
+        <p>The release 12% from the edge now falls within the snap area and counts as a response. Choices are still evaluated as before.</p>
+        <p class="muted">The before/after comparison is descriptive: practice, trial order and context may explain part of the difference.</p>
+        <div class="row"><button type="button" data-act="revert">Restore the previous access</button></div>
+        <p class="msg" id="msg" role="status"></p>`,
+    },
+    {
+      title: "The other possible proposal: two taps",
+      text: "For a child who breaks off the drag far from the backpack, the system proposes two taps: touch the object in the list, then the backpack.",
+      list: ITEMS.P, A: ITEMS.A, B: ITEMS.P,
+      play: async (my) => { await twoTaps(my, "B"); if (my === run) setPacked(["🖍️"]); },
+      end: () => { placeObj("B", BPC.x, BPC.y, 0); setPacked(["🖍️"]); },
+      logBefore: [OTHER],
+      log: [OTHER, RT],
+      concl: `<p>The system proposes two taps when failed attempts break off far from the backpack: widening the snap area would not help.</p>
+        <p>Same list, same objects, same correctness rule. Only the gesture changes.</p>
+        <p class="muted">This proposal too goes through the adult and can be undone.</p>`,
+    },
+    {
+      title: "What stays fixed",
+      text: "The question is always the same. The way of answering changes, one thing at a time and only with the adult's yes.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      log: [R1, R2, R3, GAP, R24],
+      concl: `<div class="grid4">
+          <section><h4>Stays the same</h4><p>The question, the objects, their positions and the criterion for a correct answer.</p></section>
+          <section><h4>Can change</h4><p>The gesture (dragging or two taps) and the size of the snap area. One thing at a time, with the adult's yes, always reversible.</p></section>
+          <section><h4>When it proposes nothing</h4><ul><li>choices often wrong</li><li>few trials or a single session</li><li>dimension locked by the adult</li><li>proposal recently refused</li></ul></section>
+          <section><h4>What it does not conclude</h4><p>That the child has an established skill, or a general motor difficulty. Transfer to the real objects is checked separately.</p></section>
+        </div>`,
+    },
+  ];
+
+  // Ogni peculiarità mostra solo i suoi passi; senza parametro la simulazione è completa.
+  const TRATTI = {
+    "scelta-e-gesto": {
+      steps: [0, 1, 2, 3],
+      eyebrow: "Feature 1 · simulation",
+      title: "Choice and gesture are recorded separately",
+      lead: "A right object released just outside the backpack is not a discrimination error. The game records it as a failed gesture, next to the correct choice.",
+      point: "Watch: in the log below, the «Choice» and «Gesture» columns change independently.",
+    },
+    proposta: {
+      steps: [4, 5, 6],
+      eyebrow: "Feature 2 · simulation",
+      title: "The proposal is explained, and the adult decides",
+      lead: "After several sessions the system proposes a single change, with the numbers that justify it. Nothing changes during play, and nothing is applied without the adult's yes.",
+      point: "Try: at step 2 you can accept, refuse, or refuse and lock the proposal.",
+    },
+    domanda: {
+      steps: [6, 7, 8],
+      eyebrow: "Feature 3 · simulation",
+      title: "The question does not change, the way of answering does",
+      lead: "A more tolerant target or two taps instead of dragging: list, objects, positions and correct answer stay the same.",
+      point: "Watch: with the new access the scene is identical; only the gesture that counts changes.",
+    },
+  };
+  const tratto = TRATTI[new URLSearchParams(location.search).get("tratto")];
+  const STEPS = tratto ? tratto.steps.map((i) => ALL_STEPS[i]) : ALL_STEPS;
+  if (tratto) {
+    $("#simEyebrow").textContent = tratto.eyebrow;
+    $("#simTitle").textContent = tratto.title;
+    $("#simLead").textContent = tratto.lead;
+    $("#simPoint").textContent = tratto.point;
+    $("#simPoint").hidden = false;
+  }
+
+  // ---- navigazione ----
+
+  const stepsNav = $("#steps");
+  stepsNav.innerHTML = STEPS.map((s, i) => `<li><button type="button" data-step="${i}" title="${s.title}">${i + 1}</button></li>`).join("");
+
+  function base(st) {
+    $("#listGlyph").textContent = st.list.e;
+    $("#listLabel").textContent = st.list.l;
+    setGlyph("A", st.A); setGlyph("B", st.B);
+    resetObj("A"); resetObj("B");
+    setSelected("A", false); setSelected("B", false); bpReady(false);
+    objs.A.classList.remove("lift"); objs.B.classList.remove("lift");
+    objs.A.classList.toggle("dim", !!st.dim); objs.B.classList.toggle("dim", !!st.dim);
+    show(hit, !!st.hit);
+    show(cloud, !!st.cloud);
+    setPacked(st.packed || []);
+    setNote(null);
+    finger.setAttribute("opacity", "0"); press(false);
+  }
+
+  function renderText(st) {
+    $("#stepNo").textContent = `Step ${cur + 1} of ${STEPS.length}`;
+    $("#stepTitle").textContent = st.title;
+    $("#stepText").textContent = st.text;
+    show($("#legend"), !!st.cloud);
+    $("#logNote").textContent = st.logNote || "";
+    $("#prev").disabled = cur === 0;
+    $("#next").disabled = cur === STEPS.length - 1;
+    $("#replay").disabled = !st.play;
+    stepsNav.querySelectorAll("button").forEach((b, i) => {
+      if (i === cur) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+    });
+  }
+
+  async function go(i, animate) {
+    cur = Math.max(0, Math.min(STEPS.length - 1, i));
+    const st = STEPS[cur];
+    const my = ++run;
+    const before = st.logBefore || (cur > 0 ? STEPS[cur - 1].log : []);
+    base(st);
+    renderText(st);
+    if (st.play && animate) {
+      renderLog(before, []);
+      $("#concl").innerHTML = `<p class="wait">Watch the gesture on the screen.</p>`;
+      await st.play(my);
+      if (my !== run) return;
+    } else if (st.end) {
+      st.end();
+    }
+    renderLog(st.log, st.log.filter((r) => !before.includes(r)));
+    $("#concl").innerHTML = st.concl;
+    if (auto) {
+      await wait(st.play ? 3200 : 6500);
+      if (my !== run || !auto) return;
+      if (cur < STEPS.length - 1) go(cur + 1, true); else setAuto(false);
+    }
+  }
+
+  function setAuto(on) {
+    auto = on;
+    $("#auto").setAttribute("aria-pressed", String(on));
+    $("#auto").textContent = on ? "Stop" : "Play all";
+  }
+
+  $("#prev").addEventListener("click", () => { setAuto(false); go(cur - 1, false); });
+  $("#next").addEventListener("click", () => { setAuto(false); go(cur + 1, true); });
+  $("#replay").addEventListener("click", () => { setAuto(false); go(cur, true); });
+  $("#auto").addEventListener("click", () => {
+    if (auto) { setAuto(false); run++; return; }
+    setAuto(true);
+    go(cur === STEPS.length - 1 ? 0 : cur, true);
+  });
+  stepsNav.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-step]");
+    if (!b) return;
+    setAuto(false); go(Number(b.dataset.step), true);
+  });
+  $("#concl").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-act]");
+    if (!b) return;
+    const msg = $("#msg");
+    const act = b.dataset.act;
+    if (act === "accept") {
+      setAuto(false);
+      const k = STEPS.indexOf(ALL_STEPS[6]);
+      if (k >= 0) go(k, true);
+      else if (msg) msg.textContent = "Accepted: the next step shows the more tolerant backpack.";
+      return;
+    }
+    if (msg && act === "refuse") msg.textContent = "Refused: nothing changes. The system waits for at least 12 new trials before proposing it again.";
+    if (msg && act === "lock") msg.textContent = "Refused and locked: the system will not propose tolerance changes again until the adult unlocks them.";
+    if (msg && act === "revert") msg.textContent = "The backpack goes back to how it was, with a new version of the configuration: trials made before and after remain distinguishable.";
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.target.closest && e.target.closest("input, textarea, select")) return;
+    if (e.key === "ArrowRight") { setAuto(false); go(cur + 1, true); }
+    if (e.key === "ArrowLeft") { setAuto(false); go(cur - 1, false); }
+  });
+
+  renderCloud();
+  const fromHash = () => { const m = /^#p([1-9])$/.exec(location.hash); return m ? Math.min(Number(m[1]) - 1, STEPS.length - 1) : 0; };
+  const hot = window.claude && window.claude.hot;
+  if (hot && hot.snapshot) hot.snapshot(() => ({ step: cur }));
+  const start = (data) => go(data && Number.isInteger(data.step) ? data.step : fromHash(), false);
+  if (hot && hot.ready) hot.ready(start); else start((hot && hot.data) || {});
+})();
+</script>
+<script src="../percorso.js"></script>
+</body>
+</html>

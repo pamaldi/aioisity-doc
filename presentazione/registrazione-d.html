@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutto riesce · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso D · 0:45</p>
+    <h1>Tutto riesce</h1>
+    <p class="lead">Il sistema non cambia ciò che funziona.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-D.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="simulazione.html?tratto=proposta">Peculiarità 2</a></p>
+        <section><h2>Che cosa mostra</h2><p>Il caso di controllo: scelte giuste, gesti riusciti. Il sistema non propone niente. Un motore che proponesse sempre qualcosa sarebbe un cattivo segno.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="37.25">0:37</a> la conclusione per l'adulto: nessun cambio.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«Con l'accesso attuale i gesti riescono nella maggior parte delle prove: non propongo cambi.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-D-dati.json">caso-D-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "Il bambino sceglie l'oggetto giusto e lo porta nello zaino al primo tentativo."], [19.0, "Seconda sessione, a velocità doppia."], [37.25, "I gesti riescono: il sistema non cambia ciò che funziona."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

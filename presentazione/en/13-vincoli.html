@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inconsistent settings blocked · Pack the backpack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../stile.css">
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow">Feature 6 · simulation</p>
+    <h1>Inconsistent settings blocked</h1>
+    <p class="lead">Settings depend on one another. The system checks the combinations and blocks those that would make the task incomprehensible.</p>
+  </header>
+  <main class="sheet">
+    <div class="cols2">
+      <div class="card">
+        <h3>Adult settings</h3>
+        <div class="row"><span>Instruction:</span>
+          <button type="button" id="cList" aria-pressed="true">list and voice</button>
+          <button type="button" id="cVoice" aria-pressed="false">voice only</button></div>
+        <div class="row"><span>Voice:</span>
+          <button type="button" id="vOn" aria-pressed="true">on</button>
+          <button type="button" id="vOff" aria-pressed="false">off</button></div>
+        <div class="row"><span>Alternatives per trial:</span>
+          <button type="button" id="a2" aria-pressed="true">2</button>
+          <button type="button" id="a3" aria-pressed="false">3</button></div>
+        <div class="row"><span>Objects in play: <b id="nObj">5</b></span>
+          <button type="button" id="less">−</button>
+          <button type="button" id="more">+</button></div>
+      </div>
+      <div class="card">
+        <h3>Configuration checks</h3>
+        <div id="issues" style="display:grid;gap:8px" aria-live="polite"></div>
+        <div class="row"><button type="button" class="primary" id="play">▶ Play</button><span class="status" id="playMsg"></span></div>
+      </div>
+    </div>
+    <p class="key">An error blocks the start and the change; a warning or a note lets it through, saying what will happen. The same rules apply when the adult edits the settings and when the child presses «Play».</p>
+    <p class="muted">Try: «voice only» instruction with the voice off, or three alternatives with only two objects.</p>
+  </main>
+</div>
+<script src="../percorso.js"></script>
+<script>
+(() => {
+  const st = { voiceOnly: false, voice: true, choices: 2, objects: 5 };
+  const TRIALS = 5;
+  function check() {
+    const out = [];
+    if (st.voiceOnly && !st.voice) out.push(["error", "The instruction is voice only but the voice is off: the child would not know which object to look for."]);
+    if (!st.voiceOnly && !st.voice) out.push(["info", "The voice is off: the instruction stays visual, with the list."]);
+    if (st.objects < st.choices) out.push(["error", `${st.choices} alternatives need at least ${st.choices} objects: ${st.objects} available.`]);
+    else if (st.objects < TRIALS) out.push(["warning", `With ${st.objects} objects the session will have ${st.objects} trials instead of ${TRIALS}.`]);
+    return out;
+  }
+  const LABEL = { error: "Error", warning: "Warning", info: "Note" };
+  function render() {
+    const issues = check();
+    document.getElementById("issues").innerHTML = issues.length
+      ? issues.map(([s, m]) => `<div class="issue ${s === "warning" ? "info" : s}"><b>${LABEL[s]}:</b> ${m}</div>`).join("")
+      : `<div class="issue ok">The settings are consistent.</div>`;
+    const blocked = issues.some(([s]) => s === "error");
+    document.getElementById("play").disabled = blocked;
+    document.getElementById("playMsg").textContent = blocked ? "The game does not start: the configuration never reaches the child." : "";
+    document.getElementById("nObj").textContent = st.objects;
+    const pr = (id, on) => document.getElementById(id).setAttribute("aria-pressed", String(on));
+    pr("cList", !st.voiceOnly); pr("cVoice", st.voiceOnly); pr("vOn", st.voice); pr("vOff", !st.voice);
+    pr("a2", st.choices === 2); pr("a3", st.choices === 3);
+  }
+  const on = (id, f) => (document.getElementById(id).onclick = () => { f(); render(); });
+  on("cList", () => (st.voiceOnly = false)); on("cVoice", () => (st.voiceOnly = true));
+  on("vOn", () => (st.voice = true)); on("vOff", () => (st.voice = false));
+  on("a2", () => (st.choices = 2)); on("a3", () => (st.choices = 3));
+  on("less", () => (st.objects = Math.max(1, st.objects - 1))); on("more", () => (st.objects = Math.min(8, st.objects + 1)));
+  on("play", () => (document.getElementById("playMsg").textContent = "The session starts."));
+  render();
+})();
+</script>
+</body>
+</html>

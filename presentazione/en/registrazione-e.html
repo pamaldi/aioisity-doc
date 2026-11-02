@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help, pause and exit · Pack the backpack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../stile.css">
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow">Recording · case E · 0:39</p>
+    <h1>Help, pause and exit</h1>
+    <p class="lead">Always available, with no penalty.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="../registrazioni/caso-E.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Chapters: one click takes the video to that moment."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Caption, in English"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><span class="chip">Game rules</span></p>
+        <section><h2>What it shows</h2><p>Help, pause and exit are always within the child's reach and have no consequences. A response given with a prompt that reveals the object does not count as independent.</p></section>
+        <section><h2>What to watch</h2>
+        <ul>
+          <li><a href="#" data-t="6.0">0:06</a> the help highlights the right object: the trial is recorded as prompted.</li>
+          <li><a href="#" data-t="25.25">0:25</a> exit closes the session at once, and what was done is kept.</li>
+        </ul></section>
+        <section><h2>What the adult read</h2><p class="quote">Not enough data for a proposal: a single valid trial, in one session.</p></section>
+        <p class="muted small">Chapters: one click takes the video to that moment. Recorded data: <a href="../registrazioni/caso-E-dati.json">caso-E-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "The child must put into the backpack the object shown in the list."], [5.0, "Unsure, presses the help button."], [6.0, "The right object is highlighted. The trial is recorded as prompted: it does not count as an independent response."], [14.75, "Asks for a pause."], [15.75, "The game stops. A pause is not an error and has no consequences."], [25.25, "Wants to stop and presses «end»: the session closes at once, with no penalty, and what was done stays saved."], [33.25, "Prompted trials and interrupted sessions are not enough to propose changes."]]</script>
+<script src="../registrazioni.js"></script>
+</body>
+</html>

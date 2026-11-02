@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'adulto rifiuta la proposta · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso F · 0:30</p>
+    <h1>L'adulto rifiuta la proposta</h1>
+    <p class="lead">Rifiutata e bloccata: il sistema non insiste.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-F.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="simulazione.html?tratto=proposta">Peculiarità 2</a></p>
+        <section><h2>Che cosa mostra</h2><p>Decide l'adulto, anche quando i dati sembrano chiari. Rifiutando e bloccando, il sistema smette di proporre cambi della tolleranza finché l'adulto non la sblocca.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="4.5">0:04</a> le sessioni simulate restano marcate come tali, e non si mescolano con quelle vere.</li>
+          <li><a href="#" data-t="15.75">0:15</a> «Rifiuta e blocca»: la proposta resta nello storico, come rifiutata.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«Zaino più tollerante (0% → 32%) · rifiutata.» «Una proposta è stata rifiutata con questo accesso: aspetto altre prove prima di riproporla.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-F-dati.json">caso-F-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "Per brevità partiamo dall'area adulti, con due sessioni simulate dello stesso comportamento del caso A."], [4.5, "Nei dati le sessioni simulate restano marcate come tali."], [9.75, "Arriva la proposta di uno zaino più tollerante."], [15.75, "L'adulto preferisce di no: la rifiuta e blocca la tolleranza."], [17.5, "Il sistema non la ripropone e, prima di proporre altro, aspetta prove nuove."], [21.25, "La tolleranza ora è bloccata: si può sbloccare in qualunque momento."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

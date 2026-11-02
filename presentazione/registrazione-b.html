@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sceglie bene, ma non riesce a trascinare · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso B · 1:29</p>
+    <h1>Sceglie bene, ma non riesce a trascinare</h1>
+    <p class="lead">Il sistema propone i due tocchi al posto del trascinamento.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-B.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="simulazione.html?tratto=scelta-e-gesto">Peculiarità 1</a> <a class="chip" href="simulazione.html?tratto=proposta">Peculiarità 2</a> <a class="chip" href="simulazione.html?tratto=domanda">Peculiarità 3</a></p>
+        <section><h2>Che cosa mostra</h2><p>Anche qui la scelta è giusta, ma il trascinamento si interrompe lontano dallo zaino. Allargare l'aggancio non servirebbe, quindi il sistema propone un gesto diverso: due tocchi.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="57.0">0:57</a> la proposta dice perché i due tocchi e non uno zaino più tollerante.</li>
+          <li><a href="#" data-t="70.5">1:10</a> con i due tocchi la prova è la stessa di prima: cambia solo il gesto.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«Due tocchi al posto del trascinamento. Nelle ultime 19 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 19 volte; in 9 di queste il trascinamento non si è concluso nello zaino. Stima prudente della quota di gesti non riusciti: 33%.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-B-dati.json">caso-B-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "Il bambino deve mettere nello zaino l'oggetto mostrato nella lista."], [5.75, "Registrato: scelta corretta, gesto interrotto. Non conta come errore di scelta."], [9.5, "Con fatica, al secondo tentativo, lo porta nello zaino."], [34.0, "Seconda sessione, a velocità doppia: stesso comportamento."], [57.0, "Qui i gesti falliti non finiscono vicino allo zaino: allargarlo non servirebbe. Il sistema propone due tocchi."], [65.0, "L'adulto accetta. Si può sempre tornare al trascinamento."], [70.5, "Ora il primo tocco sceglie l'oggetto..."], [73.25, "...e il secondo lo mette nello zaino."], [83.5, "La domanda è la stessa: cambia solo il modo di rispondere."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

@@ -1,0 +1,2951 @@
+{
+  "caso": "Caso C · Gesto sicuro, scelta incerta",
+  "riepilogo": {
+    "sessioni": 2,
+    "tentativi": 20,
+    "tentativiSimulati": 0,
+    "scelteCorrette": 10,
+    "conAiuto": 0,
+    "conFotoPropria": 0,
+    "conVoceRegistrata": 0,
+    "oggettiDellaFamiglia": [],
+    "esitiDelGesto": {
+      "placed": 20
+    },
+    "proposte": [],
+    "accessoFinale": {
+      "templateId": "prepariamo-lo-zaino",
+      "device": "questo-dispositivo",
+      "interaction": {
+        "mode": "drag",
+        "tolerance": 0,
+        "version": 1
+      },
+      "locked": [],
+      "task": {
+        "instruction": "list_voice"
+      }
+    }
+  },
+  "motore": [
+    "Proposte del sistema\n\nLa scelta dell'oggetto non è abbastanza stabile: cambiare il gesto non risponderebbe a ciò che si osserva. Non attribuisco gli errori a mancata comprensione, frustrazione o scarso interesse."
+  ],
+  "dati": {
+    "attempts": [
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267523547,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "matita",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1272,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              54,
+              421,
+              192
+            ],
+            [
+              97,
+              423,
+              196
+            ],
+            [
+              142,
+              426,
+              200
+            ],
+            [
+              191,
+              429,
+              205
+            ],
+            [
+              227,
+              433,
+              212
+            ],
+            [
+              292,
+              443,
+              229
+            ],
+            [
+              354,
+              455,
+              251
+            ],
+            [
+              426,
+              471,
+              279
+            ],
+            [
+              459,
+              479,
+              294
+            ],
+            [
+              495,
+              489,
+              310
+            ],
+            [
+              557,
+              510,
+              347
+            ],
+            [
+              621,
+              531,
+              384
+            ],
+            [
+              692,
+              549,
+              416
+            ],
+            [
+              730,
+              557,
+              430
+            ],
+            [
+              793,
+              572,
+              455
+            ],
+            [
+              864,
+              583,
+              475
+            ],
+            [
+              927,
+              591,
+              489
+            ],
+            [
+              991,
+              597,
+              499
+            ],
+            [
+              1028,
+              599,
+              502
+            ],
+            [
+              1068,
+              600,
+              504
+            ],
+            [
+              1272,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "matita",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": true,
+          "interrupted": false
+        },
+        "id": 1
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267528497,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1354,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              55,
+              759,
+              192
+            ],
+            [
+              102,
+              757,
+              196
+            ],
+            [
+              167,
+              752,
+              205
+            ],
+            [
+              207,
+              749,
+              212
+            ],
+            [
+              278,
+              740,
+              229
+            ],
+            [
+              311,
+              735,
+              240
+            ],
+            [
+              347,
+              729,
+              251
+            ],
+            [
+              410,
+              715,
+              279
+            ],
+            [
+              458,
+              707,
+              294
+            ],
+            [
+              505,
+              699,
+              310
+            ],
+            [
+              543,
+              690,
+              328
+            ],
+            [
+              604,
+              670,
+              366
+            ],
+            [
+              666,
+              653,
+              401
+            ],
+            [
+              740,
+              638,
+              430
+            ],
+            [
+              777,
+              631,
+              443
+            ],
+            [
+              810,
+              625,
+              455
+            ],
+            [
+              873,
+              615,
+              475
+            ],
+            [
+              913,
+              611,
+              483
+            ],
+            [
+              960,
+              608,
+              489
+            ],
+            [
+              1006,
+              605,
+              495
+            ],
+            [
+              1039,
+              603,
+              499
+            ],
+            [
+              1078,
+              601,
+              502
+            ],
+            [
+              1116,
+              600,
+              504
+            ],
+            [
+              1163,
+              600,
+              505
+            ],
+            [
+              1354,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 2
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267531648,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1297,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              49,
+              421,
+              192
+            ],
+            [
+              102,
+              423,
+              196
+            ],
+            [
+              151,
+              426,
+              200
+            ],
+            [
+              189,
+              429,
+              205
+            ],
+            [
+              251,
+              437,
+              220
+            ],
+            [
+              320,
+              448,
+              240
+            ],
+            [
+              354,
+              455,
+              251
+            ],
+            [
+              393,
+              463,
+              264
+            ],
+            [
+              440,
+              471,
+              279
+            ],
+            [
+              477,
+              479,
+              294
+            ],
+            [
+              518,
+              489,
+              310
+            ],
+            [
+              580,
+              510,
+              347
+            ],
+            [
+              619,
+              521,
+              366
+            ],
+            [
+              682,
+              541,
+              401
+            ],
+            [
+              719,
+              549,
+              416
+            ],
+            [
+              782,
+              565,
+              443
+            ],
+            [
+              852,
+              577,
+              465
+            ],
+            [
+              914,
+              587,
+              483
+            ],
+            [
+              948,
+              591,
+              489
+            ],
+            [
+              1017,
+              597,
+              499
+            ],
+            [
+              1050,
+              599,
+              502
+            ],
+            [
+              1085,
+              600,
+              504
+            ],
+            [
+              1118,
+              600,
+              505
+            ],
+            [
+              1297,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 3
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267534007,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "libro",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1272,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              48,
+              759,
+              192
+            ],
+            [
+              99,
+              757,
+              196
+            ],
+            [
+              148,
+              755,
+              200
+            ],
+            [
+              210,
+              749,
+              212
+            ],
+            [
+              282,
+              740,
+              229
+            ],
+            [
+              318,
+              735,
+              240
+            ],
+            [
+              352,
+              729,
+              251
+            ],
+            [
+              391,
+              722,
+              264
+            ],
+            [
+              454,
+              707,
+              294
+            ],
+            [
+              517,
+              690,
+              328
+            ],
+            [
+              581,
+              670,
+              366
+            ],
+            [
+              650,
+              653,
+              401
+            ],
+            [
+              683,
+              645,
+              416
+            ],
+            [
+              722,
+              638,
+              430
+            ],
+            [
+              784,
+              625,
+              455
+            ],
+            [
+              817,
+              620,
+              465
+            ],
+            [
+              851,
+              615,
+              475
+            ],
+            [
+              915,
+              608,
+              489
+            ],
+            [
+              979,
+              603,
+              499
+            ],
+            [
+              1044,
+              600,
+              504
+            ],
+            [
+              1083,
+              600,
+              505
+            ],
+            [
+              1272,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "libro",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 4
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267537121,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1264,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              51,
+              421,
+              192
+            ],
+            [
+              93,
+              423,
+              196
+            ],
+            [
+              140,
+              426,
+              200
+            ],
+            [
+              176,
+              429,
+              205
+            ],
+            [
+              239,
+              437,
+              220
+            ],
+            [
+              303,
+              448,
+              240
+            ],
+            [
+              343,
+              455,
+              251
+            ],
+            [
+              378,
+              463,
+              264
+            ],
+            [
+              442,
+              479,
+              294
+            ],
+            [
+              505,
+              499,
+              328
+            ],
+            [
+              576,
+              521,
+              366
+            ],
+            [
+              610,
+              531,
+              384
+            ],
+            [
+              644,
+              541,
+              401
+            ],
+            [
+              706,
+              557,
+              430
+            ],
+            [
+              777,
+              572,
+              455
+            ],
+            [
+              814,
+              577,
+              465
+            ],
+            [
+              876,
+              587,
+              483
+            ],
+            [
+              940,
+              594,
+              495
+            ],
+            [
+              1002,
+              599,
+              502
+            ],
+            [
+              1044,
+              600,
+              504
+            ],
+            [
+              1082,
+              600,
+              505
+            ],
+            [
+              1264,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "succo",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 5
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267539517,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "mela",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1331,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              47,
+              759,
+              192
+            ],
+            [
+              97,
+              757,
+              196
+            ],
+            [
+              145,
+              755,
+              200
+            ],
+            [
+              184,
+              752,
+              205
+            ],
+            [
+              221,
+              749,
+              212
+            ],
+            [
+              283,
+              740,
+              229
+            ],
+            [
+              346,
+              729,
+              251
+            ],
+            [
+              415,
+              715,
+              279
+            ],
+            [
+              477,
+              699,
+              310
+            ],
+            [
+              511,
+              690,
+              328
+            ],
+            [
+              550,
+              680,
+              347
+            ],
+            [
+              613,
+              661,
+              384
+            ],
+            [
+              650,
+              653,
+              401
+            ],
+            [
+              717,
+              638,
+              430
+            ],
+            [
+              752,
+              631,
+              443
+            ],
+            [
+              785,
+              625,
+              455
+            ],
+            [
+              834,
+              620,
+              465
+            ],
+            [
+              880,
+              615,
+              475
+            ],
+            [
+              920,
+              611,
+              483
+            ],
+            [
+              958,
+              608,
+              489
+            ],
+            [
+              1021,
+              603,
+              499
+            ],
+            [
+              1067,
+              601,
+              502
+            ],
+            [
+              1114,
+              600,
+              504
+            ],
+            [
+              1151,
+              600,
+              505
+            ],
+            [
+              1331,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "mela",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 6
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267542619,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "matita",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1269,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              53,
+              421,
+              192
+            ],
+            [
+              100,
+              423,
+              196
+            ],
+            [
+              151,
+              426,
+              200
+            ],
+            [
+              188,
+              429,
+              205
+            ],
+            [
+              252,
+              437,
+              220
+            ],
+            [
+              322,
+              448,
+              240
+            ],
+            [
+              360,
+              455,
+              251
+            ],
+            [
+              423,
+              471,
+              279
+            ],
+            [
+              485,
+              489,
+              310
+            ],
+            [
+              522,
+              499,
+              328
+            ],
+            [
+              558,
+              510,
+              347
+            ],
+            [
+              593,
+              521,
+              366
+            ],
+            [
+              657,
+              541,
+              401
+            ],
+            [
+              721,
+              557,
+              430
+            ],
+            [
+              786,
+              572,
+              455
+            ],
+            [
+              822,
+              577,
+              465
+            ],
+            [
+              885,
+              587,
+              483
+            ],
+            [
+              947,
+              594,
+              495
+            ],
+            [
+              1020,
+              599,
+              502
+            ],
+            [
+              1091,
+              600,
+              505
+            ],
+            [
+              1269,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "matita",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 7
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267545063,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1366,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              53,
+              759,
+              192
+            ],
+            [
+              101,
+              757,
+              196
+            ],
+            [
+              147,
+              755,
+              200
+            ],
+            [
+              188,
+              752,
+              205
+            ],
+            [
+              223,
+              749,
+              212
+            ],
+            [
+              288,
+              740,
+              229
+            ],
+            [
+              326,
+              735,
+              240
+            ],
+            [
+              372,
+              729,
+              251
+            ],
+            [
+              419,
+              722,
+              264
+            ],
+            [
+              490,
+              707,
+              294
+            ],
+            [
+              529,
+              699,
+              310
+            ],
+            [
+              606,
+              680,
+              347
+            ],
+            [
+              653,
+              670,
+              366
+            ],
+            [
+              690,
+              661,
+              384
+            ],
+            [
+              752,
+              645,
+              416
+            ],
+            [
+              813,
+              631,
+              443
+            ],
+            [
+              855,
+              625,
+              455
+            ],
+            [
+              928,
+              615,
+              475
+            ],
+            [
+              963,
+              611,
+              483
+            ],
+            [
+              1040,
+              605,
+              495
+            ],
+            [
+              1086,
+              603,
+              499
+            ],
+            [
+              1123,
+              601,
+              502
+            ],
+            [
+              1185,
+              600,
+              505
+            ],
+            [
+              1366,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "succo",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 8
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267548224,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "pastelli",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1315,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              48,
+              759,
+              192
+            ],
+            [
+              94,
+              757,
+              196
+            ],
+            [
+              145,
+              755,
+              200
+            ],
+            [
+              178,
+              752,
+              205
+            ],
+            [
+              241,
+              745,
+              220
+            ],
+            [
+              275,
+              740,
+              229
+            ],
+            [
+              313,
+              735,
+              240
+            ],
+            [
+              376,
+              722,
+              264
+            ],
+            [
+              415,
+              715,
+              279
+            ],
+            [
+              449,
+              707,
+              294
+            ],
+            [
+              486,
+              699,
+              310
+            ],
+            [
+              548,
+              680,
+              347
+            ],
+            [
+              611,
+              661,
+              384
+            ],
+            [
+              684,
+              645,
+              416
+            ],
+            [
+              721,
+              638,
+              430
+            ],
+            [
+              778,
+              631,
+              443
+            ],
+            [
+              814,
+              625,
+              455
+            ],
+            [
+              877,
+              615,
+              475
+            ],
+            [
+              911,
+              611,
+              483
+            ],
+            [
+              945,
+              608,
+              489
+            ],
+            [
+              982,
+              605,
+              495
+            ],
+            [
+              1015,
+              603,
+              499
+            ],
+            [
+              1050,
+              601,
+              502
+            ],
+            [
+              1128,
+              600,
+              505
+            ],
+            [
+              1315,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "pastelli",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 9
+      },
+      {
+        "sessionId": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "trialId": "1465444748-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267550574,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "quaderno",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1286,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              48,
+              421,
+              192
+            ],
+            [
+              97,
+              423,
+              196
+            ],
+            [
+              147,
+              426,
+              200
+            ],
+            [
+              211,
+              433,
+              212
+            ],
+            [
+              274,
+              443,
+              229
+            ],
+            [
+              315,
+              448,
+              240
+            ],
+            [
+              383,
+              463,
+              264
+            ],
+            [
+              455,
+              479,
+              294
+            ],
+            [
+              501,
+              489,
+              310
+            ],
+            [
+              548,
+              499,
+              328
+            ],
+            [
+              616,
+              521,
+              366
+            ],
+            [
+              681,
+              541,
+              401
+            ],
+            [
+              742,
+              557,
+              430
+            ],
+            [
+              815,
+              572,
+              455
+            ],
+            [
+              880,
+              583,
+              475
+            ],
+            [
+              915,
+              587,
+              483
+            ],
+            [
+              978,
+              594,
+              495
+            ],
+            [
+              1042,
+              599,
+              502
+            ],
+            [
+              1113,
+              600,
+              505
+            ],
+            [
+              1286,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "quaderno",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 10
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267555591,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 721,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              47,
+              755,
+              200
+            ],
+            [
+              101,
+              749,
+              212
+            ],
+            [
+              148,
+              740,
+              229
+            ],
+            [
+              186,
+              729,
+              251
+            ],
+            [
+              250,
+              699,
+              310
+            ],
+            [
+              284,
+              680,
+              347
+            ],
+            [
+              319,
+              661,
+              384
+            ],
+            [
+              381,
+              631,
+              443
+            ],
+            [
+              417,
+              620,
+              465
+            ],
+            [
+              453,
+              611,
+              483
+            ],
+            [
+              517,
+              601,
+              502
+            ],
+            [
+              721,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 11
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267557167,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 830,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              48,
+              426,
+              200
+            ],
+            [
+              96,
+              433,
+              212
+            ],
+            [
+              149,
+              443,
+              229
+            ],
+            [
+              220,
+              471,
+              279
+            ],
+            [
+              268,
+              489,
+              310
+            ],
+            [
+              315,
+              510,
+              347
+            ],
+            [
+              352,
+              531,
+              384
+            ],
+            [
+              395,
+              549,
+              416
+            ],
+            [
+              444,
+              565,
+              443
+            ],
+            [
+              481,
+              577,
+              465
+            ],
+            [
+              552,
+              594,
+              495
+            ],
+            [
+              598,
+              599,
+              502
+            ],
+            [
+              647,
+              600,
+              505
+            ],
+            [
+              830,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "succo",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 12
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267559777,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "libro",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 766,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              55,
+              755,
+              200
+            ],
+            [
+              101,
+              749,
+              212
+            ],
+            [
+              136,
+              740,
+              229
+            ],
+            [
+              173,
+              729,
+              251
+            ],
+            [
+              210,
+              715,
+              279
+            ],
+            [
+              276,
+              680,
+              347
+            ],
+            [
+              313,
+              661,
+              384
+            ],
+            [
+              359,
+              645,
+              416
+            ],
+            [
+              406,
+              631,
+              443
+            ],
+            [
+              443,
+              620,
+              465
+            ],
+            [
+              477,
+              611,
+              483
+            ],
+            [
+              549,
+              601,
+              502
+            ],
+            [
+              766,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "libro",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 13
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267561326,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 800,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              55,
+              426,
+              200
+            ],
+            [
+              94,
+              433,
+              212
+            ],
+            [
+              142,
+              443,
+              229
+            ],
+            [
+              178,
+              455,
+              251
+            ],
+            [
+              246,
+              489,
+              310
+            ],
+            [
+              281,
+              510,
+              347
+            ],
+            [
+              328,
+              531,
+              384
+            ],
+            [
+              375,
+              549,
+              416
+            ],
+            [
+              414,
+              565,
+              443
+            ],
+            [
+              452,
+              577,
+              465
+            ],
+            [
+              499,
+              587,
+              483
+            ],
+            [
+              545,
+              594,
+              495
+            ],
+            [
+              579,
+              599,
+              502
+            ],
+            [
+              613,
+              600,
+              505
+            ],
+            [
+              800,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 14
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267563935,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "forbici",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 764,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              53,
+              755,
+              200
+            ],
+            [
+              104,
+              749,
+              212
+            ],
+            [
+              147,
+              740,
+              229
+            ],
+            [
+              210,
+              715,
+              279
+            ],
+            [
+              282,
+              680,
+              347
+            ],
+            [
+              317,
+              661,
+              384
+            ],
+            [
+              351,
+              645,
+              416
+            ],
+            [
+              390,
+              631,
+              443
+            ],
+            [
+              437,
+              620,
+              465
+            ],
+            [
+              475,
+              611,
+              483
+            ],
+            [
+              515,
+              605,
+              495
+            ],
+            [
+              551,
+              601,
+              502
+            ],
+            [
+              584,
+              600,
+              505
+            ],
+            [
+              764,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "forbici",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 15
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267565444,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "quaderno",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 753,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              39,
+              426,
+              200
+            ],
+            [
+              88,
+              433,
+              212
+            ],
+            [
+              126,
+              443,
+              229
+            ],
+            [
+              164,
+              455,
+              251
+            ],
+            [
+              226,
+              489,
+              310
+            ],
+            [
+              260,
+              510,
+              347
+            ],
+            [
+              294,
+              531,
+              384
+            ],
+            [
+              331,
+              549,
+              416
+            ],
+            [
+              377,
+              565,
+              443
+            ],
+            [
+              426,
+              577,
+              465
+            ],
+            [
+              462,
+              587,
+              483
+            ],
+            [
+              527,
+              599,
+              502
+            ],
+            [
+              566,
+              600,
+              505
+            ],
+            [
+              753,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "quaderno",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 16
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267568102,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "quaderno",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 795,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              39,
+              755,
+              200
+            ],
+            [
+              78,
+              749,
+              212
+            ],
+            [
+              125,
+              740,
+              229
+            ],
+            [
+              179,
+              729,
+              251
+            ],
+            [
+              251,
+              699,
+              310
+            ],
+            [
+              297,
+              680,
+              347
+            ],
+            [
+              344,
+              661,
+              384
+            ],
+            [
+              414,
+              631,
+              443
+            ],
+            [
+              477,
+              611,
+              483
+            ],
+            [
+              547,
+              601,
+              502
+            ],
+            [
+              595,
+              600,
+              505
+            ],
+            [
+              795,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "quaderno",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 17
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267569614,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "mela",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 778,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              51,
+              426,
+              200
+            ],
+            [
+              97,
+              433,
+              212
+            ],
+            [
+              149,
+              443,
+              229
+            ],
+            [
+              218,
+              471,
+              279
+            ],
+            [
+              252,
+              489,
+              310
+            ],
+            [
+              319,
+              531,
+              384
+            ],
+            [
+              391,
+              565,
+              443
+            ],
+            [
+              437,
+              577,
+              465
+            ],
+            [
+              484,
+              587,
+              483
+            ],
+            [
+              519,
+              594,
+              495
+            ],
+            [
+              585,
+              600,
+              505
+            ],
+            [
+              778,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "mela",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 18
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267572216,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": false,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 766,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              54,
+              426,
+              200
+            ],
+            [
+              103,
+              433,
+              212
+            ],
+            [
+              147,
+              443,
+              229
+            ],
+            [
+              185,
+              455,
+              251
+            ],
+            [
+              254,
+              489,
+              310
+            ],
+            [
+              292,
+              510,
+              347
+            ],
+            [
+              327,
+              531,
+              384
+            ],
+            [
+              374,
+              549,
+              416
+            ],
+            [
+              412,
+              565,
+              443
+            ],
+            [
+              452,
+              577,
+              465
+            ],
+            [
+              517,
+              594,
+              495
+            ],
+            [
+              554,
+              599,
+              502
+            ],
+            [
+              766,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 19
+      },
+      {
+        "sessionId": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "trialId": "1405637646-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd6fpt",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267573721,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "forbici",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 768,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              48,
+              755,
+              200
+            ],
+            [
+              97,
+              749,
+              212
+            ],
+            [
+              148,
+              740,
+              229
+            ],
+            [
+              218,
+              715,
+              279
+            ],
+            [
+              287,
+              680,
+              347
+            ],
+            [
+              351,
+              645,
+              416
+            ],
+            [
+              423,
+              620,
+              465
+            ],
+            [
+              502,
+              605,
+              495
+            ],
+            [
+              548,
+              601,
+              502
+            ],
+            [
+              586,
+              600,
+              505
+            ],
+            [
+              768,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "forbici",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 20
+      }
+    ],
+    "configHistory": [
+      {
+        "ts": 1793267516940,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "default",
+        "id": 1
+      }
+    ],
+    "editorSessions": [],
+    "kv": [
+      {
+        "key": "context",
+        "value": {
+          "templateId": "prepariamo-lo-zaino",
+          "device": "questo-dispositivo",
+          "interaction": {
+            "mode": "drag",
+            "tolerance": 0,
+            "version": 1
+          },
+          "locked": [],
+          "task": {
+            "instruction": "list_voice"
+          }
+        }
+      },
+      {
+        "key": "materialsSeeded",
+        "value": true
+      }
+    ],
+    "materials": [
+      {
+        "id": "forbici",
+        "label": "forbici",
+        "article": "le",
+        "emoji": "✂️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516950,
+        "updatedAt": 1793267516945
+      },
+      {
+        "id": "libro",
+        "label": "libro",
+        "article": "il",
+        "emoji": "📕",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516949,
+        "updatedAt": 1793267516945
+      },
+      {
+        "id": "matita",
+        "label": "matita",
+        "article": "la",
+        "emoji": "✏️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516946,
+        "updatedAt": 1793267516945
+      },
+      {
+        "id": "mela",
+        "label": "mela",
+        "article": "la",
+        "emoji": "🍎",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516948,
+        "updatedAt": 1793267516945
+      },
+      {
+        "id": "pastelli",
+        "label": "pastelli",
+        "article": "i",
+        "emoji": "🖍️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516947,
+        "updatedAt": 1793267516945
+      },
+      {
+        "id": "quaderno",
+        "label": "quaderno",
+        "article": "il",
+        "emoji": "📓",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516945,
+        "updatedAt": 1793267516945
+      },
+      {
+        "id": "righello",
+        "label": "righello",
+        "article": "il",
+        "emoji": "📏",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516951,
+        "updatedAt": 1793267516945
+      },
+      {
+        "id": "succo",
+        "label": "succo",
+        "article": "il",
+        "emoji": "🧃",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267516952,
+        "updatedAt": 1793267516945
+      }
+    ],
+    "proposals": [],
+    "sessionEvents": [],
+    "sessions": [
+      {
+        "id": "56e78fac-d2d2-4ea6-b61f-61d8e4fca198",
+        "startedAt": 1793267553467,
+        "trials": 5,
+        "endedAt": 1793267574823,
+        "endReason": "completed"
+      },
+      {
+        "id": "f3311732-02d5-446e-ba6c-d759f9f8b18b",
+        "startedAt": 1793267520865,
+        "trials": 5,
+        "endedAt": 1793267551690,
+        "endReason": "completed"
+      }
+    ]
+  }
+}

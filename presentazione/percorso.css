@@ -1,0 +1,37 @@
+/* Navigazione del percorso, comune a presentazione e simulazione: una barra compatta in alto. */
+.percorso { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: .8rem; align-items: center; }
+.percorso a[rel] {
+  display: grid; gap: 0; padding: .3rem .8rem; min-height: 2.4rem; border-radius: .7rem; border: 1.5px solid var(--line);
+  background: var(--surface); color: var(--ink); text-decoration: none; font-weight: 600; font-size: .85rem; line-height: 1.25;
+}
+.percorso a[rel] small { font-weight: 400; font-size: .68rem; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.percorso a[rel="next"] { justify-self: end; text-align: right; }
+.percorso a[rel="prev"] { justify-self: start; }
+.percorso a.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.percorso a.primary small { color: var(--accent-ink); opacity: .85; }
+.percorso a[rel]:hover { border-color: var(--accent); }
+.percorso a[rel]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.percorso .where { font-size: .78rem; color: var(--muted); text-align: center; white-space: nowrap; }
+.percorso .where a { color: var(--muted); }
+
+/*
+ * Stessa impaginazione su ogni pagina, presentazione e simulazione: la pagina è alta quanto lo schermo,
+ * la testata ha sempre la stessa altezza (occhiello, titolo su una riga, al massimo due righe di sottotitolo)
+ * e il foglio sotto parte e finisce sempre nello stesso punto.
+ */
+@media (min-width: 821px) {
+  .wrap { height: 100dvh; min-height: 0; max-width: 86rem; padding-block: .9rem; gap: .7rem; }
+  .wrap > header { height: 6.6rem; flex: none; overflow: hidden; }
+  .wrap > header .eyebrow { margin: 0; font-size: .72rem; line-height: 1.45; }
+  .wrap > header h1 { margin: .15rem 0 0; font-size: 1.9rem; line-height: 1.15; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .wrap > header .lead {
+    margin: .35rem 0 0; max-width: 92ch; font-size: 1rem; line-height: 1.45;
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  }
+  .wrap > .sheet { min-height: 0; overflow: hidden; }
+  .sheet > .mappa { flex: 1; }
+}
+@media (max-width: 640px) {
+  .percorso { grid-template-columns: 1fr 1fr; }
+  .percorso .where { grid-column: 1 / -1; grid-row: 1; }
+}

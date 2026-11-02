@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lo zaino vero, a parte · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Peculiarità 5 · simulazione</p>
+    <h1>Lo zaino vero, a parte</h1>
+    <p class="lead">Dopo il gioco l'adulto può annotare in pochi secondi com'è andata con gli oggetti veri. Il dato resta separato da quelli del tablet.</p>
+  </header>
+  <main class="sheet">
+    <div class="cols3">
+      <div class="screen" style="text-align:center;display:grid;gap:.5rem;align-content:center">
+        <p style="font-size:1.5rem;font-weight:700;margin:0">Zaino pronto!</p>
+        <p style="font-size:1.8rem;margin:0">📓 ✏️ 🍎 📏 🧃</p>
+        <p class="small" style="margin:0;color:#566573">Il bambino vede solo la conclusione. In un angolo, un'icona discreta per l'adulto:</p>
+        <p style="margin:0"><button type="button" id="openInvite">🎒 Prova con gli oggetti veri</button></p>
+      </div>
+      <div class="card" id="form">
+        <h3>Com'è andata con lo zaino vero?</h3>
+        <p class="muted small" id="formHint">Apri l'invito sullo schermo del tablet.</p>
+        <div class="row" role="group" aria-label="Esito" id="outcomes" hidden>
+          <button type="button" data-o="ind">In autonomia</button>
+          <button type="button" data-o="help">Con aiuto</button>
+          <button type="button" data-o="no">Non riuscito in questa occasione</button>
+          <button type="button" data-o="nobs">Non osservato</button>
+        </div>
+        <p class="muted small">Facoltativi: luogo, persona presente (il ruolo, non il nome), una nota.</p>
+        <p class="status small" id="saved" role="status"></p>
+      </div>
+      <div class="card">
+        <h3>Il report dell'adulto</h3>
+        <table>
+          <thead><tr><th></th><th>Nel gioco</th><th>Oggetti veri</th></tr></thead>
+          <tbody id="report"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="key">Le due colonne si leggono affiancate, mai sommate. «Non osservato» non è un insuccesso, e il trasferimento non si deduce dalla prestazione sul tablet.</p>
+    <p class="muted">Prova a scegliere più volte gli esiti, anche «non osservato»: la colonna del gioco non cambia mai, e «non osservato» resta fuori dal conteggio.</p>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script>
+(() => {
+  const real = { ind: 0, help: 0, no: 0, nobs: 0 };
+  const game = { trials: 12, auto: 10, help: 1, no: 1 };
+  const of = (k, n) => (n ? `${k} su ${n}` : "—");
+  function render() {
+    const obs = real.ind + real.help + real.no;
+    document.getElementById("report").innerHTML = [
+      ["Occasioni", `${game.trials} prove valide`, `${obs} osservat${obs === 1 ? "a" : "e"}`],
+      ["In autonomia", of(game.auto, game.trials), of(real.ind, obs)],
+      ["Con aiuto", of(game.help, game.trials), of(real.help, obs)],
+      ["Non completato", of(game.no, game.trials), of(real.no, obs)],
+      ["Non osservato", "—", real.nobs ? `${real.nobs}, fuori dal conteggio` : "—"],
+    ].map((r) => `<tr><th scope="row">${r[0]}</th><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("");
+  }
+  document.getElementById("openInvite").onclick = () => { document.getElementById("outcomes").hidden = false; document.getElementById("formHint").hidden = true; };
+  document.querySelectorAll("[data-o]").forEach((b) => b.onclick = () => {
+    real[b.dataset.o]++;
+    document.getElementById("saved").textContent = `Annotato: «${b.textContent}». Resta in una tabella a parte, che il motore non legge.`;
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

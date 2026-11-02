@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Più foto dello stesso oggetto · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso I · 0:58</p>
+    <h1>Più foto dello stesso oggetto</h1>
+    <p class="lead">Cambia l'aspetto, non il compito.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-I.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="11-posizioni-e-foto.html">Peculiarità 4</a></p>
+        <section><h2>Che cosa mostra</h2><p>Più foto dello stesso oggetto aiutano a capire se il bambino risponde all'oggetto o a una certa immagine. La lista mostra sempre la stessa foto della carta giusta, e ogni prova registra quale foto è stata usata.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="24.75">0:24</a> le varianti si attivano con una scelta esplicita dell'adulto.</li>
+          <li><a href="#" data-t="44.0">0:44</a> anche la posizione della risposta giusta è bilanciata.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«Con le varianti la stessa foto compare nella lista e sulla carta: cambia l'aspetto dell'oggetto, non il compito.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-I-dati.json">caso-I-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "Partiamo dall'editor: tre oggetti di casa, ciascuno con la sua foto."], [15.25, "All'astuccio si aggiungono altre due foto: lo stesso oggetto, visto in un altro modo (qui cambia lo sfondo)."], [17.5, "Le foto in più compaiono accanto al nome e si possono togliere; la principale si sostituisce."], [23.0, "Nella sezione «Consegna e compito» l'adulto attiva le varianti."], [24.75, "Il compito non cambia: la lista mostra la stessa foto della carta giusta, e la prova registra quale foto è stata usata."], [31.75, "Il bambino gioca; quando tocca all'astuccio, la foto è scelta a caso fra le tre."], [44.0, "Seconda sessione: anche la posizione dell'oggetto giusto è bilanciata, a sinistra e a destra in parti uguali."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

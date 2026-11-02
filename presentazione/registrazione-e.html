@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aiuto, pausa e uscita · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso E · 0:39</p>
+    <h1>Aiuto, pausa e uscita</h1>
+    <p class="lead">Sempre disponibili, senza penalità.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-E.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><span class="chip">Regole del gioco</span></p>
+        <section><h2>Che cosa mostra</h2><p>Aiuto, pausa e uscita sono sempre a portata del bambino e non hanno conseguenze. Una risposta data con un aiuto che rivela l'oggetto non conta come indipendente.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="6.0">0:06</a> l'aiuto evidenzia l'oggetto giusto: la prova è registrata come aiutata.</li>
+          <li><a href="#" data-t="25.25">0:25</a> l'uscita chiude la sessione subito, e quello che è stato fatto resta.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">Dati insufficienti per una proposta: una sola prova valida, in una sessione.</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-E-dati.json">caso-E-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "Il bambino deve mettere nello zaino l'oggetto mostrato nella lista."], [5.0, "Non è sicuro e preme il pulsante di aiuto."], [6.0, "L'oggetto giusto si evidenzia. La prova viene registrata come aiutata: non conta come risposta indipendente."], [14.75, "Chiede una pausa."], [15.75, "Il gioco si ferma. Una pausa non è un errore e non ha conseguenze."], [25.25, "Vuole smettere e preme «fine»: la sessione si chiude subito, senza penalità, e ciò che ha fatto resta salvato."], [33.25, "Le prove aiutate e le sessioni interrotte non bastano per proporre cambi."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

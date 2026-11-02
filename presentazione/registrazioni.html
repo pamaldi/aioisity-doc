@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Il gioco vero, registrato · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazioni</p>
+    <h1>Il gioco vero, registrato</h1>
+    <p class="lead">Nove casi giocati davvero nell'app, partendo da dati vuoti, con un mouse automatico. Il cerchio blu mostra dove tocca il dito; le didascalie sono aggiunte solo nella registrazione.</p>
+  </header>
+  <main class="sheet">
+    <div class="cols3 recgrid">
+    <a class="card reccard" href="registrazione-a.html">
+      <span class="tag">Caso A · 1:45 · Peculiarità 1, 2, 3</span>
+      <h3>Sceglie bene, rilascia vicino allo zaino</h3>
+      <p>Lo zaino diventa più tollerante, la domanda resta uguale.</p>
+    </a>
+    <a class="card reccard" href="registrazione-b.html">
+      <span class="tag">Caso B · 1:29 · Peculiarità 1, 2, 3</span>
+      <h3>Sceglie bene, ma non riesce a trascinare</h3>
+      <p>Il sistema propone i due tocchi al posto del trascinamento.</p>
+    </a>
+    <a class="card reccard" href="registrazione-c.html">
+      <span class="tag">Caso C · 1:12 · Peculiarità 1</span>
+      <h3>Gesto sicuro, scelta incerta</h3>
+      <p>Il caso opposto: il sistema non propone di cambiare il gesto.</p>
+    </a>
+    <a class="card reccard" href="registrazione-d.html">
+      <span class="tag">Caso D · 0:45 · Peculiarità 2</span>
+      <h3>Tutto riesce</h3>
+      <p>Il sistema non cambia ciò che funziona.</p>
+    </a>
+    <a class="card reccard" href="registrazione-e.html">
+      <span class="tag">Caso E · 0:39 · Regole del gioco</span>
+      <h3>Aiuto, pausa e uscita</h3>
+      <p>Sempre disponibili, senza penalità.</p>
+    </a>
+    <a class="card reccard" href="registrazione-f.html">
+      <span class="tag">Caso F · 0:30 · Peculiarità 2</span>
+      <h3>L'adulto rifiuta la proposta</h3>
+      <p>Rifiutata e bloccata: il sistema non insiste.</p>
+    </a>
+    <a class="card reccard" href="registrazione-g.html">
+      <span class="tag">Caso G · 0:59 · Peculiarità 6</span>
+      <h3>L'adulto prepara gli oggetti di casa</h3>
+      <p>Foto e voce di un familiare, in pochi minuti.</p>
+    </a>
+    <a class="card reccard" href="registrazione-h.html">
+      <span class="tag">Caso H · 0:54 · Peculiarità 5</span>
+      <h3>Lo zaino vero</h3>
+      <p>Annotato dall'adulto, mai sommato al gioco.</p>
+    </a>
+    <a class="card reccard" href="registrazione-i.html">
+      <span class="tag">Caso I · 0:58 · Peculiarità 4</span>
+      <h3>Più foto dello stesso oggetto</h3>
+      <p>Cambia l'aspetto, non il compito.</p>
+    </a>
+    </div>
+    <p class="muted">La simulazione mostrava le idee; qui c'è il prototipo che funziona. I numeri che si vedono nei video sono quelli che il gioco ha davvero calcolato. Ogni registrazione è riproducibile: lo script <code>scripts/registra-casistiche.mjs</code> rigioca i casi da zero. Accanto a ogni video ci sono i dati che il gioco ha salvato.</p>
+  </main>
+</div>
+<script src="percorso.js"></script>
+</body>
+</html>

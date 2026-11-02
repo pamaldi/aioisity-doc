@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Balanced positions and several photos of the same object · Pack the backpack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../stile.css">
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow">Feature 4 · simulation</p>
+    <h1>Balanced positions and several photos of the same object</h1>
+    <p class="lead">Two measures to tell whether the child really recognizes the object: the correct answer is not always in the same place, and the same object appears in different photos.</p>
+  </header>
+  <main class="sheet">
+    <p class="key">In each block of trials the correct object takes each place once. With variations the object's photo changes, but the list always shows the same photo as the correct card: the appearance changes, not the task.</p>
+    <div class="row">
+      <button type="button" class="primary" id="newSession">New session</button>
+      <span>Photos:</span>
+      <button type="button" id="vFirst" aria-pressed="true">always the main one</button>
+      <button type="button" id="vMixed" aria-pressed="false">the others too (variations)</button>
+    </div>
+    <div class="cols2">
+      <div>
+        <div class="screen">
+          <div class="slots" id="trialView" aria-live="polite"></div>
+        </div>
+        <div class="row" style="margin-top:10px">
+          <button type="button" id="prevTrial">‹ Previous trial</button>
+          <span id="trialNo" class="muted"></span>
+          <button type="button" id="nextTrial">Next trial ›</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Where the correct answer is</h3>
+        <div class="sessions" id="seq"></div>
+        <p class="muted small">Six trials with three places: two blocks of three. Within each block the three places appear once only, in random order.</p>
+        <p class="muted small">The first box is the list; the correct card is in green. The letters show which photo of the object is displayed.</p>
+      </div>
+    </div>
+    <p class="muted">What it does not prove: recognizing a new photo on the tablet is not the same as recognizing the real object. That is what feature 5 is for.</p>
+  </main>
+</div>
+<script src="../percorso.js"></script>
+<script>
+(() => {
+  // Household objects, each with three «photos» (here: emoji on different backgrounds).
+  const OBJ = [
+    { e: "👝", n: "pencil case" }, { e: "🧴", n: "water bottle" }, { e: "📔", n: "planner" },
+    { e: "🍎", n: "apple" }, { e: "✏️", n: "pencil" }, { e: "📏", n: "ruler" },
+  ];
+  const BG = ["#fffdf8", "#f6d6d6", "#dde9f6"];
+  const PH = ["A", "B", "C"];
+  const PLACES = ["left", "center", "right"];
+  let mixed = false, trials = [], k = 0;
+  const shuffle = (a) => { a = [...a]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  function build() {
+    const positions = [...shuffle([0, 1, 2]), ...shuffle([0, 1, 2])];
+    const targets = shuffle(OBJ);
+    trials = targets.map((t, i) => {
+      const others = shuffle(OBJ.filter((o) => o !== t)).slice(0, 2);
+      others.splice(positions[i], 0, t);
+      return { target: t, pos: positions[i], cards: others.map((o) => ({ o, v: Math.floor(Math.random() * 3) })) };
+    });
+    k = 0; render();
+  }
+  function card(o, v, cls, caption) {
+    const vv = mixed ? v : 0;
+    return `<figure class="pick ${cls}"><div class="slot" style="background:${BG[vv]}">${o.e}<span class="ph">photo ${PH[vv]}</span></div><figcaption>${caption}</figcaption></figure>`;
+  }
+  function render() {
+    const t = trials[k];
+    // the list shows the same photo as the correct card
+    const tv = t.cards[t.pos].v;
+    document.getElementById("trialView").innerHTML =
+      card(t.target, tv, "list", "list") + `<span class="sep" aria-hidden="true"></span>` +
+      t.cards.map((c, i) => card(c.o, c.v, i === t.pos ? "target" : "", PLACES[i] + (i === t.pos ? " ✓" : ""))).join("");
+    document.getElementById("trialNo").textContent = `Trial ${k + 1} of ${trials.length}`;
+    document.getElementById("seq").innerHTML = [0, 1].map((b) =>
+      `<div><span class="blk">block ${b + 1}</span>` + trials.slice(b * 3, b * 3 + 3).map((x, i) =>
+        `<b style="${b * 3 + i === k ? "text-decoration:underline" : ""}">${PLACES[x.pos]}</b>`).join(" · ") + "</div>").join("");
+  }
+  document.getElementById("newSession").onclick = build;
+  document.getElementById("prevTrial").onclick = () => { k = Math.max(0, k - 1); render(); };
+  document.getElementById("nextTrial").onclick = () => { k = Math.min(trials.length - 1, k + 1); render(); };
+  const setMixed = (m) => { mixed = m; document.getElementById("vFirst").setAttribute("aria-pressed", String(!m)); document.getElementById("vMixed").setAttribute("aria-pressed", String(m)); render(); };
+  document.getElementById("vFirst").onclick = () => setMixed(false);
+  document.getElementById("vMixed").onclick = () => setMixed(true);
+  build();
+})();
+</script>
+</body>
+</html>

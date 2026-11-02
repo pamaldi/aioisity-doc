@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lo zaino vero · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso H · 0:54</p>
+    <h1>Lo zaino vero</h1>
+    <p class="lead">Annotato dall'adulto, mai sommato al gioco.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-H.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="12-zaino-vero.html">Peculiarità 5</a></p>
+        <section><h2>Che cosa mostra</h2><p>La prova con gli oggetti veri si annota dopo il gioco, in pochi secondi, e resta una fonte separata. Qui il gioco va bene in tutte le prove, mentre con lo zaino vero serve aiuto: proprio per questo i due dati non si sommano.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="19.0">0:19</a> l'invito per l'adulto è discreto, e si apre solo tenendo premuto.</li>
+          <li><a href="#" data-t="45.5">0:45</a> le due colonne affiancate: 4 su 4 nel gioco, 1 osservata con aiuto con gli oggetti veri.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«Il gioco e lo zaino vero sono due fonti diverse: si leggono affiancate e non si sommano. Una buona prestazione nel gioco non dice che il bambino prepara lo zaino vero.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-H-dati.json">caso-H-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.0, "Il bambino gioca una sessione e mette tutti gli oggetti nello zaino."], [19.0, "Il bambino vede solo la conclusione. In basso a sinistra c'è un invito per l'adulto, che si apre tenendo premuto."], [26.5, "Dopo aver preparato lo zaino vero insieme, l'adulto sceglie uno di quattro esiti: qui «con aiuto»."], [31.5, "Luogo, persona presente e nota sono facoltativi. Chi era presente si indica con il ruolo, non con il nome."], [37.75, "Annotato una volta, l'invito sparisce. «Non osservato» si può sempre scegliere e non conta come insuccesso."], [45.5, "Nell'area adulti il gioco e lo zaino vero stanno in due colonne: nessun numero li somma, e il gioco non dice nulla sullo zaino vero."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

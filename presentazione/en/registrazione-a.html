@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Picks well, releases near the backpack · Pack the backpack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../stile.css">
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow">Recording · case A · 1:45</p>
+    <h1>Picks well, releases near the backpack</h1>
+    <p class="lead">The backpack becomes more tolerant, the question stays the same.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="../registrazioni/caso-A.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Chapters: one click takes the video to that moment."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Caption, in English"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="simulazione.html?tratto=scelta-e-gesto">Feature 1</a> <a class="chip" href="simulazione.html?tratto=proposta">Feature 2</a> <a class="chip" href="simulazione.html?tratto=domanda">Feature 3</a></p>
+        <section><h2>What it shows</h2><p>This is the case the game was built for: the choice is right, the gesture fails. After a single session the system proposes nothing; after two it proposes a more tolerant backpack, with the numbers that justify it.</p></section>
+        <section><h2>What to watch</h2>
+        <ul>
+          <li><a href="#" data-t="7.5">0:07</a> the object goes back with no error sound, and the choice stays recorded as right.</li>
+          <li><a href="#" data-t="88.0">1:28</a> the same release as before now goes in: list, objects and positions have not changed.</li>
+        </ul></section>
+        <section><h2>What the adult read</h2><p class="quote">«More tolerant backpack (0% → 21%). In the last 19 valid trials, over 2 sessions, the chosen object was the one in the list 19 times; in 9 of these the release stopped near the backpack or slipped out at the last moment. Cautious estimate of the share of failed gestures: 33%.»</p></section>
+        <p class="muted small">Chapters: one click takes the video to that moment. Recorded data: <a href="../registrazioni/caso-A-dati.json">caso-A-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "The child must put into the backpack the object shown in the list, on the left."], [5.75, "Picks the right object, but releases it just outside the backpack."], [7.5, "The object returns to its place, with no error sounds. Recorded: correct choice, failed gesture."], [12.5, "Tries again and this time the release is inside: trial completed."], [18.25, "Same pattern in the other trials: right choice, first release just outside."], [39.75, "End of the first session. Let's see what the system proposes to the adult."], [42.0, "With a single session the system changes nothing: the data are not enough."], [46.75, "Second session, at double speed: same behavior."], [72.75, "After two sessions the system proposes a more tolerant backpack, and explains why with the data."], [79.75, "The proposal is not applied on its own: the adult decides, and accepts."], [80.75, "The change applies only to this game on this device, and can be undone."], [85.5, "For the demonstration only, we show the dashed snap area: the child does not see it."], [88.0, "New session: the same release as before, just outside the edge..."], [90.25, "...now goes into the backpack on the first attempt."], [98.0, "List, objects and positions are the same: only the precision required of the gesture has changed."]]</script>
+<script src="../registrazioni.js"></script>
+</body>
+</html>

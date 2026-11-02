@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gesto sicuro, scelta incerta · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso C · 1:12</p>
+    <h1>Gesto sicuro, scelta incerta</h1>
+    <p class="lead">Il caso opposto: il sistema non propone di cambiare il gesto.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-C.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="simulazione.html?tratto=scelta-e-gesto">Peculiarità 1</a></p>
+        <section><h2>Che cosa mostra</h2><p>Il gesto riesce, la scelta no. Cambiare il modo di rispondere non risolverebbe niente, quindi il sistema non propone di cambiare il gesto, e non attribuisce gli errori a cause che non può osservare.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="5.0">0:05</a> trascinamento sicuro, oggetto sbagliato: nel registro la scelta è errata, il gesto riuscito.</li>
+          <li><a href="#" data-t="61.75">1:01</a> il messaggio all'adulto: nessuna proposta, nessuna interpretazione.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«La scelta dell'oggetto non è abbastanza stabile: cambiare il gesto non risponderebbe a ciò che si osserva. Non attribuisco gli errori a mancata comprensione, frustrazione o scarso interesse.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-C-dati.json">caso-C-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "Il bambino deve mettere nello zaino l'oggetto mostrato nella lista."], [5.0, "Trascina con sicurezza, ma prende l'oggetto sbagliato."], [6.75, "Il gesto è riuscito, la scelta no: l'oggetto torna al suo posto."], [10.0, "Poi prende quello giusto."], [36.25, "Seconda sessione, a velocità doppia: stesso comportamento."], [61.75, "Nessun cambio d'accesso: il gesto funziona già. Gli errori non vengono attribuiti a comprensione o interesse: li valuta l'adulto."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

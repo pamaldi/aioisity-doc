@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulazione · Prepariamo lo zaino</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: titolo in alto; sotto, a sinistra il tablet con la didascalia del passo, a destra cosa registra e cosa conclude il sistema. */
+:root {
+  --bg: #edf1f4;
+  --surface: #ffffff;
+  --ink: #1c2731;
+  --muted: #566573;
+  --line: #d2dae2;
+  --accent: #2f6db5;
+  --accent-ink: #ffffff;
+  --accent-soft: #e4edf8;
+  --good: #2b7a52;
+  --good-bg: #e1f1e8;
+  --warn: #9a5f0c;
+  --warn-bg: #fbeed8;
+  --bad: #ad3e2c;
+  --bad-bg: #f7e2dd;
+  --chip: #edf1f5;
+  --bezel: #27313b;
+  /* lo schermo del tablet ha i colori del gioco in entrambi i temi */
+  --s-screen: #f4efe6;
+  --s-paper: #fffdf8;
+  --s-pack: #e3ecf7;
+  --s-line: #d9cfbf;
+  --s-ink: #2d2a26;
+  --s-accent: #2f6db5;
+  --s-good: #2b7a52;
+  --s-warn: #c27a10;
+  --s-far: #8b97a3;
+  --s-bad: #b3412e;
+  --font-body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Atkinson Hyperlegible Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #10161c; --surface: #18212a; --ink: #e3e9ef; --muted: #9babb9; --line: #2a3642;
+    --accent: #7eaae6; --accent-ink: #0c1520; --accent-soft: #1d2b3c;
+    --good: #66c492; --good-bg: #173127; --warn: #e3a64e; --warn-bg: #33270f; --bad: #ea8a77; --bad-bg: #3a1f1a;
+    --chip: #222d38; --bezel: #05080b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #10161c; --surface: #18212a; --ink: #e3e9ef; --muted: #9babb9; --line: #2a3642;
+  --accent: #7eaae6; --accent-ink: #0c1520; --accent-soft: #1d2b3c;
+  --good: #66c492; --good-bg: #173127; --warn: #e3a64e; --warn-bg: #33270f; --bad: #ea8a77; --bad-bg: #3a1f1a;
+  --chip: #222d38; --bezel: #05080b; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--font-body); }
+.wrap {
+  max-width: 1240px; margin: 0 auto; display: grid; gap: 22px;
+  padding-block: 28px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.point { margin: 12px 0 0; max-width: 72ch; padding: 10px 14px; border-left: 4px solid var(--accent); background: var(--accent-soft); border-radius: 0 10px 10px 0; font-weight: 600; }
+.eyebrow { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+h1 { margin: 4px 0 0; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; font-weight: 700; text-wrap: balance; }
+header p.lead { margin: 10px 0 0; max-width: 68ch; color: var(--muted); font-size: 17px; }
+
+.stage { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+@media (max-width: 920px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.left { display: grid; gap: 14px; min-width: 0; }
+
+.device { background: var(--bezel); border-radius: 26px; padding: 12px; display: flex; }
+.strip {
+  flex: 0 0 9%; background: var(--s-screen); border-right: 2px solid var(--s-line); border-radius: 15px 0 0 15px;
+  display: flex; flex-direction: column; align-items: center; gap: 6%; padding-top: 4%;
+}
+.strip span {
+  width: 68%; aspect-ratio: 1; border-radius: 24%; border: 2px solid var(--s-line); background: var(--s-paper);
+  display: grid; place-items: center; font-size: clamp(11px, 1.7vw, 21px); line-height: 1;
+}
+#scene { flex: 1; min-width: 0; width: 100%; height: auto; aspect-ratio: 10 / 7; display: block; border-radius: 0 15px 15px 0; overflow: hidden; }
+
+.screen { fill: var(--s-screen); }
+.s-card { fill: var(--s-paper); stroke: var(--s-line); stroke-width: 4; }
+.s-label { fill: var(--s-ink); font: 30px var(--font-body); text-anchor: middle; }
+.glyph { text-anchor: middle; dominant-baseline: central; }
+.bp { fill: var(--s-pack); stroke: var(--s-line); stroke-width: 4; }
+.bp.ready { stroke: var(--s-accent); stroke-width: 8; }
+.obj .s-card { transition: stroke .2s; }
+.obj.selected .s-card { stroke: var(--s-accent); stroke-width: 10; }
+.obj.lift { filter: drop-shadow(0 10px 10px rgba(30, 40, 50, .25)); }
+.obj.dim { opacity: .35; }
+.hit { fill: var(--s-accent); fill-opacity: .07; stroke: var(--s-accent); stroke-width: 3; stroke-dasharray: 14 10; }
+.dot { stroke: var(--s-paper); stroke-width: 3; }
+.dot.good { fill: var(--s-good); }
+.dot.warn { fill: var(--s-warn); }
+.dot.far { fill: var(--s-far); }
+.xmark { stroke: var(--s-bad); stroke-width: 5; stroke-linecap: round; fill: none; }
+.finger-ring { fill: var(--s-accent); fill-opacity: .2; stroke: var(--s-accent); stroke-width: 4; }
+.finger-dot { fill: var(--s-accent); }
+.note-line { stroke: var(--s-ink); stroke-width: 2; stroke-dasharray: 4 5; }
+.note-text { fill: var(--s-ink); font: 600 26px var(--font-body); }
+.note-bg { fill: var(--s-paper); stroke: var(--s-line); stroke-width: 2; }
+
+.caption { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 20px; display: grid; gap: 6px; }
+.stepno { margin: 0; font: 600 13px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); }
+.caption h2 { margin: 0; font-size: 22px; line-height: 1.25; text-wrap: balance; }
+.caption p.text { margin: 0; max-width: 66ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 6px; font-size: 14px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend svg { width: 16px; height: 16px; flex: none; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px; }
+button {
+  font: 600 15px var(--font-body); color: var(--ink); background: var(--surface); border: 1.5px solid var(--line);
+  border-radius: 999px; padding: 9px 16px; min-height: 44px; cursor: pointer;
+}
+button:hover { border-color: var(--accent); }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+button:disabled { opacity: .45; cursor: default; }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+button[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.steps button { min-width: 44px; padding: 8px 12px; font-family: var(--font-mono); }
+.steps button[aria-current="step"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+.side { display: grid; gap: 16px; min-width: 0; }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; display: grid; gap: 10px; min-width: 0; }
+.panel h3 { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.logwrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; font-weight: 600; color: var(--muted); font-size: 12px; letter-spacing: .04em; padding: 0 8px 6px 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 7px 8px 7px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+td.num { font: 14px var(--font-mono); font-variant-numeric: tabular-nums; color: var(--muted); }
+td.acc { white-space: nowrap; }
+tr.gap td { color: var(--muted); font-style: italic; }
+tr.fresh td { background: var(--accent-soft); }
+.empty { color: var(--muted); margin: 0; }
+.chip { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; background: var(--chip); color: var(--ink); }
+.chip.good { background: var(--good-bg); color: var(--good); }
+.chip.warn { background: var(--warn-bg); color: var(--warn); }
+.chip.bad { background: var(--bad-bg); color: var(--bad); }
+.note { margin: 0; font-size: 14px; color: var(--muted); }
+
+#concl { display: grid; gap: 10px; }
+#concl p { margin: 0; }
+.muted { color: var(--muted); font-size: 14px; }
+.wait { color: var(--muted); font-style: italic; }
+.facts { margin: 0; display: grid; gap: 6px; }
+.facts div { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 10px; }
+.facts dt { color: var(--muted); font-size: 14px; }
+.facts dd { margin: 0; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 8px; align-items: start; }
+.checks .ok { width: 24px; height: 24px; border-radius: 50%; background: var(--good-bg); color: var(--good); display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+.checks b { display: block; }
+.checks span.v { font: 14px var(--font-mono); color: var(--muted); }
+.proposal { background: var(--accent-soft); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; }
+.plabel { font: 600 12px var(--font-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--accent); }
+.pchange { font-weight: 700; font-size: 17px; }
+.row { display: flex; flex-wrap: wrap; gap: 8px; }
+.msg { min-height: 1.5em; font-size: 14px; color: var(--ink); }
+.grid4 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 520px) { .grid4 { grid-template-columns: minmax(0, 1fr); } }
+.grid4 section { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; }
+.grid4 h4 { margin: 0; font-size: 15px; }
+.grid4 p, .grid4 ul { margin: 0; font-size: 14px; }
+.grid4 ul { padding-left: 18px; }
+
+footer { color: var(--muted); font-size: 14px; max-width: 80ch; }
+footer p { margin: 0; }
+@media (prefers-reduced-motion: reduce) { .obj .s-card { transition: none; } }
+
+/* Tutto nello schermo: il tablet si adatta all'altezza disponibile, i pannelli di destra scorrono al loro interno se serve. */
+.controls .steps { margin-left: auto; }
+@media (min-width: 821px) {
+  html { font-size: clamp(12px, min(1.2vw, 2.15vh), 21px); }
+  body { font-size: .9rem; margin: 0; }
+  .wrap { height: 100dvh; max-width: 86rem; padding-block: .9rem; gap: .7rem; grid-template-rows: auto auto minmax(0, 1fr); }
+  .eyebrow { font-size: .72rem; }
+  h1 { font-size: 1.75rem; margin-top: .1rem; }
+  header p.lead { font-size: .98rem; margin-top: .3rem; max-width: 80ch; }
+  .point { font-size: .85rem; margin: 0; padding: .4rem .8rem; max-width: none; }
+  .stage { min-height: 0; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 1rem; align-items: stretch; }
+  .left { min-height: 0; grid-template-rows: minmax(0, 1fr) auto auto; gap: .55rem; }
+  .device { min-height: 0; height: 100%; justify-content: center; padding: .55rem; border-radius: 1.3rem; }
+  .strip { flex: 0 0 auto; width: 3rem; gap: .6rem; padding-top: .6rem; }
+  .strip span { width: 2.1rem; font-size: 1rem; }
+  #scene { flex: 0 1 auto; width: auto; max-width: calc(100% - 3rem); height: 100%; }
+  .caption { padding: .6rem .9rem; gap: .2rem; border-radius: .8rem; }
+  .stepno { font-size: .7rem; }
+  .caption h2 { font-size: 1.1rem; }
+  .caption p.text { font-size: .9rem; }
+  .legend { font-size: .75rem; gap: .2rem .9rem; margin-top: .2rem; }
+  .controls { gap: .4rem; align-items: center; }
+  button { font-size: .82rem; padding: .3rem .8rem; min-height: 2.2rem; }
+  .steps { gap: .3rem; }
+  .steps button { min-width: 2.2rem; padding: .2rem .5rem; }
+  .side { min-height: 0; grid-template-rows: auto minmax(0, 1fr); gap: .6rem; }
+  .side:has(.point:not([hidden])) { grid-template-rows: auto auto minmax(0, 1fr); }
+  .panel { min-height: 0; overflow: auto; padding: .5rem .85rem; gap: .35rem; border-radius: .8rem; }
+  .panel h3 { font-size: .7rem; }
+  table { font-size: .78rem; }
+  th { font-size: .66rem; }
+  td { padding: .25rem .4rem .25rem 0; }
+  .note, .muted { font-size: .78rem; }
+  #concl { gap: .35rem; font-size: .8rem; line-height: 1.4; }
+  .facts div { grid-template-columns: 8em minmax(0, 1fr); }
+  .proposal { padding: .5rem .75rem; gap: .3rem; }
+  .pchange { font-size: .95rem; }
+  .grid4 { gap: .5rem; }
+  .grid4 section { padding: .5rem .7rem; }
+  .grid4 h4 { font-size: .85rem; }
+  .grid4 p, .grid4 ul { font-size: .78rem; }
+}
+</style>
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow" id="simEyebrow">Simulazione guidata</p>
+    <h1 id="simTitle">Prepariamo lo zaino, passo passo</h1>
+    <p class="lead" id="simLead">Il bambino mette nello zaino l'oggetto mostrato nella lista. Il gioco registra a parte se ha scelto l'oggetto giusto e se il gesto è riuscito. Solo dopo più sessioni propone all'adulto un modo più facile per rispondere alla stessa domanda.</p>
+  </header>
+
+  <div class="stage">
+    <div class="left">
+      <div class="device">
+        <div class="strip" aria-hidden="true"><span>⏸️</span><span>🙋</span><span>🏁</span></div>
+        <svg id="scene" viewBox="0 0 1000 700" role="img" aria-label="Schermo del gioco: lista a sinistra, due oggetti in alto, zaino in basso">
+          <rect class="screen" x="0" y="0" width="1000" height="700"></rect>
+          <g>
+            <rect class="s-card" x="30" y="30" width="210" height="250" rx="24"></rect>
+            <text id="listGlyph" class="glyph" x="135" y="145" font-size="110">📓</text>
+            <text id="listLabel" class="s-label" x="135" y="252">quaderno</text>
+          </g>
+          <rect id="hit" class="hit" x="368.5" y="278.5" width="463" height="493" rx="140" hidden></rect>
+          <rect id="bp" class="bp" x="470" y="380" width="260" height="290" rx="40"></rect>
+          <text class="glyph" x="600" y="495" font-size="150">🎒</text>
+          <g id="packed"></g>
+          <g id="cloud" hidden></g>
+          <g id="objA" class="obj">
+            <rect class="s-card" x="335" y="105" width="170" height="170" rx="28"></rect>
+            <text class="glyph" x="420" y="190" font-size="110">📓</text>
+          </g>
+          <g id="objB" class="obj">
+            <rect class="s-card" x="675" y="105" width="170" height="170" rx="28"></rect>
+            <text class="glyph" x="760" y="190" font-size="110">📏</text>
+          </g>
+          <g id="note" hidden>
+            <line class="note-line" id="noteLine" x1="0" y1="0" x2="0" y2="0"></line>
+            <rect class="note-bg" id="noteBg" x="0" y="0" width="10" height="44" rx="10"></rect>
+            <text class="note-text" id="noteText" x="0" y="0"></text>
+          </g>
+          <g id="finger" opacity="0">
+            <circle class="finger-ring" r="34" id="fingerRing"></circle>
+            <circle class="finger-dot" r="9"></circle>
+          </g>
+        </svg>
+      </div>
+
+      <div class="caption" aria-live="polite">
+        <p class="stepno" id="stepNo">Passo 1 di 9</p>
+        <h2 id="stepTitle">La prova</h2>
+        <p class="text" id="stepText"></p>
+        <div class="legend" id="legend" hidden>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--s-good)"></circle></svg>dentro, scelta giusta (9)</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--s-warn)"></circle></svg>scelta giusta, rilascio vicino (10)</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--s-far)"></circle></svg>scelta giusta, rilascio lontano (2)</span>
+          <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3 L13 13 M13 3 L3 13" stroke="var(--s-bad)" stroke-width="2.5" stroke-linecap="round"></path></svg>scelta sbagliata (2)</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="prev" type="button">‹ Indietro</button>
+        <button id="replay" type="button">Rivedi il gesto</button>
+        <button id="next" type="button" class="primary">Avanti ›</button>
+        <button id="auto" type="button" aria-pressed="false">Riproduci tutto</button>
+        <ol class="steps" id="steps" aria-label="Passi della simulazione"></ol>
+      </div>
+    </div>
+
+    <aside class="side">
+      <p class="point" id="simPoint" hidden></p>
+      <section class="panel" aria-labelledby="h-log">
+        <h3 id="h-log">Cosa registra</h3>
+        <div class="logwrap" id="logwrap"></div>
+        <p class="note" id="logNote"></p>
+      </section>
+      <section class="panel" aria-labelledby="h-concl">
+        <h3 id="h-concl">Cosa conclude il sistema</h3>
+        <div id="concl"></div>
+      </section>
+    </aside>
+  </div>
+
+</div>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Geometria del gioco vero: scena 1000×700, zaino 260×290.
+  const SLOT = { A: { x: 420, y: 190 }, B: { x: 760, y: 190 } };
+  const BPC = { x: 600, y: 520 };
+  const NEAR_RELEASE = { x: 435, y: 540 }; // 35 unità a sinistra del bordo: 12% della misura dello zaino
+
+  const ITEMS = {
+    Q: { e: "📓", l: "quaderno" }, R: { e: "📏", l: "righello" }, M: { e: "✏️", l: "matita" },
+    P: { e: "🖍️", l: "pastelli" }, A: { e: "🍎", l: "mela" },
+  };
+
+  const CLOUD = {
+    good: [[560, 470], [625, 520], [655, 450], [590, 600], [540, 565], [685, 565], [610, 420], [520, 450], [660, 630]],
+    warn: [[440, 520], [452, 600], [430, 450], [455, 410], [500, 355], [560, 350], [445, 640], [425, 560], [610, 345], [460, 482]],
+    far: [[250, 600], [300, 420]],
+    bad: [[575, 505], [640, 590]],
+  };
+
+  const objs = { A: $("#objA"), B: $("#objB") };
+  const finger = $("#finger");
+  const fingerRing = $("#fingerRing");
+  const bp = $("#bp");
+  const hit = $("#hit");
+  const cloud = $("#cloud");
+  const packedG = $("#packed");
+  const note = $("#note");
+
+  let run = 0;
+  let cur = 0;
+  let auto = false;
+
+  const lerp = (a, b, k) => a + (b - a) * k;
+  const ease = (k) => (k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
+  const bez = (p0, p1, p2, k) => ({
+    x: (1 - k) * (1 - k) * p0.x + 2 * (1 - k) * k * p1.x + k * k * p2.x,
+    y: (1 - k) * (1 - k) * p0.y + 2 * (1 - k) * k * p1.y + k * k * p2.y,
+  });
+
+  function tween(my, ms, fn) {
+    return new Promise((resolve) => {
+      if (reduce) { fn(1); resolve(); return; }
+      const t0 = performance.now();
+      const frame = (t) => {
+        if (my !== run) { resolve(); return; }
+        const k = Math.min(1, (t - t0) / ms);
+        fn(ease(k));
+        if (k < 1) requestAnimationFrame(frame); else resolve();
+      };
+      requestAnimationFrame(frame);
+    });
+  }
+  const wait = (ms) => new Promise((r) => setTimeout(r, reduce ? Math.min(ms, 400) : ms));
+
+  const show = (el, on) => (on ? el.removeAttribute("hidden") : el.setAttribute("hidden", ""));
+
+  function placeObj(key, x, y, opacity = 1) {
+    const s = SLOT[key];
+    objs[key].setAttribute("transform", `translate(${x - s.x} ${y - s.y})`);
+    objs[key].style.opacity = String(opacity);
+  }
+  const resetObj = (key) => placeObj(key, SLOT[key].x, SLOT[key].y, 1);
+  const setGlyph = (key, item) => { objs[key].querySelector("text").textContent = item.e; };
+  const setSelected = (key, on) => objs[key].classList.toggle("selected", on);
+  const bpReady = (on) => bp.classList.toggle("ready", on);
+
+  function fingerAt(p) { finger.setAttribute("transform", `translate(${p.x} ${p.y})`); }
+  function press(on) { fingerRing.setAttribute("r", on ? "26" : "34"); }
+
+  function setPacked(list) {
+    packedG.innerHTML = list
+      .map((e, i) => `<text class="glyph" x="${510 + i * 45}" y="632" font-size="36">${e}</text>`)
+      .join("");
+  }
+
+  function setNote(text, at) {
+    if (!text) { show(note, false); return; }
+    const tx = 120, ty = 610;
+    $("#noteText").textContent = text;
+    $("#noteText").setAttribute("x", String(tx + 16));
+    $("#noteText").setAttribute("y", String(ty + 31));
+    const w = 16 * 2 + text.length * 13.2;
+    const bg = $("#noteBg");
+    bg.setAttribute("x", String(tx)); bg.setAttribute("y", String(ty)); bg.setAttribute("width", String(w));
+    const ln = $("#noteLine");
+    ln.setAttribute("x1", String(Math.min(tx + w - 20, at.x - 10))); ln.setAttribute("y1", String(ty));
+    ln.setAttribute("x2", String(at.x)); ln.setAttribute("y2", String(at.y));
+    show(note, true);
+  }
+
+  function renderCloud() {
+    const dots = (list, cls) => list.map(([x, y]) => `<circle class="dot ${cls}" cx="${x}" cy="${y}" r="12"></circle>`).join("");
+    const xs = CLOUD.bad.map(([x, y]) => `<path class="xmark" d="M${x - 10} ${y - 10} L${x + 10} ${y + 10} M${x + 10} ${y - 10} L${x - 10} ${y + 10}"></path>`).join("");
+    cloud.innerHTML = dots(CLOUD.good, "good") + dots(CLOUD.warn, "warn") + dots(CLOUD.far, "far") + xs;
+  }
+
+  // ---- gesti animati ----
+
+  async function moveFinger(my, from, to, ms) {
+    fingerAt(from);
+    finger.setAttribute("opacity", "1");
+    await tween(my, ms, (k) => fingerAt({ x: lerp(from.x, to.x, k), y: lerp(from.y, to.y, k) }));
+  }
+
+  async function tapAt(my) {
+    press(true); await wait(180); if (my !== run) return; press(false); await wait(120);
+  }
+
+  /** Trascina l'oggetto fino a `to`; se `accept`, entra nello zaino, altrimenti torna al suo posto. */
+  async function drag(my, key, to, accept) {
+    const from = SLOT[key];
+    await moveFinger(my, { x: from.x + 90, y: from.y + 170 }, from, 450); if (my !== run) return;
+    press(true); objs[key].classList.add("lift");
+    await wait(220); if (my !== run) return;
+    const ctrl = { x: (from.x + to.x) / 2 + 80, y: (from.y + to.y) / 2 - 30 };
+    await tween(my, 1300, (k) => { const p = bez(from, ctrl, to, k); placeObj(key, p.x, p.y); fingerAt(p); });
+    if (my !== run) return;
+    press(false); objs[key].classList.remove("lift");
+    await wait(250); if (my !== run) return;
+    finger.setAttribute("opacity", "0");
+    if (accept) {
+      await tween(my, 550, (k) => placeObj(key, lerp(to.x, BPC.x, k), lerp(to.y, BPC.y, k), 1 - k));
+    } else {
+      await wait(450); if (my !== run) return;
+      await tween(my, 700, (k) => placeObj(key, lerp(to.x, from.x, k), lerp(to.y, from.y, k)));
+    }
+  }
+
+  async function twoTaps(my, key) {
+    const s = SLOT[key];
+    await moveFinger(my, { x: s.x - 120, y: s.y + 200 }, s, 600); if (my !== run) return;
+    await tapAt(my); if (my !== run) return;
+    setSelected(key, true); bpReady(true);
+    await wait(900); if (my !== run) return;
+    await moveFinger(my, s, BPC, 800); if (my !== run) return;
+    await tapAt(my); if (my !== run) return;
+    finger.setAttribute("opacity", "0");
+    setSelected(key, false); bpReady(false);
+    await tween(my, 650, (k) => placeObj(key, lerp(s.x, BPC.x, k), lerp(s.y, BPC.y, k), 1 - k));
+  }
+
+  // ---- registro ----
+
+  const R1 = { n: 1, s: 1, acc: "trascina", choice: true, g: "fuori di poco · 12%", gk: "warn", done: false };
+  const R2 = { n: 2, s: 1, acc: "trascina", choice: true, g: "dentro", gk: "good", done: true };
+  const R3 = { n: 3, s: 1, acc: "trascina", choice: false, g: "dentro", gk: "good", done: false };
+  const GAP = { note: "… altri 20 tentativi nelle sessioni 2 e 3" };
+  const R24 = { n: 24, s: 4, acc: "trascina · aggancio 35%", choice: true, g: "dentro l'aggancio", gk: "good", done: true };
+  const OTHER = { note: "Esempio per un altro bambino, dopo il sì ai due tocchi" };
+  const RT = { n: 1, s: 4, acc: "due tocchi", choice: true, g: "secondo tocco sullo zaino", gk: "good", done: true };
+
+  const chip = (cls, text) => `<span class="chip ${cls}">${text}</span>`;
+
+  function renderLog(rows, fresh) {
+    const wrap = $("#logwrap");
+    if (!rows.length) { wrap.innerHTML = `<p class="empty">Nessun tentativo ancora.</p>`; return; }
+    const body = rows.map((r) => {
+      if (r.note) return `<tr class="gap"><td colspan="6">${r.note}</td></tr>`;
+      const cls = fresh.includes(r) ? "fresh" : "";
+      return `<tr class="${cls}"><td class="num">${r.n}</td><td class="num">${r.s}</td><td class="acc">${r.acc}</td>` +
+        `<td>${chip(r.choice ? "good" : "bad", r.choice ? "giusta" : "sbagliata")}</td>` +
+        `<td>${chip(r.gk, r.g)}</td><td>${r.done ? chip("good", "completata") : chip("", "si riprova")}</td></tr>`;
+    }).join("");
+    wrap.innerHTML = `<table><thead><tr><th>#</th><th>Sess.</th><th>Accesso</th><th>Scelta</th><th>Gesto</th><th>Prova</th></tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  // ---- passi ----
+
+  const C_PROPOSAL = `
+    <div class="proposal">
+      <p class="plabel">Proposta · regola v1.0.0 · in attesa dell'adulto</p>
+      <p class="pchange">Zaino più tollerante: aggancio da 0% a 35%</p>
+      <p>Nelle ultime 23 prove valide, in 3 sessioni, l'oggetto scelto era quello della lista 21 volte; in 10 di queste il rilascio si è fermato vicino allo zaino o ne è uscito all'ultimo. Stima prudente della quota di gesti non riusciti: 43% (limite inferiore di un intervallo all'80%).</p>
+      <p class="muted">La lista e gli oggetti restano gli stessi. Le scelte corrette riguardano queste prove e non dimostrano una competenza consolidata; i gesti non riusciti non indicano una difficoltà motoria generale.</p>
+      <div class="row">
+        <button type="button" class="primary" data-act="accept">Accetta</button>
+        <button type="button" data-act="refuse">Rifiuta</button>
+        <button type="button" data-act="lock">Rifiuta e blocca</button>
+      </div>
+      <p class="msg" id="msg" role="status"></p>
+    </div>
+    <p class="muted">La proposta arriva a fine sessione. Durante il gioco non cambia niente.</p>`;
+
+  const ALL_STEPS = [
+    {
+      title: "La prova",
+      text: "Il bambino deve mettere nello zaino l'oggetto mostrato nella lista, qui il quaderno. Le alternative sono due e cambiano posto a ogni prova, così la risposta non dipende dalla posizione.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      log: [],
+      concl: `<p>Nessuna conclusione: la prova è appena cominciata.</p>
+        <dl class="facts">
+          <div><dt>Domanda</dt><dd>Metti nello zaino l'oggetto della lista</dd></div>
+          <div><dt>Alternative</dt><dd>2, in posizioni che cambiano</dd></div>
+          <div><dt>Accesso attuale</dt><dd>Trascinamento; conta solo il rilascio dentro lo zaino</dd></div>
+        </dl>`,
+    },
+    {
+      title: "Sceglie bene, rilascia appena fuori",
+      text: "Il bambino prende il quaderno, cioè l'oggetto giusto, ma lo lascia poco prima dello zaino. Il quaderno torna al suo posto con calma, senza suoni d'errore.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      play: async (my) => { await drag(my, "A", NEAR_RELEASE, false); if (my === run) setNote("rilascio: 12% fuori dal bordo", NEAR_RELEASE); },
+      end: () => setNote("rilascio: 12% fuori dal bordo", NEAR_RELEASE),
+      log: [R1],
+      logNote: "Scelta e gesto stanno in due colonne diverse.",
+      concl: `<p><b>Scelta giusta, gesto non riuscito.</b> Il sistema tiene separate le due cose: questo tentativo non conta come errore di scelta.</p>
+        <p class="muted">Un tentativo non basta per concludere niente, né sulla competenza né sulla motricità.</p>`,
+    },
+    {
+      title: "Riprova e ci riesce",
+      text: "Al secondo tentativo il rilascio cade dentro lo zaino. Il quaderno entra e il gioco passa alla prova successiva.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      play: async (my) => { await drag(my, "A", BPC, true); if (my === run) setPacked(["📓"]); },
+      end: () => { placeObj("A", BPC.x, BPC.y, 0); setPacked(["📓"]); },
+      log: [R1, R2],
+      concl: `<p><b>Prova completata al secondo tentativo.</b> Il primo resta nel registro come gesto non riuscito con scelta giusta: è l'informazione che servirà più avanti.</p>`,
+    },
+    {
+      title: "Per confronto: sceglie l'oggetto sbagliato",
+      text: "In un'altra prova la lista mostra la matita, ma il bambino trascina il righello nello zaino. Il gesto riesce, la scelta no, e il righello torna al suo posto.",
+      list: ITEMS.M, A: ITEMS.M, B: ITEMS.R, packed: ["📓"],
+      play: (my) => drag(my, "B", BPC, false),
+      log: [R1, R2, R3],
+      concl: `<p><b>Gesto riuscito, scelta sbagliata:</b> il caso opposto al passo 2.</p>
+        <p>Se capitasse spesso, la regola non proporrebbe nessun cambio d'accesso. Con una scelta instabile cambiare il gesto non risponde al problema, e il sistema non attribuisce l'errore a mancata comprensione.</p>`,
+    },
+    {
+      title: "Dopo tre sessioni",
+      text: "I punti mostrano dove sono finiti i rilasci. Il bambino sceglie quasi sempre l'oggetto giusto, e i tentativi falliti si fermano quasi tutti vicino al bordo dello zaino.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R, cloud: true, dim: true,
+      log: [R1, R2, R3, GAP],
+      logNote: "Non contano: prove con un aiuto che rivela la risposta, aiuto fisico, primo tentativo dopo un cambio, interruzioni.",
+      concl: `<p>A fine sessione la regola controlla quattro condizioni, solo sulle prove valide fatte con l'accesso attuale.</p>
+        <ul class="checks">
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Abbastanza prove</b><span class="v">23 valide in 3 sessioni · minimo 8 in 2</span></div></li>
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Scelta stabile</b><span class="v">21 giuste su 23 · 91% · soglia 75%</span></div></li>
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Gesto fragile</b><span class="v">12 non riusciti su 21 · stima prudente 43% · soglia 30%</span></div></li>
+          <li><span class="ok" aria-hidden="true">✓</span><div><b>Rilasci vicini</b><span class="v">10 su 12 · 83% · sopra il 60% basta allargare l'aggancio</span></div></li>
+        </ul>
+        <p class="muted">Le soglie sono segnaposto da tarare con chi segue il bambino.</p>`,
+    },
+    {
+      title: "La proposta all'adulto",
+      text: "A fine sessione il sistema propone un cambio all'adulto, con i dati che lo motivano. Il bambino non vede niente finché l'adulto non decide.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R, cloud: true, dim: true,
+      log: [R1, R2, R3, GAP],
+      concl: C_PROPOSAL,
+    },
+    {
+      title: "Zaino più tollerante: lo stesso gesto ora vale",
+      text: "Dopo il sì dell'adulto lo zaino aggancia anche i rilasci vicini. Il tratteggio serve solo a spiegare: il bambino vede lo stesso zaino di prima, e lo stesso rilascio del passo 2 ora mette il quaderno nello zaino.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R, cloud: true, hit: true,
+      play: async (my) => { await drag(my, "A", NEAR_RELEASE, true); if (my === run) setPacked(["📓"]); },
+      end: () => { placeObj("A", BPC.x, BPC.y, 0); setPacked(["📓"]); },
+      log: [R1, R2, R3, GAP, R24],
+      logNote: "Il cambio apre una versione nuova della configurazione: le prove di prima e di dopo restano distinguibili.",
+      concl: `<p class="pchange">In prova: zaino più tollerante (0% → 35%)</p>
+        <p>Il rilascio al 12% dal bordo ora rientra nell'aggancio e conta come risposta. Le scelte restano valutate come prima.</p>
+        <p class="muted">Il confronto prima/dopo è descrittivo: pratica, ordine delle prove e contesto possono spiegare parte della differenza.</p>
+        <div class="row"><button type="button" data-act="revert">Ripristina l'accesso precedente</button></div>
+        <p class="msg" id="msg" role="status"></p>`,
+    },
+    {
+      title: "L'altra proposta possibile: due tocchi",
+      text: "Per un bambino che interrompe il trascinamento lontano dallo zaino, il sistema propone i due tocchi: si tocca l'oggetto della lista, poi lo zaino.",
+      list: ITEMS.P, A: ITEMS.A, B: ITEMS.P,
+      play: async (my) => { await twoTaps(my, "B"); if (my === run) setPacked(["🖍️"]); },
+      end: () => { placeObj("B", BPC.x, BPC.y, 0); setPacked(["🖍️"]); },
+      logBefore: [OTHER],
+      log: [OTHER, RT],
+      concl: `<p>Il sistema propone i due tocchi quando i tentativi falliti si interrompono lontano dallo zaino: allargare l'aggancio non aiuterebbe.</p>
+        <p>Stessa lista, stessi oggetti, stessa regola di correttezza. Cambia solo il gesto.</p>
+        <p class="muted">Anche questa proposta passa dall'adulto e si può annullare.</p>`,
+    },
+    {
+      title: "Cosa resta fermo",
+      text: "La domanda è sempre la stessa. Cambia il modo di rispondere, una cosa per volta e solo con il sì dell'adulto.",
+      list: ITEMS.Q, A: ITEMS.Q, B: ITEMS.R,
+      log: [R1, R2, R3, GAP, R24],
+      concl: `<div class="grid4">
+          <section><h4>Resta uguale</h4><p>La domanda, gli oggetti, le loro posizioni e il criterio di risposta giusta.</p></section>
+          <section><h4>Può cambiare</h4><p>Il gesto (trascinamento o due tocchi) e l'ampiezza dell'aggancio. Una cosa per volta, con il sì dell'adulto, sempre reversibile.</p></section>
+          <section><h4>Quando non propone niente</h4><ul><li>scelte spesso sbagliate</li><li>poche prove o una sola sessione</li><li>dimensione bloccata dall'adulto</li><li>proposta rifiutata di recente</li></ul></section>
+          <section><h4>Cosa non conclude</h4><p>Che il bambino abbia una competenza consolidata, o una difficoltà motoria generale. Il passaggio agli oggetti veri si verifica a parte.</p></section>
+        </div>`,
+    },
+  ];
+
+  // Ogni peculiarità mostra solo i suoi passi; senza parametro la simulazione è completa.
+  const TRATTI = {
+    "scelta-e-gesto": {
+      steps: [0, 1, 2, 3],
+      eyebrow: "Peculiarità 1 · simulazione",
+      title: "La scelta e il gesto si registrano a parte",
+      lead: "Un oggetto giusto rilasciato appena fuori dallo zaino non è un errore di discriminazione. Il gioco lo registra come gesto non riuscito, accanto alla scelta corretta.",
+      point: "Da guardare: nel registro qui sotto, la colonna «Scelta» e la colonna «Gesto» cambiano in modo indipendente.",
+    },
+    proposta: {
+      steps: [4, 5, 6],
+      eyebrow: "Peculiarità 2 · simulazione",
+      title: "La proposta è spiegata, e decide l'adulto",
+      lead: "Dopo più sessioni il sistema propone un solo cambio, con i numeri che lo giustificano. Niente cambia durante il gioco, e niente si applica senza il sì dell'adulto.",
+      point: "Da provare: al passo 2 puoi accettare, rifiutare o rifiutare e bloccare la proposta.",
+    },
+    domanda: {
+      steps: [6, 7, 8],
+      eyebrow: "Peculiarità 3 · simulazione",
+      title: "La domanda non cambia, cambia il modo di rispondere",
+      lead: "Bersaglio più tollerante o due tocchi al posto del trascinamento: lista, oggetti, posizioni e risposta giusta restano gli stessi.",
+      point: "Da guardare: con il nuovo accesso la scena è identica; cambia solo il gesto che vale.",
+    },
+  };
+  const tratto = TRATTI[new URLSearchParams(location.search).get("tratto")];
+  const STEPS = tratto ? tratto.steps.map((i) => ALL_STEPS[i]) : ALL_STEPS;
+  if (tratto) {
+    $("#simEyebrow").textContent = tratto.eyebrow;
+    $("#simTitle").textContent = tratto.title;
+    $("#simLead").textContent = tratto.lead;
+    $("#simPoint").textContent = tratto.point;
+    $("#simPoint").hidden = false;
+  }
+
+  // ---- navigazione ----
+
+  const stepsNav = $("#steps");
+  stepsNav.innerHTML = STEPS.map((s, i) => `<li><button type="button" data-step="${i}" title="${s.title}">${i + 1}</button></li>`).join("");
+
+  function base(st) {
+    $("#listGlyph").textContent = st.list.e;
+    $("#listLabel").textContent = st.list.l;
+    setGlyph("A", st.A); setGlyph("B", st.B);
+    resetObj("A"); resetObj("B");
+    setSelected("A", false); setSelected("B", false); bpReady(false);
+    objs.A.classList.remove("lift"); objs.B.classList.remove("lift");
+    objs.A.classList.toggle("dim", !!st.dim); objs.B.classList.toggle("dim", !!st.dim);
+    show(hit, !!st.hit);
+    show(cloud, !!st.cloud);
+    setPacked(st.packed || []);
+    setNote(null);
+    finger.setAttribute("opacity", "0"); press(false);
+  }
+
+  function renderText(st) {
+    $("#stepNo").textContent = `Passo ${cur + 1} di ${STEPS.length}`;
+    $("#stepTitle").textContent = st.title;
+    $("#stepText").textContent = st.text;
+    show($("#legend"), !!st.cloud);
+    $("#logNote").textContent = st.logNote || "";
+    $("#prev").disabled = cur === 0;
+    $("#next").disabled = cur === STEPS.length - 1;
+    $("#replay").disabled = !st.play;
+    stepsNav.querySelectorAll("button").forEach((b, i) => {
+      if (i === cur) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+    });
+  }
+
+  async function go(i, animate) {
+    cur = Math.max(0, Math.min(STEPS.length - 1, i));
+    const st = STEPS[cur];
+    const my = ++run;
+    const before = st.logBefore || (cur > 0 ? STEPS[cur - 1].log : []);
+    base(st);
+    renderText(st);
+    if (st.play && animate) {
+      renderLog(before, []);
+      $("#concl").innerHTML = `<p class="wait">Guarda il gesto sullo schermo.</p>`;
+      await st.play(my);
+      if (my !== run) return;
+    } else if (st.end) {
+      st.end();
+    }
+    renderLog(st.log, st.log.filter((r) => !before.includes(r)));
+    $("#concl").innerHTML = st.concl;
+    if (auto) {
+      await wait(st.play ? 3200 : 6500);
+      if (my !== run || !auto) return;
+      if (cur < STEPS.length - 1) go(cur + 1, true); else setAuto(false);
+    }
+  }
+
+  function setAuto(on) {
+    auto = on;
+    $("#auto").setAttribute("aria-pressed", String(on));
+    $("#auto").textContent = on ? "Ferma" : "Riproduci tutto";
+  }
+
+  $("#prev").addEventListener("click", () => { setAuto(false); go(cur - 1, false); });
+  $("#next").addEventListener("click", () => { setAuto(false); go(cur + 1, true); });
+  $("#replay").addEventListener("click", () => { setAuto(false); go(cur, true); });
+  $("#auto").addEventListener("click", () => {
+    if (auto) { setAuto(false); run++; return; }
+    setAuto(true);
+    go(cur === STEPS.length - 1 ? 0 : cur, true);
+  });
+  stepsNav.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-step]");
+    if (!b) return;
+    setAuto(false); go(Number(b.dataset.step), true);
+  });
+  $("#concl").addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-act]");
+    if (!b) return;
+    const msg = $("#msg");
+    const act = b.dataset.act;
+    if (act === "accept") {
+      setAuto(false);
+      const k = STEPS.indexOf(ALL_STEPS[6]);
+      if (k >= 0) go(k, true);
+      else if (msg) msg.textContent = "Accettata: il passo successivo mostra lo zaino più tollerante.";
+      return;
+    }
+    if (msg && act === "refuse") msg.textContent = "Rifiutata: non cambia niente. Il sistema aspetta almeno 12 prove nuove prima di riproporla.";
+    if (msg && act === "lock") msg.textContent = "Rifiutata e bloccata: il sistema non proporrà più cambi della tolleranza finché l'adulto non li sblocca.";
+    if (msg && act === "revert") msg.textContent = "Lo zaino torna come prima, con una versione nuova della configurazione: le prove fatte prima e dopo restano distinguibili.";
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.target.closest && e.target.closest("input, textarea, select")) return;
+    if (e.key === "ArrowRight") { setAuto(false); go(cur + 1, true); }
+    if (e.key === "ArrowLeft") { setAuto(false); go(cur - 1, false); }
+  });
+
+  renderCloud();
+  const fromHash = () => { const m = /^#p([1-9])$/.exec(location.hash); return m ? Math.min(Number(m[1]) - 1, STEPS.length - 1) : 0; };
+  const hot = window.claude && window.claude.hot;
+  if (hot && hot.snapshot) hot.snapshot(() => ({ step: cur }));
+  const start = (data) => go(data && Number.isInteger(data.step) ? data.step : fromHash(), false);
+  if (hot && hot.ready) hot.ready(start); else start((hot && hot.data) || {});
+})();
+</script>
+<script src="percorso.js"></script>
+</body>
+</html>

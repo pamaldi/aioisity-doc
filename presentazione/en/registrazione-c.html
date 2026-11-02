@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confident gesture, uncertain choice · Pack the backpack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../stile.css">
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow">Recording · case C · 1:12</p>
+    <h1>Confident gesture, uncertain choice</h1>
+    <p class="lead">The opposite case: the system does not propose changing the gesture.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="../registrazioni/caso-C.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Chapters: one click takes the video to that moment."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Caption, in English"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="simulazione.html?tratto=scelta-e-gesto">Feature 1</a></p>
+        <section><h2>What it shows</h2><p>The gesture succeeds, the choice does not. Changing the way of answering would solve nothing, so the system does not propose changing the gesture, and does not attribute the errors to causes it cannot observe.</p></section>
+        <section><h2>What to watch</h2>
+        <ul>
+          <li><a href="#" data-t="5.0">0:05</a> confident drag, wrong object: in the log the choice is wrong, the gesture successful.</li>
+          <li><a href="#" data-t="61.75">1:01</a> the message to the adult: no proposal, no interpretation.</li>
+        </ul></section>
+        <section><h2>What the adult read</h2><p class="quote">«The choice of object is not stable enough: changing the gesture would not address what is observed. I do not attribute the errors to lack of understanding, frustration or low interest.»</p></section>
+        <p class="muted small">Chapters: one click takes the video to that moment. Recorded data: <a href="../registrazioni/caso-C-dati.json">caso-C-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="../percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.25, "The child must put into the backpack the object shown in the list."], [5.0, "Drags confidently, but takes the wrong object."], [6.75, "The gesture succeeded, the choice did not: the object returns to its place."], [10.0, "Then takes the right one."], [36.25, "Second session, at double speed: same behavior."], [61.75, "No access change: the gesture already works. Errors are not attributed to understanding or interest: the adult evaluates them."]]</script>
+<script src="../registrazioni.js"></script>
+</body>
+</html>

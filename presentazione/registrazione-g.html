@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L'adulto prepara gli oggetti di casa · Prepariamo lo zaino</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="stile.css">
+<link rel="stylesheet" href="percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Percorso"></nav>
+  <header>
+    <p class="eyebrow">Registrazione · caso G · 0:59</p>
+    <h1>L'adulto prepara gli oggetti di casa</h1>
+    <p class="lead">Foto e voce di un familiare, in pochi minuti.</p>
+  </header>
+  <main class="sheet">
+    <div class="rec">
+      <div class="rec-left">
+        <video data-rec src="registrazioni/caso-G.mp4" controls preload="metadata" playsinline></video>
+        <div class="chips" id="chips" aria-label="Capitoli: un clic porta il video a quel momento."></div>
+        <p class="now" id="now" aria-live="polite" aria-label="Didascalia"></p>
+      </div>
+      <div class="rec-side">
+        <p class="row"><a class="chip" href="13-vincoli.html">Peculiarità 6</a></p>
+        <section><h2>Che cosa mostra</h2><p>La personalizzazione parte dagli oggetti veri del bambino: foto e voce di un familiare, preparate in pochi minuti e tenute sul tablet. I controlli dicono subito che cosa cambia con pochi oggetti.</p></section>
+        <section><h2>Da guardare</h2>
+        <ul>
+          <li><a href="#" data-t="6.75">0:06</a> la consegna registrata con la voce di casa.</li>
+          <li><a href="#" data-t="34.25">0:34</a> un avviso, non un blocco: la sessione parte, con tre prove.</li>
+        </ul></section>
+        <section><h2>Che cosa ha letto l'adulto</h2><p class="quote">«Controlli della configurazione. Avviso: con 3 oggetti la sessione avrà 3 prove invece di 5.»</p></section>
+        <p class="muted small">Capitoli: un clic porta il video a quel momento. Dati registrati: <a href="registrazioni/caso-G-dati.json">caso-G-dati.json</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="percorso.js"></script>
+<script type="application/json" id="capitoli">[[0.5, "Nell'area adulti c'è l'editor degli oggetti: foto, nome e, se si vuole, la voce di un familiare."], [4.0, "Si scatta la foto dell'oggetto (qui una foto di prova) e si scrive il nome; l'articolo è proposto e si può correggere."], [6.75, "Si registra la consegna con la voce di un familiare: «Metti nello zaino l'astuccio»."], [12.0, "L'anteprima mostra la lista e la carta come le vedrà il bambino."], [27.0, "Si tengono in gioco solo gli oggetti di casa."], [28.0, "L'editor misura anche quanto dura la preparazione: è uno degli indicatori da verificare con le famiglie."], [34.25, "I controlli avvisano: con tre oggetti la sessione avrà tre prove invece di cinque."], [39.25, "Il bambino gioca con le foto dei suoi oggetti; per l'astuccio sente la voce registrata."], [51.5, "In ogni prova resta scritto se l'oggetto era una foto propria e se la consegna era registrata."]]</script>
+<script src="registrazioni.js"></script>
+</body>
+</html>

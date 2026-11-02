@@ -1,0 +1,542 @@
+{
+  "caso": "Caso E · Aiuto, pausa e uscita",
+  "riepilogo": {
+    "sessioni": 1,
+    "tentativi": 2,
+    "tentativiSimulati": 0,
+    "scelteCorrette": 2,
+    "conAiuto": 1,
+    "conFotoPropria": 0,
+    "conVoceRegistrata": 0,
+    "oggettiDellaFamiglia": [],
+    "esitiDelGesto": {
+      "placed": 2
+    },
+    "proposte": [],
+    "accessoFinale": {
+      "templateId": "prepariamo-lo-zaino",
+      "device": "questo-dispositivo",
+      "interaction": {
+        "mode": "drag",
+        "tolerance": 0,
+        "version": 1
+      },
+      "locked": [],
+      "task": {
+        "instruction": "list_voice"
+      }
+    }
+  },
+  "motore": [
+    "Proposte del sistema\n\nDati insufficienti: 1 prove valide in 1 sessioni con l'accesso attuale."
+  ],
+  "dati": {
+    "attempts": [
+      {
+        "sessionId": "f39b3afe-6a39-4956-ae0e-ecbfd73d3859",
+        "trialId": "365723785-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd918u",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267651274,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "forbici",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1398,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              50,
+              759,
+              192
+            ],
+            [
+              94,
+              758,
+              194
+            ],
+            [
+              142,
+              756,
+              198
+            ],
+            [
+              211,
+              751,
+              207
+            ],
+            [
+              274,
+              744,
+              221
+            ],
+            [
+              313,
+              740,
+              229
+            ],
+            [
+              346,
+              735,
+              239
+            ],
+            [
+              416,
+              724,
+              260
+            ],
+            [
+              482,
+              712,
+              285
+            ],
+            [
+              520,
+              704,
+              299
+            ],
+            [
+              583,
+              689,
+              330
+            ],
+            [
+              647,
+              671,
+              364
+            ],
+            [
+              680,
+              663,
+              380
+            ],
+            [
+              713,
+              656,
+              395
+            ],
+            [
+              776,
+              642,
+              423
+            ],
+            [
+              840,
+              630,
+              446
+            ],
+            [
+              880,
+              625,
+              456
+            ],
+            [
+              943,
+              616,
+              474
+            ],
+            [
+              979,
+              612,
+              481
+            ],
+            [
+              1040,
+              606,
+              493
+            ],
+            [
+              1104,
+              602,
+              500
+            ],
+            [
+              1144,
+              601,
+              503
+            ],
+            [
+              1177,
+              600,
+              504
+            ],
+            [
+              1213,
+              600,
+              505
+            ],
+            [
+              1398,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "forbici",
+          "destinationId": "zaino"
+        },
+        "aids": [
+          {
+            "kind": "highlight",
+            "trigger": "child"
+          }
+        ],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": true,
+          "interrupted": false
+        },
+        "id": 1
+      },
+      {
+        "sessionId": "f39b3afe-6a39-4956-ae0e-ecbfd73d3859",
+        "trialId": "365723785-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd918u",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267659840,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1379,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              38,
+              421,
+              192
+            ],
+            [
+              85,
+              423,
+              194
+            ],
+            [
+              124,
+              424,
+              198
+            ],
+            [
+              196,
+              430,
+              207
+            ],
+            [
+              234,
+              434,
+              214
+            ],
+            [
+              297,
+              443,
+              229
+            ],
+            [
+              361,
+              454,
+              249
+            ],
+            [
+              425,
+              467,
+              272
+            ],
+            [
+              462,
+              474,
+              285
+            ],
+            [
+              524,
+              491,
+              314
+            ],
+            [
+              586,
+              510,
+              347
+            ],
+            [
+              621,
+              520,
+              364
+            ],
+            [
+              659,
+              529,
+              380
+            ],
+            [
+              693,
+              537,
+              395
+            ],
+            [
+              730,
+              546,
+              410
+            ],
+            [
+              768,
+              553,
+              423
+            ],
+            [
+              829,
+              566,
+              446
+            ],
+            [
+              893,
+              577,
+              465
+            ],
+            [
+              958,
+              586,
+              481
+            ],
+            [
+              994,
+              590,
+              487
+            ],
+            [
+              1056,
+              596,
+              497
+            ],
+            [
+              1120,
+              599,
+              503
+            ],
+            [
+              1192,
+              600,
+              505
+            ],
+            [
+              1379,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 2
+      }
+    ],
+    "configHistory": [
+      {
+        "ts": 1793267638130,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "default",
+        "id": 1
+      }
+    ],
+    "editorSessions": [],
+    "kv": [
+      {
+        "key": "context",
+        "value": {
+          "templateId": "prepariamo-lo-zaino",
+          "device": "questo-dispositivo",
+          "interaction": {
+            "mode": "drag",
+            "tolerance": 0,
+            "version": 1
+          },
+          "locked": [],
+          "task": {
+            "instruction": "list_voice"
+          }
+        }
+      },
+      {
+        "key": "materialsSeeded",
+        "value": true
+      }
+    ],
+    "materials": [
+      {
+        "id": "forbici",
+        "label": "forbici",
+        "article": "le",
+        "emoji": "✂️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638163,
+        "updatedAt": 1793267638158
+      },
+      {
+        "id": "libro",
+        "label": "libro",
+        "article": "il",
+        "emoji": "📕",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638162,
+        "updatedAt": 1793267638158
+      },
+      {
+        "id": "matita",
+        "label": "matita",
+        "article": "la",
+        "emoji": "✏️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638159,
+        "updatedAt": 1793267638158
+      },
+      {
+        "id": "mela",
+        "label": "mela",
+        "article": "la",
+        "emoji": "🍎",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638161,
+        "updatedAt": 1793267638158
+      },
+      {
+        "id": "pastelli",
+        "label": "pastelli",
+        "article": "i",
+        "emoji": "🖍️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638160,
+        "updatedAt": 1793267638158
+      },
+      {
+        "id": "quaderno",
+        "label": "quaderno",
+        "article": "il",
+        "emoji": "📓",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638158,
+        "updatedAt": 1793267638158
+      },
+      {
+        "id": "righello",
+        "label": "righello",
+        "article": "il",
+        "emoji": "📏",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638164,
+        "updatedAt": 1793267638158
+      },
+      {
+        "id": "succo",
+        "label": "succo",
+        "article": "il",
+        "emoji": "🧃",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267638165,
+        "updatedAt": 1793267638158
+      }
+    ],
+    "proposals": [],
+    "sessionEvents": [
+      {
+        "sessionId": "f39b3afe-6a39-4956-ae0e-ecbfd73d3859",
+        "kind": "help",
+        "ts": 1793267643568,
+        "id": 1
+      },
+      {
+        "sessionId": "f39b3afe-6a39-4956-ae0e-ecbfd73d3859",
+        "kind": "pause",
+        "ts": 1793267653249,
+        "id": 2
+      },
+      {
+        "sessionId": "f39b3afe-6a39-4956-ae0e-ecbfd73d3859",
+        "kind": "resume",
+        "ts": 1793267657569,
+        "id": 3
+      },
+      {
+        "sessionId": "f39b3afe-6a39-4956-ae0e-ecbfd73d3859",
+        "kind": "exit",
+        "ts": 1793267661819,
+        "id": 4
+      }
+    ],
+    "sessions": [
+      {
+        "id": "f39b3afe-6a39-4956-ae0e-ecbfd73d3859",
+        "startedAt": 1793267642052,
+        "trials": 5,
+        "endedAt": 1793267661832,
+        "endReason": "exit"
+      }
+    ]
+  }
+}

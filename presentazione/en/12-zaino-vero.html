@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The real backpack, kept apart · Pack the backpack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../stile.css">
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow">Feature 5 · simulation</p>
+    <h1>The real backpack, kept apart</h1>
+    <p class="lead">After the game the adult can note in a few seconds how it went with the real objects. The data stay separate from the tablet's.</p>
+  </header>
+  <main class="sheet">
+    <div class="cols3">
+      <div class="screen" style="text-align:center;display:grid;gap:.5rem;align-content:center">
+        <p style="font-size:1.5rem;font-weight:700;margin:0">Backpack ready!</p>
+        <p style="font-size:1.8rem;margin:0">📓 ✏️ 🍎 📏 🧃</p>
+        <p class="small" style="margin:0;color:#566573">The child sees only the ending. In a corner, a discreet icon for the adult:</p>
+        <p style="margin:0"><button type="button" id="openInvite">🎒 Try with the real objects</button></p>
+      </div>
+      <div class="card" id="form">
+        <h3>How did it go with the real backpack?</h3>
+        <p class="muted small" id="formHint">Open the invitation on the tablet screen.</p>
+        <div class="row" role="group" aria-label="Outcome" id="outcomes" hidden>
+          <button type="button" data-o="ind">Independently</button>
+          <button type="button" data-o="help">With help</button>
+          <button type="button" data-o="no">Not achieved this time</button>
+          <button type="button" data-o="nobs">Not observed</button>
+        </div>
+        <p class="muted small">Optional: place, person present (the role, not the name), a note.</p>
+        <p class="status small" id="saved" role="status"></p>
+      </div>
+      <div class="card">
+        <h3>The adult's report</h3>
+        <table>
+          <thead><tr><th></th><th>In the game</th><th>Real objects</th></tr></thead>
+          <tbody id="report"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="key">The two columns are read side by side, never added. «Not observed» is not a failure, and transfer is not inferred from tablet performance.</p>
+    <p class="muted">Try choosing the outcomes several times, «not observed» included: the game column never changes, and «not observed» stays out of the count.</p>
+  </main>
+</div>
+<script src="../percorso.js"></script>
+<script>
+(() => {
+  const real = { ind: 0, help: 0, no: 0, nobs: 0 };
+  const game = { trials: 12, auto: 10, help: 1, no: 1 };
+  const of = (k, n) => (n ? `${k} of ${n}` : "—");
+  function render() {
+    const obs = real.ind + real.help + real.no;
+    document.getElementById("report").innerHTML = [
+      ["Occasions", `${game.trials} valid trials`, `${obs} observed`],
+      ["Independently", of(game.auto, game.trials), of(real.ind, obs)],
+      ["With help", of(game.help, game.trials), of(real.help, obs)],
+      ["Not completed", of(game.no, game.trials), of(real.no, obs)],
+      ["Not observed", "—", real.nobs ? `${real.nobs}, outside the count` : "—"],
+    ].map((r) => `<tr><th scope="row">${r[0]}</th><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("");
+  }
+  document.getElementById("openInvite").onclick = () => { document.getElementById("outcomes").hidden = false; document.getElementById("formHint").hidden = true; };
+  document.querySelectorAll("[data-o]").forEach((b) => b.onclick = () => {
+    real[b.dataset.o]++;
+    document.getElementById("saved").textContent = `Noted: «${b.textContent}». It stays in a separate table that the engine does not read.`;
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

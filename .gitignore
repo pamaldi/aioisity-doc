@@ -1,0 +1,47 @@
+# Configurazioni locali degli IDE
+.idea/
+*.iml
+.vscode/
+
+# File del sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# File temporanei, backup e lock degli editor
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+~$*
+*.bak
+
+# Segreti e configurazioni locali (gli esempi restano versionabili)
+.env
+.env.*
+!.env.example
+!.env.*.example
+!.env.sample
+!.env.template
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Log e cache di strumenti eventualmente usati per la documentazione
+*.log
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+.cache/
+
+# Output generati: mantenere gli artefatti pubblicabili fuori da queste cartelle
+/dist/
+/build/
+/out/
+/tmp/
+
+# Requisiti, spec, steering, presentazione e registrazioni sono sorgenti:
+# non escludere globalmente PDF, immagini, video o file JSON.

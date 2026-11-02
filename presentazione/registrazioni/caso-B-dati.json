@@ -1,0 +1,2774 @@
+{
+  "caso": "Caso B · Sceglie bene, ma non riesce a trascinare",
+  "riepilogo": {
+    "sessioni": 3,
+    "tentativi": 23,
+    "tentativiSimulati": 0,
+    "scelteCorrette": 23,
+    "conAiuto": 0,
+    "conFotoPropria": 0,
+    "conVoceRegistrata": 0,
+    "oggettiDellaFamiglia": [],
+    "esitiDelGesto": {
+      "abandoned": 10,
+      "placed": 13
+    },
+    "proposte": [
+      {
+        "cambio": {
+          "dimension": "input",
+          "from": "drag",
+          "to": "tap_then_tap"
+        },
+        "stato": "accepted",
+        "spiegazione": "Propongo la selezione con due tocchi (prima l'oggetto, poi lo zaino) al posto del trascinamento. Nelle ultime 19 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 19 volte; in 9 di queste il trascinamento non si è concluso nello zaino. Stima prudente della quota di gesti non riusciti: 33% (limite inferiore di un intervallo all'80%). Le prove sono poche: conviene provare il cambio per una sessione e poi decidere. La lista e gli oggetti restano gli stessi. Le scelte corrette riguardano queste prove e non dimostrano una competenza consolidata; i gesti non riusciti non indicano una difficoltà motoria generale."
+      }
+    ],
+    "accessoFinale": {
+      "templateId": "prepariamo-lo-zaino",
+      "device": "questo-dispositivo",
+      "interaction": {
+        "mode": "tap_then_tap",
+        "tolerance": 0,
+        "version": 2
+      },
+      "locked": [],
+      "task": {
+        "instruction": "list_voice"
+      }
+    }
+  },
+  "motore": [
+    "Proposte del sistema\n\nDue tocchi al posto del trascinamento\n\nPropongo la selezione con due tocchi (prima l'oggetto, poi lo zaino) al posto del trascinamento. Nelle ultime 19 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 19 volte; in 9 di queste il trascinamento non si è concluso nello zaino. Stima prudente della quota di gesti non riusciti: 33% (limite inferiore di un intervallo all'80%). Le prove sono poche: conviene provare il cambio per una sessione e poi decidere. La lista e gli oggetti restano gli stessi. Le scelte corrette riguardano queste prove e non dimostrano una competenza consolidata; i gesti non riusciti non indicano una difficoltà motoria generale.\n\nRegola interaction-access v1.0.0 · 19 prove · 2 sessioni\n\nAccetta\nRifiuta\nRifiuta e blocca\n29/10/2026, 10:51:20 · Due tocchi al posto del trascinamento · in attesa"
+  ],
+  "dati": {
+    "attempts": [
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267432277,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.663,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 93,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              93,
+              760,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": true,
+          "interrupted": false
+        },
+        "id": 1
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267438605,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1970,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              47,
+              759,
+              191
+            ],
+            [
+              96,
+              759,
+              192
+            ],
+            [
+              148,
+              758,
+              194
+            ],
+            [
+              220,
+              755,
+              199
+            ],
+            [
+              282,
+              752,
+              206
+            ],
+            [
+              351,
+              747,
+              215
+            ],
+            [
+              415,
+              742,
+              226
+            ],
+            [
+              486,
+              735,
+              239
+            ],
+            [
+              550,
+              727,
+              254
+            ],
+            [
+              596,
+              723,
+              263
+            ],
+            [
+              643,
+              719,
+              272
+            ],
+            [
+              685,
+              714,
+              281
+            ],
+            [
+              720,
+              709,
+              291
+            ],
+            [
+              782,
+              698,
+              312
+            ],
+            [
+              850,
+              686,
+              335
+            ],
+            [
+              886,
+              680,
+              347
+            ],
+            [
+              923,
+              674,
+              360
+            ],
+            [
+              1001,
+              662,
+              383
+            ],
+            [
+              1048,
+              656,
+              394
+            ],
+            [
+              1086,
+              651,
+              404
+            ],
+            [
+              1125,
+              646,
+              414
+            ],
+            [
+              1158,
+              641,
+              423
+            ],
+            [
+              1194,
+              637,
+              432
+            ],
+            [
+              1265,
+              629,
+              448
+            ],
+            [
+              1336,
+              622,
+              462
+            ],
+            [
+              1374,
+              618,
+              469
+            ],
+            [
+              1454,
+              613,
+              480
+            ],
+            [
+              1494,
+              610,
+              484
+            ],
+            [
+              1533,
+              608,
+              489
+            ],
+            [
+              1596,
+              605,
+              496
+            ],
+            [
+              1666,
+              602,
+              501
+            ],
+            [
+              1705,
+              601,
+              503
+            ],
+            [
+              1767,
+              600,
+              505
+            ],
+            [
+              1970,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "succo",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 2
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267440526,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "mela",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.677,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 95,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              95,
+              420,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 3
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267443563,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "mela",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 2067,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              55,
+              421,
+              191
+            ],
+            [
+              100,
+              421,
+              192
+            ],
+            [
+              149,
+              422,
+              194
+            ],
+            [
+              189,
+              424,
+              196
+            ],
+            [
+              268,
+              427,
+              202
+            ],
+            [
+              315,
+              429,
+              206
+            ],
+            [
+              352,
+              432,
+              210
+            ],
+            [
+              392,
+              434,
+              215
+            ],
+            [
+              438,
+              437,
+              220
+            ],
+            [
+              485,
+              441,
+              226
+            ],
+            [
+              518,
+              444,
+              233
+            ],
+            [
+              556,
+              448,
+              239
+            ],
+            [
+              624,
+              457,
+              254
+            ],
+            [
+              688,
+              467,
+              272
+            ],
+            [
+              753,
+              478,
+              291
+            ],
+            [
+              792,
+              484,
+              301
+            ],
+            [
+              830,
+              490,
+              312
+            ],
+            [
+              894,
+              503,
+              335
+            ],
+            [
+              973,
+              517,
+              360
+            ],
+            [
+              1013,
+              524,
+              372
+            ],
+            [
+              1053,
+              530,
+              383
+            ],
+            [
+              1123,
+              542,
+              404
+            ],
+            [
+              1195,
+              553,
+              423
+            ],
+            [
+              1274,
+              563,
+              440
+            ],
+            [
+              1320,
+              568,
+              448
+            ],
+            [
+              1391,
+              576,
+              462
+            ],
+            [
+              1429,
+              579,
+              469
+            ],
+            [
+              1492,
+              586,
+              480
+            ],
+            [
+              1538,
+              588,
+              484
+            ],
+            [
+              1583,
+              591,
+              489
+            ],
+            [
+              1616,
+              593,
+              492
+            ],
+            [
+              1655,
+              595,
+              496
+            ],
+            [
+              1719,
+              598,
+              501
+            ],
+            [
+              1757,
+              599,
+              503
+            ],
+            [
+              1804,
+              599,
+              504
+            ],
+            [
+              1849,
+              600,
+              505
+            ],
+            [
+              1887,
+              600,
+              505
+            ],
+            [
+              2067,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "mela",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 4
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267445481,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "quaderno",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.663,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 93,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              93,
+              760,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 5
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267448434,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "quaderno",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1964,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              49,
+              759,
+              191
+            ],
+            [
+              95,
+              759,
+              192
+            ],
+            [
+              148,
+              758,
+              194
+            ],
+            [
+              210,
+              755,
+              199
+            ],
+            [
+              272,
+              752,
+              206
+            ],
+            [
+              314,
+              750,
+              210
+            ],
+            [
+              378,
+              745,
+              220
+            ],
+            [
+              414,
+              742,
+              226
+            ],
+            [
+              448,
+              738,
+              233
+            ],
+            [
+              488,
+              735,
+              239
+            ],
+            [
+              535,
+              731,
+              247
+            ],
+            [
+              573,
+              727,
+              254
+            ],
+            [
+              613,
+              723,
+              263
+            ],
+            [
+              647,
+              719,
+              272
+            ],
+            [
+              681,
+              714,
+              281
+            ],
+            [
+              745,
+              704,
+              301
+            ],
+            [
+              808,
+              692,
+              323
+            ],
+            [
+              872,
+              680,
+              347
+            ],
+            [
+              913,
+              674,
+              360
+            ],
+            [
+              982,
+              662,
+              383
+            ],
+            [
+              1016,
+              656,
+              394
+            ],
+            [
+              1055,
+              651,
+              404
+            ],
+            [
+              1133,
+              641,
+              423
+            ],
+            [
+              1180,
+              637,
+              432
+            ],
+            [
+              1258,
+              629,
+              448
+            ],
+            [
+              1312,
+              625,
+              455
+            ],
+            [
+              1375,
+              618,
+              469
+            ],
+            [
+              1447,
+              613,
+              480
+            ],
+            [
+              1511,
+              608,
+              489
+            ],
+            [
+              1550,
+              606,
+              492
+            ],
+            [
+              1620,
+              603,
+              498
+            ],
+            [
+              1683,
+              601,
+              503
+            ],
+            [
+              1750,
+              600,
+              505
+            ],
+            [
+              1785,
+              600,
+              505
+            ],
+            [
+              1964,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "quaderno",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 6
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267450337,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "libro",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.663,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 93,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              93,
+              760,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 7
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267453309,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "libro",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.218,
+          "durationMs": 1990,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              760,
+              190
+            ],
+            [
+              47,
+              759,
+              191
+            ],
+            [
+              96,
+              759,
+              192
+            ],
+            [
+              149,
+              758,
+              194
+            ],
+            [
+              189,
+              757,
+              196
+            ],
+            [
+              237,
+              755,
+              199
+            ],
+            [
+              277,
+              754,
+              202
+            ],
+            [
+              311,
+              752,
+              206
+            ],
+            [
+              347,
+              750,
+              210
+            ],
+            [
+              410,
+              745,
+              220
+            ],
+            [
+              450,
+              742,
+              226
+            ],
+            [
+              520,
+              735,
+              239
+            ],
+            [
+              567,
+              731,
+              247
+            ],
+            [
+              609,
+              727,
+              254
+            ],
+            [
+              648,
+              723,
+              263
+            ],
+            [
+              683,
+              719,
+              272
+            ],
+            [
+              748,
+              709,
+              291
+            ],
+            [
+              810,
+              698,
+              312
+            ],
+            [
+              844,
+              692,
+              323
+            ],
+            [
+              883,
+              686,
+              335
+            ],
+            [
+              946,
+              674,
+              360
+            ],
+            [
+              982,
+              668,
+              372
+            ],
+            [
+              1044,
+              656,
+              394
+            ],
+            [
+              1109,
+              646,
+              414
+            ],
+            [
+              1146,
+              641,
+              423
+            ],
+            [
+              1184,
+              637,
+              432
+            ],
+            [
+              1254,
+              629,
+              448
+            ],
+            [
+              1317,
+              622,
+              462
+            ],
+            [
+              1381,
+              615,
+              474
+            ],
+            [
+              1445,
+              610,
+              484
+            ],
+            [
+              1481,
+              608,
+              489
+            ],
+            [
+              1552,
+              605,
+              496
+            ],
+            [
+              1599,
+              603,
+              498
+            ],
+            [
+              1649,
+              602,
+              501
+            ],
+            [
+              1686,
+              601,
+              503
+            ],
+            [
+              1719,
+              601,
+              504
+            ],
+            [
+              1757,
+              600,
+              505
+            ],
+            [
+              1804,
+              600,
+              505
+            ],
+            [
+              1990,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "libro",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 8
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267455248,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.677,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 98,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              98,
+              420,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 9
+      },
+      {
+        "sessionId": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "trialId": "646402466-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267458179,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1967,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              53,
+              421,
+              191
+            ],
+            [
+              101,
+              421,
+              192
+            ],
+            [
+              148,
+              422,
+              194
+            ],
+            [
+              214,
+              425,
+              199
+            ],
+            [
+              253,
+              427,
+              202
+            ],
+            [
+              293,
+              429,
+              206
+            ],
+            [
+              330,
+              432,
+              210
+            ],
+            [
+              392,
+              437,
+              220
+            ],
+            [
+              455,
+              444,
+              233
+            ],
+            [
+              488,
+              448,
+              239
+            ],
+            [
+              526,
+              452,
+              247
+            ],
+            [
+              563,
+              457,
+              254
+            ],
+            [
+              641,
+              467,
+              272
+            ],
+            [
+              688,
+              472,
+              281
+            ],
+            [
+              724,
+              478,
+              291
+            ],
+            [
+              788,
+              490,
+              312
+            ],
+            [
+              851,
+              503,
+              335
+            ],
+            [
+              923,
+              517,
+              360
+            ],
+            [
+              987,
+              530,
+              383
+            ],
+            [
+              1025,
+              536,
+              394
+            ],
+            [
+              1090,
+              548,
+              414
+            ],
+            [
+              1126,
+              553,
+              423
+            ],
+            [
+              1195,
+              563,
+              440
+            ],
+            [
+              1234,
+              568,
+              448
+            ],
+            [
+              1282,
+              572,
+              455
+            ],
+            [
+              1317,
+              576,
+              462
+            ],
+            [
+              1380,
+              583,
+              474
+            ],
+            [
+              1453,
+              588,
+              484
+            ],
+            [
+              1492,
+              591,
+              489
+            ],
+            [
+              1530,
+              593,
+              492
+            ],
+            [
+              1608,
+              596,
+              498
+            ],
+            [
+              1654,
+              598,
+              501
+            ],
+            [
+              1693,
+              599,
+              503
+            ],
+            [
+              1757,
+              600,
+              505
+            ],
+            [
+              1794,
+              600,
+              505
+            ],
+            [
+              1967,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 10
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267462564,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "matita",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.677,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 93,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              93,
+              420,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 11
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267464324,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "matita",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1072,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              46,
+              422,
+              194
+            ],
+            [
+              103,
+              425,
+              199
+            ],
+            [
+              147,
+              429,
+              206
+            ],
+            [
+              216,
+              441,
+              226
+            ],
+            [
+              279,
+              457,
+              254
+            ],
+            [
+              314,
+              467,
+              272
+            ],
+            [
+              350,
+              478,
+              291
+            ],
+            [
+              388,
+              490,
+              312
+            ],
+            [
+              451,
+              517,
+              360
+            ],
+            [
+              514,
+              542,
+              404
+            ],
+            [
+              584,
+              563,
+              440
+            ],
+            [
+              624,
+              572,
+              455
+            ],
+            [
+              671,
+              579,
+              469
+            ],
+            [
+              707,
+              586,
+              480
+            ],
+            [
+              748,
+              591,
+              489
+            ],
+            [
+              785,
+              595,
+              496
+            ],
+            [
+              848,
+              599,
+              504
+            ],
+            [
+              887,
+              600,
+              505
+            ],
+            [
+              1072,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "matita",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 12
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267466252,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "libro",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.677,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 104,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              104,
+              420,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 13
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267467990,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "libro",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1047,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              55,
+              422,
+              194
+            ],
+            [
+              100,
+              425,
+              199
+            ],
+            [
+              141,
+              429,
+              206
+            ],
+            [
+              210,
+              441,
+              226
+            ],
+            [
+              273,
+              457,
+              254
+            ],
+            [
+              313,
+              467,
+              272
+            ],
+            [
+              376,
+              490,
+              312
+            ],
+            [
+              439,
+              517,
+              360
+            ],
+            [
+              473,
+              530,
+              383
+            ],
+            [
+              509,
+              542,
+              404
+            ],
+            [
+              548,
+              553,
+              423
+            ],
+            [
+              594,
+              563,
+              440
+            ],
+            [
+              640,
+              572,
+              455
+            ],
+            [
+              674,
+              579,
+              469
+            ],
+            [
+              709,
+              586,
+              480
+            ],
+            [
+              771,
+              595,
+              496
+            ],
+            [
+              837,
+              599,
+              504
+            ],
+            [
+              875,
+              600,
+              505
+            ],
+            [
+              1047,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "libro",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 14
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267469907,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.677,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 94,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              94,
+              420,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 15
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267471615,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "righello",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1029,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              48,
+              422,
+              194
+            ],
+            [
+              96,
+              425,
+              199
+            ],
+            [
+              147,
+              429,
+              206
+            ],
+            [
+              208,
+              441,
+              226
+            ],
+            [
+              248,
+              448,
+              239
+            ],
+            [
+              283,
+              457,
+              254
+            ],
+            [
+              316,
+              467,
+              272
+            ],
+            [
+              378,
+              490,
+              312
+            ],
+            [
+              443,
+              517,
+              360
+            ],
+            [
+              513,
+              542,
+              404
+            ],
+            [
+              582,
+              563,
+              440
+            ],
+            [
+              645,
+              579,
+              469
+            ],
+            [
+              710,
+              591,
+              489
+            ],
+            [
+              749,
+              595,
+              496
+            ],
+            [
+              783,
+              598,
+              501
+            ],
+            [
+              816,
+              599,
+              504
+            ],
+            [
+              1029,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "righello",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 16
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267473519,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "forbici",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.677,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 94,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              94,
+              420,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 17
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-3",
+        "trialIndex": 3,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267475266,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "forbici",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1058,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              54,
+              422,
+              194
+            ],
+            [
+              102,
+              425,
+              199
+            ],
+            [
+              141,
+              429,
+              206
+            ],
+            [
+              179,
+              434,
+              215
+            ],
+            [
+              247,
+              448,
+              239
+            ],
+            [
+              311,
+              467,
+              272
+            ],
+            [
+              345,
+              478,
+              291
+            ],
+            [
+              378,
+              490,
+              312
+            ],
+            [
+              412,
+              503,
+              335
+            ],
+            [
+              481,
+              530,
+              383
+            ],
+            [
+              543,
+              553,
+              423
+            ],
+            [
+              578,
+              563,
+              440
+            ],
+            [
+              616,
+              572,
+              455
+            ],
+            [
+              652,
+              579,
+              469
+            ],
+            [
+              731,
+              591,
+              489
+            ],
+            [
+              769,
+              595,
+              496
+            ],
+            [
+              803,
+              598,
+              501
+            ],
+            [
+              841,
+              599,
+              504
+            ],
+            [
+              877,
+              600,
+              505
+            ],
+            [
+              1058,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "forbici",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 18
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267477170,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0.677,
+          "enteredTarget": false,
+          "pathLength": 0,
+          "durationMs": 92,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              92,
+              420,
+              190
+            ]
+          ],
+          "outcome": "abandoned"
+        },
+        "decision": null,
+        "aids": [],
+        "completed": false,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 19
+      },
+      {
+        "sessionId": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "trialId": "295720334-4",
+        "trialIndex": 4,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 2,
+        "ts": 1793267478954,
+        "config": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 1.25,
+          "durationMs": 1100,
+          "multiTouch": false,
+          "path": [
+            [
+              0,
+              420,
+              190
+            ],
+            [
+              47,
+              422,
+              194
+            ],
+            [
+              95,
+              425,
+              199
+            ],
+            [
+              146,
+              429,
+              206
+            ],
+            [
+              207,
+              441,
+              226
+            ],
+            [
+              248,
+              448,
+              239
+            ],
+            [
+              283,
+              457,
+              254
+            ],
+            [
+              316,
+              467,
+              272
+            ],
+            [
+              387,
+              490,
+              312
+            ],
+            [
+              450,
+              517,
+              360
+            ],
+            [
+              496,
+              530,
+              383
+            ],
+            [
+              542,
+              542,
+              404
+            ],
+            [
+              580,
+              553,
+              423
+            ],
+            [
+              615,
+              563,
+              440
+            ],
+            [
+              651,
+              572,
+              455
+            ],
+            [
+              696,
+              579,
+              469
+            ],
+            [
+              745,
+              586,
+              480
+            ],
+            [
+              780,
+              591,
+              489
+            ],
+            [
+              842,
+              598,
+              501
+            ],
+            [
+              914,
+              600,
+              505
+            ],
+            [
+              1100,
+              600,
+              505
+            ]
+          ],
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "succo",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 20
+      },
+      {
+        "sessionId": "a7c36ce8-f368-49bb-80f5-a168244f79d9",
+        "trialId": "507850117-0",
+        "trialIndex": 0,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267500446,
+        "config": {
+          "mode": "tap_then_tap",
+          "tolerance": 0,
+          "version": 2
+        },
+        "selection": {
+          "objectId": "quaderno",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 0,
+          "durationMs": 2865,
+          "multiTouch": false,
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "quaderno",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": true,
+          "interrupted": false
+        },
+        "id": 21
+      },
+      {
+        "sessionId": "a7c36ce8-f368-49bb-80f5-a168244f79d9",
+        "trialId": "507850117-1",
+        "trialIndex": 1,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267503899,
+        "config": {
+          "mode": "tap_then_tap",
+          "tolerance": 0,
+          "version": 2
+        },
+        "selection": {
+          "objectId": "succo",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 0,
+          "durationMs": 1150,
+          "multiTouch": false,
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "succo",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 22
+      },
+      {
+        "sessionId": "a7c36ce8-f368-49bb-80f5-a168244f79d9",
+        "trialId": "507850117-2",
+        "trialIndex": 2,
+        "goal": "match_list_item",
+        "materials": {
+          "version": "set-8-mvtd4i8m",
+          "target": "emoji",
+          "voice": "synthetic"
+        },
+        "n": 1,
+        "ts": 1793267506884,
+        "config": {
+          "mode": "tap_then_tap",
+          "tolerance": 0,
+          "version": 2
+        },
+        "selection": {
+          "objectId": "mela",
+          "correct": true,
+          "changes": 0
+        },
+        "gesture": {
+          "releaseDist": 0,
+          "enteredTarget": true,
+          "pathLength": 0,
+          "durationMs": 1144,
+          "multiTouch": false,
+          "outcome": "placed"
+        },
+        "decision": {
+          "objectId": "mela",
+          "destinationId": "zaino"
+        },
+        "aids": [],
+        "completed": true,
+        "flags": {
+          "firstAfterChange": false,
+          "interrupted": false
+        },
+        "id": 23
+      }
+    ],
+    "configHistory": [
+      {
+        "ts": 1793267426874,
+        "interaction": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "default",
+        "id": 1
+      },
+      {
+        "ts": 1793267491333,
+        "interaction": {
+          "mode": "tap_then_tap",
+          "tolerance": 0,
+          "version": 2
+        },
+        "locked": [],
+        "task": {
+          "instruction": "list_voice"
+        },
+        "source": "proposal",
+        "proposalId": "4ef027de-d6c7-4659-8d02-7105a4759930",
+        "id": 2
+      }
+    ],
+    "editorSessions": [],
+    "kv": [
+      {
+        "key": "context",
+        "value": {
+          "templateId": "prepariamo-lo-zaino",
+          "device": "questo-dispositivo",
+          "interaction": {
+            "mode": "tap_then_tap",
+            "tolerance": 0,
+            "version": 2
+          },
+          "locked": [],
+          "task": {
+            "instruction": "list_voice"
+          }
+        }
+      },
+      {
+        "key": "materialsSeeded",
+        "value": true
+      }
+    ],
+    "materials": [
+      {
+        "id": "forbici",
+        "label": "forbici",
+        "article": "le",
+        "emoji": "✂️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426907,
+        "updatedAt": 1793267426902
+      },
+      {
+        "id": "libro",
+        "label": "libro",
+        "article": "il",
+        "emoji": "📕",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426906,
+        "updatedAt": 1793267426902
+      },
+      {
+        "id": "matita",
+        "label": "matita",
+        "article": "la",
+        "emoji": "✏️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426903,
+        "updatedAt": 1793267426902
+      },
+      {
+        "id": "mela",
+        "label": "mela",
+        "article": "la",
+        "emoji": "🍎",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426905,
+        "updatedAt": 1793267426902
+      },
+      {
+        "id": "pastelli",
+        "label": "pastelli",
+        "article": "i",
+        "emoji": "🖍️",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426904,
+        "updatedAt": 1793267426902
+      },
+      {
+        "id": "quaderno",
+        "label": "quaderno",
+        "article": "il",
+        "emoji": "📓",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426902,
+        "updatedAt": 1793267426902
+      },
+      {
+        "id": "righello",
+        "label": "righello",
+        "article": "il",
+        "emoji": "📏",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426908,
+        "updatedAt": 1793267426902
+      },
+      {
+        "id": "succo",
+        "label": "succo",
+        "article": "il",
+        "emoji": "🧃",
+        "source": "demo",
+        "active": true,
+        "createdAt": 1793267426909,
+        "updatedAt": 1793267426902
+      }
+    ],
+    "proposals": [
+      {
+        "id": "4ef027de-d6c7-4659-8d02-7105a4759930",
+        "ts": 1793267480065,
+        "ruleset": {
+          "id": "interaction-access",
+          "version": "1.0.0"
+        },
+        "change": {
+          "dimension": "input",
+          "from": "drag",
+          "to": "tap_then_tap"
+        },
+        "evidence": {
+          "considered": 19,
+          "sessions": 2,
+          "choiceOk": 19,
+          "gestureFailed": 9,
+          "nearOrOvershoot": 0,
+          "failRateLower": 0.33,
+          "attemptIds": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        "explanation": "Propongo la selezione con due tocchi (prima l'oggetto, poi lo zaino) al posto del trascinamento. Nelle ultime 19 prove valide, in 2 sessioni, l'oggetto scelto era quello della lista 19 volte; in 9 di queste il trascinamento non si è concluso nello zaino. Stima prudente della quota di gesti non riusciti: 33% (limite inferiore di un intervallo all'80%). Le prove sono poche: conviene provare il cambio per una sessione e poi decidere. La lista e gli oggetti restano gli stessi. Le scelte corrette riguardano queste prove e non dimostrano una competenza consolidata; i gesti non riusciti non indicano una difficoltà motoria generale.",
+        "status": "accepted",
+        "fromConfig": {
+          "mode": "drag",
+          "tolerance": 0,
+          "version": 1
+        },
+        "decidedAt": 1793267491329,
+        "appliedVersion": 2
+      }
+    ],
+    "sessionEvents": [
+      {
+        "sessionId": "a7c36ce8-f368-49bb-80f5-a168244f79d9",
+        "kind": "exit",
+        "ts": 1793267508829,
+        "id": 1
+      }
+    ],
+    "sessions": [
+      {
+        "id": "8f76c889-22b9-4aaf-af38-898fbf7d1380",
+        "startedAt": 1793267461075,
+        "trials": 5,
+        "endedAt": 1793267480063,
+        "endReason": "completed"
+      },
+      {
+        "id": "a7c36ce8-f368-49bb-80f5-a168244f79d9",
+        "startedAt": 1793267496186,
+        "trials": 5,
+        "endedAt": 1793267508830,
+        "endReason": "exit"
+      },
+      {
+        "id": "f2eb966d-1bf1-4559-9a97-aef219f030e4",
+        "startedAt": 1793267430782,
+        "trials": 5,
+        "endedAt": 1793267459309,
+        "endReason": "completed"
+      }
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The real game, recorded · Pack the backpack</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="../stile.css">
+<link rel="stylesheet" href="../percorso.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="percorso" data-percorso aria-label="Route"></nav>
+  <header>
+    <p class="eyebrow">Recordings</p>
+    <h1>The real game, recorded</h1>
+    <p class="lead">Nine cases actually played in the app, starting from empty data, with an automated mouse. The blue circle shows where the finger touches; the captions were added only in the recording.</p>
+  </header>
+  <main class="sheet">
+    <div class="cols3 recgrid">
+    <a class="card reccard" href="registrazione-a.html">
+      <span class="tag">Case A · 1:45 · Feature 1, 2, 3</span>
+      <h3>Picks well, releases near the backpack</h3>
+      <p>The backpack becomes more tolerant, the question stays the same.</p>
+    </a>
+    <a class="card reccard" href="registrazione-b.html">
+      <span class="tag">Case B · 1:29 · Feature 1, 2, 3</span>
+      <h3>Picks well, but cannot drag</h3>
+      <p>The system proposes two taps instead of dragging.</p>
+    </a>
+    <a class="card reccard" href="registrazione-c.html">
+      <span class="tag">Case C · 1:12 · Feature 1</span>
+      <h3>Confident gesture, uncertain choice</h3>
+      <p>The opposite case: the system does not propose changing the gesture.</p>
+    </a>
+    <a class="card reccard" href="registrazione-d.html">
+      <span class="tag">Case D · 0:45 · Feature 2</span>
+      <h3>Everything works</h3>
+      <p>The system does not change what works.</p>
+    </a>
+    <a class="card reccard" href="registrazione-e.html">
+      <span class="tag">Case E · 0:39 · Game rules</span>
+      <h3>Help, pause and exit</h3>
+      <p>Always available, with no penalty.</p>
+    </a>
+    <a class="card reccard" href="registrazione-f.html">
+      <span class="tag">Case F · 0:30 · Feature 2</span>
+      <h3>The adult refuses the proposal</h3>
+      <p>Refused and locked: the system does not insist.</p>
+    </a>
+    <a class="card reccard" href="registrazione-g.html">
+      <span class="tag">Case G · 0:59 · Feature 6</span>
+      <h3>The adult prepares household objects</h3>
+      <p>Photos and a family member's voice, in a few minutes.</p>
+    </a>
+    <a class="card reccard" href="registrazione-h.html">
+      <span class="tag">Case H · 0:54 · Feature 5</span>
+      <h3>The real backpack</h3>
+      <p>Noted by the adult, never added to the game.</p>
+    </a>
+    <a class="card reccard" href="registrazione-i.html">
+      <span class="tag">Case I · 0:58 · Feature 4</span>
+      <h3>Several photos of the same object</h3>
+      <p>The appearance changes, not the task.</p>
+    </a>
+    </div>
+    <p class="muted">The simulation showed the ideas; here is the working prototype. The numbers in the videos are the ones the game actually computed. The captions inside the videos are in Italian: under each video an English translation follows the playback. Every recording is reproducible: <code>scripts/registra-casistiche.mjs</code> replays the cases from scratch.</p>
+  </main>
+</div>
+<script src="../percorso.js"></script>
+</body>
+</html>
